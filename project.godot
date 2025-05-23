@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Tug of War"
+config/name="Tuggers"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
