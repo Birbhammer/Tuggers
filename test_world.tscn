@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhi8dmlwr0rwd"]
+
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="1_dxppu"]
+[ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/player_controller.tscn" id="2_gy3sr"]
+[ext_resource type="Script" uid="uid://brfmhlrs2xj8t" path="res://Scripts/Test/moving_obj_test.gd" id="3_1lwx6"]
+[ext_resource type="PackedScene" uid="uid://doy88vrk1d5eu" path="res://rope.tscn" id="4_dsnr4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dsnr4"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3sr"]
+size = Vector2(412, 60)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1lwx6"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsnr4"]
+size = Vector2(106, 265)
+
+[node name="TestWorld" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(10, 11)
+physics_material_override = SubResource("PhysicsMaterial_dsnr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-10, 20)
+shape = SubResource("RectangleShape2D_gy3sr")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-7.62939e-06, 0.500001)
+scale = Vector2(3.21875, 0.476563)
+texture = ExtResource("1_dxppu")
+
+[node name="MovingObjTest" type="AnimatableBody2D" parent="."]
+position = Vector2(-486, -132)
+physics_material_override = SubResource("PhysicsMaterial_1lwx6")
+script = ExtResource("3_1lwx6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingObjTest"]
+position = Vector2(43, -35.5)
+shape = SubResource("RectangleShape2D_dsnr4")
+
+[node name="Icon" type="Sprite2D" parent="MovingObjTest/CollisionShape2D"]
+position = Vector2(0.49999, -3.8147e-06)
+scale = Vector2(0.820313, 2.07031)
+texture = ExtResource("1_dxppu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerController" parent="." instance=ExtResource("2_gy3sr")]
+position = Vector2(0, -173)
+scale = Vector2(0.25, 0.25)
+
+[node name="Rope" parent="." instance=ExtResource("4_dsnr4")]
+position = Vector2(168, -679)
+rotation = 1.28866

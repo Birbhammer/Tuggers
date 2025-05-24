@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://clkj1kklnkc3d"]
+
+[ext_resource type="Script" uid="uid://c1rm83uam4f4p" path="res://Scripts/Player/player_controller.gd" id="1_a1q1g"]
+[ext_resource type="PackedScene" uid="uid://dxa4uiine0vdd" path="res://Player/player_ik_body.tscn" id="2_cxhyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
+size = Vector2(353, 780)
+
+[node name="PlayerController" type="CharacterBody2D"]
+script = ExtResource("1_a1q1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -28)
+shape = SubResource("RectangleShape2D_a1q1g")
+
+[node name="PlayerIKBody" parent="." instance=ExtResource("2_cxhyj")]
+position = Vector2(0, -300)
