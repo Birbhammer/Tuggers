@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhi8dmlwr0rwd"]
+[gd_scene load_steps=11 format=3 uid="uid://dhi8dmlwr0rwd"]
 
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="1_dxppu"]
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/player_controller.tscn" id="2_gy3sr"]
 [ext_resource type="Script" uid="uid://brfmhlrs2xj8t" path="res://Scripts/Test/moving_obj_test.gd" id="3_1lwx6"]
-[ext_resource type="PackedScene" uid="uid://doy88vrk1d5eu" path="res://rope.tscn" id="4_dsnr4"]
+[ext_resource type="PackedScene" uid="uid://doy88vrk1d5eu" path="res://rope1.tscn" id="4_dsnr4"]
+[ext_resource type="PackedScene" uid="uid://cv5nq34dxhxxy" path="res://LevelAssets/game_manager.tscn" id="5_lf0gk"]
+[ext_resource type="PackedScene" uid="uid://1s88pbjdy58g" path="res://rope2.tscn" id="6_cnaw2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dsnr4"]
 friction = 0.0
@@ -19,39 +21,84 @@ size = Vector2(106, 265)
 
 [node name="TestWorld" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(10, 11)
-physics_material_override = SubResource("PhysicsMaterial_dsnr4")
+[node name="GameManager" parent="." instance=ExtResource("5_lf0gk")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Connector" type="PinJoint2D" parent="GameManager"]
+position = Vector2(0, -144)
+
+[node name="LeftSide" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="LeftSide"]
+position = Vector2(-1035, 11)
+physics_material_override = SubResource("PhysicsMaterial_dsnr4")
+constant_linear_velocity = Vector2(60, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Floor"]
 position = Vector2(-10, 20)
+scale = Vector2(3.87411, 1)
 shape = SubResource("RectangleShape2D_gy3sr")
 
-[node name="Icon" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+[node name="Icon" type="Sprite2D" parent="LeftSide/Floor/CollisionShape2D"]
 position = Vector2(-7.62939e-06, 0.500001)
 scale = Vector2(3.21875, 0.476563)
 texture = ExtResource("1_dxppu")
 
-[node name="MovingObjTest" type="AnimatableBody2D" parent="."]
-position = Vector2(-486, -132)
+[node name="MovingObjTest" type="AnimatableBody2D" parent="LeftSide"]
+position = Vector2(-1531, 119)
 physics_material_override = SubResource("PhysicsMaterial_1lwx6")
 script = ExtResource("3_1lwx6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingObjTest"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/MovingObjTest"]
 position = Vector2(43, -35.5)
 shape = SubResource("RectangleShape2D_dsnr4")
 
-[node name="Icon" type="Sprite2D" parent="MovingObjTest/CollisionShape2D"]
+[node name="Icon" type="Sprite2D" parent="LeftSide/MovingObjTest/CollisionShape2D"]
 position = Vector2(0.49999, -3.8147e-06)
 scale = Vector2(0.820313, 2.07031)
 texture = ExtResource("1_dxppu")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="PlayerController" parent="." instance=ExtResource("2_gy3sr")]
-position = Vector2(0, -173)
+[node name="Player1" parent="LeftSide" instance=ExtResource("2_gy3sr")]
+position = Vector2(-470, -133)
 scale = Vector2(0.25, 0.25)
 
-[node name="Rope" parent="." instance=ExtResource("4_dsnr4")]
-position = Vector2(168, -679)
-rotation = 1.28866
+[node name="Rope1" parent="LeftSide" instance=ExtResource("4_dsnr4")]
+position = Vector2(-28, -144)
+rotation = 1.5708
+
+[node name="RightSide" type="Node" parent="."]
+
+[node name="Floor2" type="StaticBody2D" parent="RightSide"]
+position = Vector2(1068, 11)
+physics_material_override = SubResource("PhysicsMaterial_dsnr4")
+constant_linear_velocity = Vector2(-60, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/Floor2"]
+position = Vector2(-10, 20)
+scale = Vector2(3.87411, 1)
+shape = SubResource("RectangleShape2D_gy3sr")
+
+[node name="Icon" type="Sprite2D" parent="RightSide/Floor2/CollisionShape2D"]
+position = Vector2(-7.62939e-06, 0.500001)
+scale = Vector2(3.21875, 0.476563)
+texture = ExtResource("1_dxppu")
+
+[node name="MovingObjTest2" type="AnimatableBody2D" parent="RightSide"]
+position = Vector2(572, 119)
+physics_material_override = SubResource("PhysicsMaterial_1lwx6")
+script = ExtResource("3_1lwx6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/MovingObjTest2"]
+position = Vector2(43, -35.5)
+shape = SubResource("RectangleShape2D_dsnr4")
+
+[node name="Icon" type="Sprite2D" parent="RightSide/MovingObjTest2/CollisionShape2D"]
+position = Vector2(0.49999, -3.8147e-06)
+scale = Vector2(0.820313, 2.07031)
+texture = ExtResource("1_dxppu")
+
+[node name="Rope2" parent="RightSide" instance=ExtResource("6_cnaw2")]
+position = Vector2(28, -144)
+rotation = -1.5708
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

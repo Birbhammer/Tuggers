@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://doy88vrk1d5eu"]
+[gd_scene load_steps=3 format=3 uid="uid://1s88pbjdy58g"]
 
-[ext_resource type="PackedScene" uid="uid://cgcswixlwt3ru" path="res://rope_segment.tscn" id="1_0756u"]
+[ext_resource type="Script" uid="uid://bcd71r2t5bcpy" path="res://Scripts/rope2.gd" id="1_3th7e"]
+[ext_resource type="PackedScene" uid="uid://cgcswixlwt3ru" path="res://rope_segment.tscn" id="2_ri4nk"]
 
-[node name="Rope" type="Node2D"]
+[node name="Rope2" type="Node2D"]
+script = ExtResource("1_3th7e")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, 26)
@@ -49,31 +51,43 @@ position = Vector2(0, 434)
 node_a = NodePath("../RopeSegment9")
 node_b = NodePath("../RopeSegment10")
 
-[node name="RopeSegment" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment" parent="." instance=ExtResource("2_ri4nk")]
+collision_layer = 2
+freeze_mode = 1
 
-[node name="RopeSegment2" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment2" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 51)
+collision_layer = 2
+freeze_mode = 1
 
-[node name="RopeSegment3" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment3" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 102)
+collision_layer = 2
 
-[node name="RopeSegment4" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment4" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 153)
+collision_layer = 2
 
-[node name="RopeSegment5" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment5" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 204)
+collision_layer = 2
 
-[node name="RopeSegment6" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment6" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 255)
+collision_layer = 2
 
-[node name="RopeSegment7" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment7" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 306)
+collision_layer = 2
 
-[node name="RopeSegment8" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment8" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 357)
+collision_layer = 2
 
-[node name="RopeSegment9" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment9" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 408)
+collision_layer = 2
 
-[node name="RopeSegment10" parent="." instance=ExtResource("1_0756u")]
+[node name="RopeSegment10" parent="." instance=ExtResource("2_ri4nk")]
 position = Vector2(0, 459)
+collision_layer = 2
