@@ -12,6 +12,7 @@ func _ready() -> void:
 	for i in self.get_child_count():
 		if get_child(i) is RigidBody2D:
 			gameManager.ropeSegment1.append(get_child(i))
+			gameManager.rope1Length -= 1
 			var label = get_child(i).find_child("Label")
 			label.text = str(1 + segmentNumber)
 			segmentNumber += 1

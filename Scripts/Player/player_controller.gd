@@ -5,6 +5,11 @@ const JUMP_VELOCITY = -400.0
 
 @onready var handL: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmL/HandL
 @onready var handR: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmR/HandR
+@onready var gameManager: Node = $"../../GameManager"
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Tug"):
+		gameManager.ropeCurrentPosition += 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,5 +27,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
