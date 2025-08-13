@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://uj1fawcq85y6"]
+
+[ext_resource type="Script" uid="uid://brfmhlrs2xj8t" path="res://Scripts/Platform/moving_platform_horizontal.gd" id="1_r0i6p"]
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_e5fqf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1lwx6"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsnr4"]
+size = Vector2(219, 83)
+
+[node name="MovingPlatformHorizontal" type="AnimatableBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_1lwx6")
+script = ExtResource("1_r0i6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dsnr4")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0.49999, -3.8147e-06)
+scale = Vector2(1.6967, 0.659905)
+texture = ExtResource("2_e5fqf")

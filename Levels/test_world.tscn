@@ -1,18 +1,82 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhi8dmlwr0rwd"]
+[gd_scene load_steps=22 format=3 uid="uid://dhi8dmlwr0rwd"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nq34dxhxxy" path="res://LevelAssets/game_manager.tscn" id="1_mggor"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_1ot53"]
-[ext_resource type="Script" uid="uid://brfmhlrs2xj8t" path="res://Scripts/Test/moving_obj_test.gd" id="3_m5bqa"]
+[ext_resource type="PackedScene" uid="uid://uj1fawcq85y6" path="res://LevelAssets/PlatformPrefabs/moving_platform_horizontal.tscn" id="3_jykfp"]
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/player_controller.tscn" id="4_1r5jd"]
+[ext_resource type="Texture2D" uid="uid://66e4fa7ivjkp" path="res://TestAssets/Gbot/gBot_arm_l.png" id="5_1mxxg"]
+[ext_resource type="Texture2D" uid="uid://tsijpijbye5p" path="res://TestAssets/Gbot/gBot_arm_r.png" id="6_0ipmq"]
+[ext_resource type="Texture2D" uid="uid://sqgrktxua2t5" path="res://TestAssets/Gbot/gBot_forearm_l.png" id="9_optmq"]
+[ext_resource type="PackedScene" uid="uid://bd1jbyhhia6mf" path="res://LevelAssets/PlatformPrefabs/moving_platform_vertical.tscn" id="9_vufbg"]
+[ext_resource type="Texture2D" uid="uid://upbd0mslu5wl" path="res://TestAssets/Gbot/gBot_forearm_r.png" id="10_dr4kj"]
+[ext_resource type="Script" uid="uid://b6dx56hhodcuf" path="res://Scripts/idiot_box.gd" id="10_eokls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3sr"]
 size = Vector2(412, 60)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1lwx6"]
-friction = 0.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
+height = 33.3345
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsnr4"]
-size = Vector2(106, 265)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jykfp"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1r5jd"]
+radius = 7.07068
+height = 19.7677
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vufbg"]
+radius = 6.0
+height = 18.2199
+
+[sub_resource type="LabelSettings" id="LabelSettings_jykfp"]
+font_size = 80
+
+[sub_resource type="Curve2D" id="Curve2D_vufbg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 799, 13, 0, 0, 0, 0, 371, 7, 0, 0, 0, 0, 246, -245, 0, 0, 0, 0, 309, -497, 0, 0, 0, 0, 554, -636, 0, 0, 0, 0, 1031, -638, 0, 0, 0, 0, 1310, -577, 0, 0, 0, 0, 1368, -252, 0, 0, 0, 0, 1190, -13, 0, 0, 0, 0, 799, 13)
+}
+point_count = 10
+
+[sub_resource type="Animation" id="Animation_eokls"]
+resource_name = "Test_Path_Follow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_84vo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3cm4"]
+_data = {
+&"RESET": SubResource("Animation_84vo3"),
+&"Test_Path_Follow": SubResource("Animation_eokls")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84vo3"]
+size = Vector2(15951, 461)
 
 [node name="TestWorld" type="Node2D"]
 
@@ -33,30 +97,104 @@ position = Vector2(-7.62939e-06, 0.500001)
 scale = Vector2(3.21875, 0.476563)
 texture = ExtResource("2_1ot53")
 
-[node name="MovingObjTest" type="AnimatableBody2D" parent="LeftSide"]
-position = Vector2(-1531, 119)
-physics_material_override = SubResource("PhysicsMaterial_1lwx6")
-script = ExtResource("3_m5bqa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/MovingObjTest"]
-position = Vector2(43, -35.5)
-shape = SubResource("RectangleShape2D_dsnr4")
-
-[node name="Icon" type="Sprite2D" parent="LeftSide/MovingObjTest/CollisionShape2D"]
-position = Vector2(0.49999, -3.8147e-06)
-scale = Vector2(0.820313, 2.07031)
-texture = ExtResource("2_1ot53")
-
 [node name="Player1" parent="LeftSide" instance=ExtResource("4_1r5jd")]
 position = Vector2(-470, -133)
 scale = Vector2(0.25, 0.25)
+collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="LeftSide/Player1"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Arms" type="Node2D" parent="LeftSide/Player1"]
+scale = Vector2(4, 4)
+
+[node name="ArmR" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(-20, -14)
+node_a = NodePath("../..")
+node_b = NodePath("../UpperArmR")
+bias = 0.9
+
+[node name="ElbowR" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(-23, 9)
+node_a = NodePath("../UpperArmR")
+node_b = NodePath("../LowerArmR")
+bias = 0.9
+
+[node name="ElbowL" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(15, 14)
+node_a = NodePath("../UpperArmL")
+node_b = NodePath("../LowerArmL")
+bias = 0.9
+
+[node name="ArmL" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(17, -14)
+node_a = NodePath("../..")
+node_b = NodePath("../UpperArmL")
+bias = 0.9
+
+[node name="UpperArmR" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(-19, -9)
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/UpperArmR"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_0ipmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/UpperArmR"]
+position = Vector2(-2, 3)
+rotation = 0.147846
+shape = SubResource("CapsuleShape2D_m5bqa")
+
+[node name="UpperArmL" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(17, -14)
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/UpperArmL"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_jykfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/UpperArmL"]
+z_index = -1
+position = Vector2(0, 5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_1mxxg")
+
+[node name="LowerArmR" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(-19, 27)
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/LowerArmR"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_dr4kj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/LowerArmR"]
+position = Vector2(-1, 9)
+rotation = -0.152566
+shape = SubResource("CapsuleShape2D_1r5jd")
+
+[node name="LowerArmL" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
+position = Vector2(16, 22)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/LowerArmL"]
+z_index = -1
+position = Vector2(4, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_optmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/LowerArmL"]
+position = Vector2(2, 7)
+rotation = -0.373014
+shape = SubResource("CapsuleShape2D_vufbg")
 
 [node name="RightSide" type="Node" parent="."]
 
 [node name="Floor2" type="StaticBody2D" parent="RightSide"]
-position = Vector2(1068, 11)
+position = Vector2(575, 286)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/Floor2"]
 position = Vector2(-10, 20)
@@ -68,16 +206,121 @@ position = Vector2(-7.62939e-06, 0.500001)
 scale = Vector2(3.21875, 0.476563)
 texture = ExtResource("2_1ot53")
 
-[node name="MovingObjTest2" type="AnimatableBody2D" parent="RightSide"]
-position = Vector2(572, 119)
-physics_material_override = SubResource("PhysicsMaterial_1lwx6")
-script = ExtResource("3_m5bqa")
+[node name="Floor4" type="StaticBody2D" parent="RightSide"]
+position = Vector2(3129, -401)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/MovingObjTest2"]
-position = Vector2(43, -35.5)
-shape = SubResource("RectangleShape2D_dsnr4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/Floor4"]
+position = Vector2(-10, 20)
+scale = Vector2(3.87411, 1)
+shape = SubResource("RectangleShape2D_gy3sr")
 
-[node name="Icon" type="Sprite2D" parent="RightSide/MovingObjTest2/CollisionShape2D"]
-position = Vector2(0.49999, -3.8147e-06)
-scale = Vector2(0.820313, 2.07031)
+[node name="Icon" type="Sprite2D" parent="RightSide/Floor4/CollisionShape2D"]
+position = Vector2(-7.62939e-06, 0.500001)
+scale = Vector2(3.21875, 0.476563)
 texture = ExtResource("2_1ot53")
+
+[node name="Floor3" type="StaticBody2D" parent="RightSide"]
+position = Vector2(2893, 286)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide/Floor3"]
+position = Vector2(-10, 20)
+scale = Vector2(3.87411, 1)
+shape = SubResource("RectangleShape2D_gy3sr")
+
+[node name="Icon" type="Sprite2D" parent="RightSide/Floor3/CollisionShape2D"]
+position = Vector2(-7.62939e-06, 0.500001)
+scale = Vector2(3.21875, 0.476563)
+texture = ExtResource("2_1ot53")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -111.0
+offset_top = 72.0
+offset_right = 429.0
+offset_bottom = 182.0
+text = "THIS WAY ---->"
+label_settings = SubResource("LabelSettings_jykfp")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2786.0
+offset_top = -561.0
+offset_right = 3531.0
+offset_bottom = -451.0
+text = "WOW YOU MADE IT"
+label_settings = SubResource("LabelSettings_jykfp")
+
+[node name="Moving Platforms" type="Node" parent="."]
+
+[node name="MovingPlatformHorizontal" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+position = Vector2(178, 565)
+SPEED = 2
+
+[node name="MovingPlatformHorizontal2" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+position = Vector2(615, 565)
+SPEED = 2
+
+[node name="MovingPlatformHorizontal3" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+position = Vector2(1023, 565)
+SPEED = 2
+
+[node name="MovingPlatformHorizontal4" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+position = Vector2(1400, 565)
+SPEED = 2
+
+[node name="MovingPlatformHorizontal5" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+position = Vector2(1848, 565)
+SPEED = 2
+
+[node name="MovingPlatformVertical" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+position = Vector2(4536, 50)
+SPEED = 1
+
+[node name="MovingPlatformVertical3" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+position = Vector2(4536, -344)
+SPEED = 1
+
+[node name="MovingPlatformVertical4" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+position = Vector2(4536, -666)
+SPEED = 1
+
+[node name="MovingPlatformVertical2" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+position = Vector2(3906, 517)
+SPEED = -1
+
+[node name="MovingPlatformVertical5" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+position = Vector2(3906, 751)
+SPEED = -1
+
+[node name="MovingPlatformVertical6" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+position = Vector2(3906, 994)
+SPEED = -1
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(937, 182)
+curve = SubResource("Curve2D_vufbg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(799, 13)
+rotates = false
+
+[node name="MovingPlatformHorizontal" parent="Path2D/PathFollow2D" instance=ExtResource("3_jykfp")]
+sync_to_physics = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_v3cm4")
+}
+autoplay = "Test_Path_Follow"
+speed_scale = 0.1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1286, 1384)
+script = ExtResource("10_eokls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-550.5, 821.5)
+shape = SubResource("RectangleShape2D_84vo3")
+
+[node name="ResetPOS" type="Marker2D" parent="."]
+position = Vector2(-756, -560)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

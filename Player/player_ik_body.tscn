@@ -138,15 +138,18 @@ modifications/7 = SubResource("SkeletonModification2DLookAt_sl8yu")
 [node name="Body" type="Node2D" parent="CharacterContainer"]
 
 [node name="GBotArmL" type="Sprite2D" parent="CharacterContainer/Body"]
+visible = false
 position = Vector2(71, 232)
-rotation = -0.783145
+rotation = -1.61415
+scale = Vector2(0.999999, 0.999999)
 texture = ExtResource("1_sjlcb")
 offset = Vector2(-3, 32)
 
 [node name="GBotForearmL" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(147.863, 326.219)
-rotation = -2.06844
-scale = Vector2(1, 1)
+visible = false
+position = Vector2(192.398, 238.744)
+rotation = -1.31799
+scale = Vector2(0.999997, 0.999997)
 texture = ExtResource("2_abdv7")
 offset = Vector2(18, 53)
 
@@ -155,14 +158,14 @@ position = Vector2(18.9573, 90.3299)
 
 [node name="GBotLegL" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(51, 387)
-rotation = -0.348357
+rotation = -0.646699
 scale = Vector2(0.999999, 0.999999)
 texture = ExtResource("3_ppbio")
 offset = Vector2(-25, 54)
 
 [node name="GBotShinL" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(57.2738, 503.881)
-rotation = -0.18122
+position = Vector2(91.3523, 496.872)
+rotation = 0.168411
 scale = Vector2(1, 1)
 texture = ExtResource("4_7mixy")
 offset = Vector2(12, 33)
@@ -192,29 +195,31 @@ texture = ExtResource("8_ivc73")
 offset = Vector2(17, 38)
 
 [node name="GBotFootL" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(83.9999, 621.999)
-rotation = -0.0630584
-scale = Vector2(0.999985, 0.999985)
+position = Vector2(76, 617)
+rotation = -0.0155007
+scale = Vector2(1, 1)
 texture = ExtResource("9_cmwdh")
 offset = Vector2(33, -5)
 
 [node name="GBotFootR" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(-118, 613)
-rotation = -0.0285654
-scale = Vector2(0.999927, 0.999927)
+scale = Vector2(0.999917, 0.999917)
 texture = ExtResource("10_o7okg")
 offset = Vector2(37, 3)
 
 [node name="GBotArmR" type="Sprite2D" parent="CharacterContainer/Body"]
+visible = false
 position = Vector2(-84, 242)
-rotation = 0.300781
+rotation = 1.43473
+scale = Vector2(0.999997, 0.999997)
 texture = ExtResource("11_skcrm")
 offset = Vector2(12, 23)
 
 [node name="GBotForearmR" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(-122.979, 344.033)
-rotation = -1.24021
-scale = Vector2(0.999999, 0.999999)
+visible = false
+position = Vector2(-192.943, 249.851)
+rotation = 0.953019
+scale = Vector2(0.999991, 0.999991)
 texture = ExtResource("12_l4nlq")
 offset = Vector2(14, 58)
 
@@ -361,26 +366,26 @@ remote_path = NodePath("../../../../../../Body/GBotForearmL")
 position = Vector2(-118, 613)
 
 [node name="FootRLookTarget" type="Node2D" parent="IKTargets/FootRTarget"]
-position = Vector2(70, -2)
+position = Vector2(102, 0)
 
 [node name="FootLTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(84, 622)
+position = Vector2(76, 617)
 rotation = -0.0630668
 
 [node name="FootLLookTarget" type="Node2D" parent="IKTargets/FootLTarget"]
-position = Vector2(83, 0)
+position = Vector2(128.87, 6.13419)
 
 [node name="ArmRTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(-118, 331)
+position = Vector2(-186, 249)
 
 [node name="ArmRLookTarget" type="Node2D" parent="IKTargets/ArmRTarget"]
-position = Vector2(94, 47)
+position = Vector2(-123, 52)
 
 [node name="ArmLTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(164, 346)
+position = Vector2(233, 241)
 
 [node name="HeadTarget" type="Node2D" parent="IKTargets"]
 position = Vector2(11, 176)
 
 [node name="ArmLLookTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(339, 162)
+position = Vector2(297, 243)

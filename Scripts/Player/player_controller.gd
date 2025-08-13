@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 800.0
 const Acceleration = 1000 #Jarryd Added
 const friction = 3500 #Jarryd Added
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -900.0
 
 @onready var handL: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmL/HandL
 @onready var handR: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmR/HandR
@@ -22,6 +22,14 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left1", "Right1")
 	if direction:
+		#Check if the player's direction input and current velocity are opposite of each other
+		#If so apply friction to the player (This could be done in 2 lines, not sure how right now)
+		#------------------------------Braking Addition-------------------------
+		if direction > 0 and velocity.x < 0: 
+			velocity.x = move_toward(velocity.x, 0, friction * delta) 
+		elif direction < 0 and velocity.x > 0: 
+			velocity.x = move_toward(velocity.x, 0, friction * delta) 
+		#-----------------------------------------------------------------------
 		velocity.x = move_toward(velocity.x, direction * SPEED, Acceleration * delta)#Jarryd Change
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)#Jarryd Change
