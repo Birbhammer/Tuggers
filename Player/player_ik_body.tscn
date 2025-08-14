@@ -166,7 +166,6 @@ offset = Vector2(-25, 54)
 [node name="GBotShinL" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(91.3523, 496.872)
 rotation = 0.168411
-scale = Vector2(1, 1)
 texture = ExtResource("4_7mixy")
 offset = Vector2(12, 33)
 
@@ -197,7 +196,6 @@ offset = Vector2(17, 38)
 [node name="GBotFootL" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(76, 617)
 rotation = -0.0155007
-scale = Vector2(1, 1)
 texture = ExtResource("9_cmwdh")
 offset = Vector2(33, -5)
 

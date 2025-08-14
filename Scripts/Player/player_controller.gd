@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 800.0
-const Acceleration = 1000 #Jarryd Added
+const SPEED = 1000
+const SprintSpeed = 1600
+const Acceleration = 1200 #Jarryd Added
 const friction = 3500 #Jarryd Added
-const JUMP_VELOCITY = -900.0
+const JUMP_VELOCITY = -900
 
 @onready var handL: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmL/HandL
 @onready var handR: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmR/HandR
