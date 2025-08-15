@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd4hpvqe7x1h3"]
+
+[ext_resource type="PackedScene" uid="uid://uj1fawcq85y6" path="res://LevelAssets/PlatformPrefabs/moving_platform_horizontal.tscn" id="1_hd3x6"]
+
+[sub_resource type="Curve2D" id="Curve2D_vufbg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 799, 13, 0, 0, 0, 0, 371, 7, 0, 0, 0, 0, 246, -245, 0, 0, 0, 0, 309, -497, 0, 0, 0, 0, 554, -636, 0, 0, 0, 0, 1031, -638, 0, 0, 0, 0, 1172, -619, 0, 0, 0, 0, 1310, -577, 0, 0, 0, 0, 1368, -252, 0, 0, 0, 0, 1190, -13, 0, 0, 0, 0, 799, 13)
+}
+point_count = 11
+
+[sub_resource type="Animation" id="Animation_84vo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eokls"]
+resource_name = "Test_Path_Follow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3cm4"]
+_data = {
+&"RESET": SubResource("Animation_84vo3"),
+&"Test_Path_Follow": SubResource("Animation_eokls")
+}
+
+[node name="PathPlatform" type="Path2D"]
+curve = SubResource("Curve2D_vufbg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(799, 13)
+rotates = false
+
+[node name="MovingPlatformHorizontal" parent="PathFollow2D" instance=ExtResource("1_hd3x6")]
+sync_to_physics = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v3cm4")
+}
+autoplay = "Test_Path_Follow"
+speed_scale = 0.1

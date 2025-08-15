@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhi8dmlwr0rwd"]
+[gd_scene load_steps=24 format=3 uid="uid://dhi8dmlwr0rwd"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nq34dxhxxy" path="res://LevelAssets/game_manager.tscn" id="1_mggor"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_1ot53"]
@@ -10,9 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bd1jbyhhia6mf" path="res://LevelAssets/PlatformPrefabs/moving_platform_vertical.tscn" id="9_vufbg"]
 [ext_resource type="Texture2D" uid="uid://upbd0mslu5wl" path="res://TestAssets/Gbot/gBot_forearm_r.png" id="10_dr4kj"]
 [ext_resource type="Script" uid="uid://b6dx56hhodcuf" path="res://Scripts/idiot_box.gd" id="10_eokls"]
+[ext_resource type="PackedScene" uid="uid://cd4hpvqe7x1h3" path="res://LevelAssets/PlatformPrefabs/path_platform.tscn" id="11_v3cm4"]
+[ext_resource type="PackedScene" uid="uid://wn1hxr4fpbkk" path="res://LevelAssets/PlatformPrefabs/falling_platform.tscn" id="12_v3cm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3sr"]
 size = Vector2(412, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84vo3"]
+size = Vector2(15951, 461)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
 height = 33.3345
@@ -32,11 +37,11 @@ height = 18.2199
 [sub_resource type="LabelSettings" id="LabelSettings_jykfp"]
 font_size = 80
 
-[sub_resource type="Curve2D" id="Curve2D_vufbg"]
+[sub_resource type="Curve2D" id="Curve2D_eokls"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 799, 13, 0, 0, 0, 0, 371, 7, 0, 0, 0, 0, 246, -245, 0, 0, 0, 0, 309, -497, 0, 0, 0, 0, 554, -636, 0, 0, 0, 0, 1031, -638, 0, 0, 0, 0, 1310, -577, 0, 0, 0, 0, 1368, -252, 0, 0, 0, 0, 1190, -13, 0, 0, 0, 0, 799, 13)
+"points": PackedVector2Array(0, 0, 0, 0, 638, 6, 0, 0, 0, 0, 387, -40, 0, 0, 0, 0, 318, -268, 0, 0, 0, 0, 387, -494, 0, 0, 0, 0, 687, -616, 0, 0, 0, 0, 1012, -650, 0, 0, 0, 0, 1291, -593, 0, 0, 0, 0, 1600, -522, 0, 0, 0, 0, 1896, -505, 0, 0, 0, 0, 2162, -556, 0, 0, 0, 0, 2415, -648, 0, 0, 0, 0, 2621, -670, 0, 0, 0, 0, 2841, -559, 0, 0, 0, 0, 2915, -277, 0, 0, 0, 0, 2744, -54, 0, 0, 0, 0, 2510, 23, 0, 0, 0, 0, 2253, 37, 0, 0, 0, 0, 1831, 3, 0, 0, 0, 0, 1280, -20, 0, 0, 0, 0, 1069, 37, 0, 0, 0, 0, 858, 37, 0, 0, 0, 0, 638, 6)
 }
-point_count = 10
+point_count = 22
 
 [sub_resource type="Animation" id="Animation_84vo3"]
 length = 0.001
@@ -75,9 +80,6 @@ _data = {
 &"Test_Path_Follow": SubResource("Animation_eokls")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_84vo3"]
-size = Vector2(15951, 461)
-
 [node name="TestWorld" type="Node2D"]
 
 [node name="GameManager" parent="." instance=ExtResource("1_mggor")]
@@ -96,6 +98,17 @@ shape = SubResource("RectangleShape2D_gy3sr")
 position = Vector2(-7.62939e-06, 0.500001)
 scale = Vector2(3.21875, 0.476563)
 texture = ExtResource("2_1ot53")
+
+[node name="IdiotBox" type="Area2D" parent="LeftSide"]
+position = Vector2(1286, 1384)
+script = ExtResource("10_eokls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/IdiotBox"]
+position = Vector2(-550.5, 821.5)
+shape = SubResource("RectangleShape2D_84vo3")
+
+[node name="ResetPOS" type="Marker2D" parent="LeftSide/IdiotBox"]
+position = Vector2(-2042, -1944)
 
 [node name="Player1" parent="LeftSide" instance=ExtResource("4_1r5jd")]
 position = Vector2(-470, -133)
@@ -240,6 +253,14 @@ offset_bottom = 182.0
 text = "THIS WAY ---->"
 label_settings = SubResource("LabelSettings_jykfp")
 
+[node name="Label3" type="Label" parent="."]
+offset_left = -1515.0
+offset_top = -191.0
+offset_right = -975.0
+offset_bottom = -81.0
+text = "<-----Falling Stuff "
+label_settings = SubResource("LabelSettings_jykfp")
+
 [node name="Label2" type="Label" parent="."]
 offset_left = 2786.0
 offset_top = -561.0
@@ -248,79 +269,119 @@ offset_bottom = -451.0
 text = "WOW YOU MADE IT"
 label_settings = SubResource("LabelSettings_jykfp")
 
-[node name="Moving Platforms" type="Node" parent="."]
+[node name="MovingPlatforms" type="Node" parent="."]
 
-[node name="MovingPlatformHorizontal" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+[node name="MovingPlatformHorizontal" parent="MovingPlatforms" instance=ExtResource("3_jykfp")]
 position = Vector2(178, 565)
 SPEED = 2
 
-[node name="MovingPlatformHorizontal2" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+[node name="MovingPlatformHorizontal2" parent="MovingPlatforms" instance=ExtResource("3_jykfp")]
 position = Vector2(615, 565)
 SPEED = 2
 
-[node name="MovingPlatformHorizontal3" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+[node name="MovingPlatformHorizontal3" parent="MovingPlatforms" instance=ExtResource("3_jykfp")]
 position = Vector2(1023, 565)
 SPEED = 2
 
-[node name="MovingPlatformHorizontal4" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+[node name="MovingPlatformHorizontal4" parent="MovingPlatforms" instance=ExtResource("3_jykfp")]
 position = Vector2(1400, 565)
 SPEED = 2
 
-[node name="MovingPlatformHorizontal5" parent="Moving Platforms" instance=ExtResource("3_jykfp")]
+[node name="MovingPlatformHorizontal5" parent="MovingPlatforms" instance=ExtResource("3_jykfp")]
 position = Vector2(1848, 565)
 SPEED = 2
 
-[node name="MovingPlatformVertical" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+[node name="MovingPlatformVertical" parent="MovingPlatforms" instance=ExtResource("9_vufbg")]
 position = Vector2(4536, 50)
 SPEED = 1
 
-[node name="MovingPlatformVertical3" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+[node name="MovingPlatformVertical3" parent="MovingPlatforms" instance=ExtResource("9_vufbg")]
 position = Vector2(4536, -344)
 SPEED = 1
 
-[node name="MovingPlatformVertical4" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+[node name="MovingPlatformVertical4" parent="MovingPlatforms" instance=ExtResource("9_vufbg")]
 position = Vector2(4536, -666)
 SPEED = 1
 
-[node name="MovingPlatformVertical2" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+[node name="MovingPlatformVertical2" parent="MovingPlatforms" instance=ExtResource("9_vufbg")]
 position = Vector2(3906, 517)
 SPEED = -1
 
-[node name="MovingPlatformVertical5" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+[node name="MovingPlatformVertical5" parent="MovingPlatforms" instance=ExtResource("9_vufbg")]
 position = Vector2(3906, 751)
 SPEED = -1
 
-[node name="MovingPlatformVertical6" parent="Moving Platforms" instance=ExtResource("9_vufbg")]
+[node name="MovingPlatformVertical6" parent="MovingPlatforms" instance=ExtResource("9_vufbg")]
 position = Vector2(3906, 994)
 SPEED = -1
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="PathPlatform" parent="MovingPlatforms" instance=ExtResource("11_v3cm4")]
 position = Vector2(937, 182)
-curve = SubResource("Curve2D_vufbg")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(799, 13)
+[node name="PathPlatform2" type="Path2D" parent="MovingPlatforms"]
+position = Vector2(232, -514)
+curve = SubResource("Curve2D_eokls")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/PathPlatform2"]
+position = Vector2(638, 6)
 rotates = false
 
-[node name="MovingPlatformHorizontal" parent="Path2D/PathFollow2D" instance=ExtResource("3_jykfp")]
+[node name="MovingPlatformHorizontal" parent="MovingPlatforms/PathPlatform2/PathFollow2D" instance=ExtResource("3_jykfp")]
 sync_to_physics = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/PathPlatform2"]
 libraries = {
 &"": SubResource("AnimationLibrary_v3cm4")
 }
 autoplay = "Test_Path_Follow"
 speed_scale = 0.1
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1286, 1384)
-script = ExtResource("10_eokls")
+[node name="FallingPlatform" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-1966, 195)
+health = 50
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-550.5, 821.5)
-shape = SubResource("RectangleShape2D_84vo3")
+[node name="FallingPlatform2" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-2265, 66)
+health = 50
 
-[node name="ResetPOS" type="Marker2D" parent="."]
-position = Vector2(-756, -560)
+[node name="FallingPlatform3" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-2499, 62)
+health = 50
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="FallingPlatform4" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-2751, 80)
+health = 50
+
+[node name="FallingPlatform5" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-3017, 183)
+health = 50
+
+[node name="FallingPlatform6" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-3279, 321)
+health = 50
+
+[node name="FallingPlatform7" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-3550, 438)
+health = 50
+
+[node name="FallingPlatform8" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-3821, 413)
+health = 50
+
+[node name="FallingPlatform9" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-4094, 328)
+health = 50
+
+[node name="FallingPlatform10" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-4330, 234)
+health = 50
+
+[node name="FallingPlatform11" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-4576, 124)
+health = 50
+
+[node name="FallingPlatform12" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
+position = Vector2(-4835, 92)
+health = 50
+
+[connection signal="body_entered" from="LeftSide/IdiotBox" to="LeftSide/IdiotBox" method="_on_body_entered"]
