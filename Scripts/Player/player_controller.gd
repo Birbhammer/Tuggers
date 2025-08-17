@@ -10,15 +10,35 @@ const JUMP_VELOCITY = -900
 @onready var handR: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmR/HandR
 @onready var gameManager: Node = $"../../GameManager"
 
+#------------Jumping Test Concept----------------
+var canJump: bool = false
+#--------------------------------------------------------------------------
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * 2 * delta #changed gravity
+		var grav = get_gravity()
+		
+		#Keeps player from gaining infinite speed downward 
+		velocity.y = clamp(velocity.y, grav.y * -2, grav.y * 2)
 
+	
+	#--------------Annotated out for test--------------------------------------
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump1") and is_on_floor():
+	#if Input.is_action_just_pressed("Jump1") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
+	#--------------------------------------------------------------------------
+	
+	#----------------Jump Test Logic-------------------------------------------
+	if is_on_floor() and canJump == false:       #Lets player jump once even if
+		canJump = true                           #ground isnt under them
+	
+	if Input.is_action_just_pressed("Jump1") and canJump:
 		velocity.y = JUMP_VELOCITY
-
+		canJump = false
+	#--------------------------------------------------------------------------
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left1", "Right1")

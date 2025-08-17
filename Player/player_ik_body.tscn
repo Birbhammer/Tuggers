@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://dxa4uiine0vdd"]
 
 [ext_resource type="Texture2D" uid="uid://66e4fa7ivjkp" path="res://TestAssets/Gbot/gBot_arm_l.png" id="1_sjlcb"]
-[ext_resource type="Texture2D" uid="uid://piwm6yhrcrka" path="res://TestAssets/Chads/Chad1/Chad1-forearmR.png" id="2_spghj"]
+[ext_resource type="Texture2D" uid="uid://piwm6yhrcrka" path="res://Visual Assets/Chad/Chad1-forearmR.png" id="2_spghj"]
 [ext_resource type="Texture2D" uid="uid://do5x06h6b6dkp" path="res://TestAssets/Gbot/gBot_leg_l.png" id="3_ppbio"]
 [ext_resource type="Texture2D" uid="uid://cqebinhcjns5g" path="res://TestAssets/Gbot/gBot_shin_l.png" id="4_7mixy"]
 [ext_resource type="Texture2D" uid="uid://d3usey4j2shvo" path="res://TestAssets/Gbot/gBot_body.png" id="5_046mb"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn0ybhcloxpot" path="res://TestAssets/Gbot/gBot_foot_r.png" id="10_o7okg"]
 [ext_resource type="Texture2D" uid="uid://tsijpijbye5p" path="res://TestAssets/Gbot/gBot_arm_r.png" id="11_skcrm"]
 [ext_resource type="Texture2D" uid="uid://upbd0mslu5wl" path="res://TestAssets/Gbot/gBot_forearm_r.png" id="12_l4nlq"]
-[ext_resource type="Texture2D" uid="uid://b3m73dwy8drob" path="res://TestAssets/Chads/Chad1/Chad1-head.png" id="13_mtdkp"]
+[ext_resource type="Texture2D" uid="uid://b3m73dwy8drob" path="res://Visual Assets/Chad/Chad1-head.png" id="13_mtdkp"]
 [ext_resource type="Texture2D" uid="uid://ceixpb8tqbidh" path="res://TestAssets/Gbot/gBot_jaw.png" id="14_f2gcf"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_duemd"]
@@ -179,15 +179,15 @@ offset = Vector2(-12, 8)
 
 [node name="GBotLegR" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(-57, 391.003)
-rotation = -0.0898202
-scale = Vector2(0.999919, 0.999919)
+rotation = -0.0887192
+scale = Vector2(0.999924, 0.999924)
 texture = ExtResource("7_el3fd")
 offset = Vector2(-12, 59)
 
 [node name="GBotShinR" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(-70.228, 511.666)
-rotation = 0.467313
-scale = Vector2(0.999916, 0.999916)
+position = Vector2(-70.3608, 511.653)
+rotation = 0.466187
+scale = Vector2(0.999922, 0.999922)
 texture = ExtResource("8_ivc73")
 offset = Vector2(17, 38)
 
@@ -198,8 +198,9 @@ texture = ExtResource("9_cmwdh")
 offset = Vector2(33, -5)
 
 [node name="GBotFootR" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(-118, 613)
-scale = Vector2(0.999908, 0.999908)
+position = Vector2(-118.019, 613.041)
+rotation = -0.000404631
+scale = Vector2(0.999915, 0.999915)
 texture = ExtResource("10_o7okg")
 offset = Vector2(37, 3)
 
