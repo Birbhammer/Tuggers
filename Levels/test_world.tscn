@@ -116,37 +116,38 @@ scale = Vector2(0.25, 0.25)
 collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="LeftSide/Player1"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.75, 0.75)
 
 [node name="Arms" type="Node2D" parent="LeftSide/Player1"]
+position = Vector2(0, -124)
 scale = Vector2(4, 4)
 
 [node name="ArmR" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-20, -14)
+position = Vector2(-28, -14)
 node_a = NodePath("../..")
 node_b = NodePath("../UpperArmR")
 bias = 0.9
 
 [node name="ElbowR" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-23, 9)
+position = Vector2(-33, 9)
 node_a = NodePath("../UpperArmR")
 node_b = NodePath("../LowerArmR")
 bias = 0.9
 
 [node name="ElbowL" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(15, 14)
+position = Vector2(21, 14)
 node_a = NodePath("../UpperArmL")
 node_b = NodePath("../LowerArmL")
 bias = 0.9
 
 [node name="ArmL" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(17, -14)
+position = Vector2(25, -14)
 node_a = NodePath("../..")
 node_b = NodePath("../UpperArmL")
 bias = 0.9
 
 [node name="UpperArmR" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-19, -9)
+position = Vector2(-27, -14)
 collision_layer = 16384
 collision_mask = 16384
 
@@ -160,7 +161,7 @@ rotation = 0.147846
 shape = SubResource("CapsuleShape2D_m5bqa")
 
 [node name="UpperArmL" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(17, -14)
+position = Vector2(25, -14)
 collision_layer = 8192
 collision_mask = 8192
 
@@ -175,7 +176,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_1mxxg")
 
 [node name="LowerArmR" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-19, 27)
+position = Vector2(-30, 30)
 collision_layer = 32768
 collision_mask = 32768
 
@@ -189,7 +190,7 @@ rotation = -0.152566
 shape = SubResource("CapsuleShape2D_1r5jd")
 
 [node name="LowerArmL" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(16, 22)
+position = Vector2(21, 23)
 collision_layer = 4096
 collision_mask = 4096
 

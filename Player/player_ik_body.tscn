@@ -179,15 +179,15 @@ offset = Vector2(-12, 8)
 
 [node name="GBotLegR" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(-57, 391.003)
-rotation = -0.0898202
-scale = Vector2(0.999919, 0.999919)
+rotation = -0.0896462
+scale = Vector2(0.999923, 0.999923)
 texture = ExtResource("7_el3fd")
 offset = Vector2(-12, 59)
 
 [node name="GBotShinR" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(-70.228, 511.666)
-rotation = 0.467313
-scale = Vector2(0.999916, 0.999916)
+position = Vector2(-70.2491, 511.665)
+rotation = 0.467137
+scale = Vector2(0.99992, 0.99992)
 texture = ExtResource("8_ivc73")
 offset = Vector2(17, 38)
 
@@ -198,8 +198,9 @@ texture = ExtResource("9_cmwdh")
 offset = Vector2(33, -5)
 
 [node name="GBotFootR" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(-118, 613)
-scale = Vector2(0.999908, 0.999908)
+position = Vector2(-118.004, 613.008)
+rotation = -7.65986e-05
+scale = Vector2(0.999913, 0.999913)
 texture = ExtResource("10_o7okg")
 offset = Vector2(37, 3)
 
