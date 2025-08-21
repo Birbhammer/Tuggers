@@ -95,20 +95,20 @@ modifications/7 = SubResource("SkeletonModification2DLookAt_tg56s")
 [node name="Chad" type="Node2D"]
 
 [node name="ArmL" type="Polygon2D" parent="."]
-position = Vector2(5316.01, -1182)
-rotation = -0.53456
-scale = Vector2(5.97467, 661.64)
-skew = 0.0491896
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(nan, nan)
+skew = nan
 offset = Vector2(-1729.55, -300)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(1605.23, 579.735, 2419.54, 619.457, 2449.33, -65.7582, 1575.43, -16.1049)
 uv = PackedVector2Array(1605.23, 579.735, 2419.54, 619.457, 2449.33, -65.7582, 1575.43, -16.1049)
 
 [node name="ForearmL" type="Polygon2D" parent="."]
-position = Vector2(10613.5, 1490.95)
-rotation = -0.73298
-scale = Vector2(29.0824, 136.241)
-skew = 1.33514e-05
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(nan, nan)
+skew = nan
 offset = Vector2(-2860, -250)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(2734.39, -107.838, 2744.32, 577.378, 3489.12, 527.724, 3528.85, -8.53125)
@@ -125,9 +125,9 @@ uv = PackedVector2Array(3582.88, 25.8377, 3908.45, -35.2073, 4322.2, 181.841, 42
 
 [node name="LegL" type="Polygon2D" parent="."]
 position = Vector2(2663, 8069)
-rotation = 0.0509445
+rotation = 0.0509446
 scale = Vector2(7.94055, 8.41054)
-skew = -0.00555086
+skew = -0.00555074
 offset = Vector2(-3680, -2610)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(3264, 2542.82, 3875.73, 2204.19, 4410.99, 3209.17, 3613.56, 3460.42)
@@ -135,7 +135,7 @@ uv = PackedVector2Array(3264, 2542.82, 3875.73, 2204.19, 4410.99, 3209.17, 3613.
 
 [node name="CalfL" type="Polygon2D" parent="."]
 position = Vector2(4743, 13353)
-rotation = -0.0473935
+rotation = -0.0473934
 scale = Vector2(7.9404, 8.41068)
 skew = 0.00516474
 offset = Vector2(-4000, -3500)
@@ -144,7 +144,7 @@ polygon = PackedVector2Array(4329.41, 3371.11, 4139.83, 3975.97, 3670.38, 3966.9
 uv = PackedVector2Array(4329.41, 3371.11, 4139.83, 3975.97, 3670.38, 3966.95, 3733.57, 3362.08)
 
 [node name="Head" type="Polygon2D" parent="."]
-position = Vector2(2, -4227)
+position = Vector2(2.0008, -4227)
 scale = Vector2(7.93943, 8.4116)
 offset = Vector2(-650, -1504.86)
 texture = ExtResource("1_bv472")
@@ -160,9 +160,9 @@ polygon = PackedVector2Array(2484.37, 1249.55, 1614.34, 1309.15, 1816.95, 2882.3
 uv = PackedVector2Array(2484.37, 1249.55, 1614.34, 1309.15, 1816.95, 2882.35, 2722.73, 3180.3, 3306.72, 2691.65, 3485.5, 1309.15)
 
 [node name="LegR" type="Polygon2D" parent="."]
-position = Vector2(-1920, 8614)
-rotation = -0.0951309
-scale = Vector2(7.94269, 8.40722)
+position = Vector2(-1920, 8614.01)
+rotation = -0.0951307
+scale = Vector2(7.9427, 8.40723)
 skew = 0.0103275
 offset = Vector2(-640, -2470)
 texture = ExtResource("1_bv472")
@@ -171,18 +171,18 @@ uv = PackedVector2Array(225.587, 2061.07, 1246.96, 2193.24, 1102.76, 3142.52, 34
 
 [node name="CalfR" type="Polygon2D" parent="."]
 position = Vector2(-983, 12885)
-rotation = 0.0975808
-scale = Vector2(7.94288, 8.40701)
-skew = -0.0105908
+rotation = 0.0975804
+scale = Vector2(7.94289, 8.40702)
+skew = -0.0105907
 offset = Vector2(-672, -3300)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(334.256, 3158.91, 1123.52, 3189.74, 907.708, 3824.85, 309.591, 3837.19)
 uv = PackedVector2Array(334.256, 3158.91, 1123.52, 3189.74, 907.708, 3824.85, 309.591, 3837.19)
 
 [node name="FootL" type="Polygon2D" parent="."]
-position = Vector2(4538.01, 16798)
-rotation = 0.00443192
-scale = Vector2(13.1995, 7.33195)
+position = Vector2(4537.99, 16798)
+rotation = 0.0106749
+scale = Vector2(7.93966, 8.41162)
 offset = Vector2(-4385, -3945)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(4101, 4160.64, 4167.13, 3889.15, 5047.73, 3951.8, 4967.68, 4216.33, 4125.36, 4223.29)
@@ -190,8 +190,8 @@ uv = PackedVector2Array(4101, 4160.64, 4167.13, 3889.15, 5047.73, 3951.8, 4967.6
 
 [node name="FootR" type="Polygon2D" parent="."]
 position = Vector2(-1805, 16367)
-rotation = 0.0374013
-scale = Vector2(7.96505, 8.38789)
+rotation = 0.395072
+scale = Vector2(7.93963, 8.40996)
 offset = Vector2(-620, -3915)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(315.792, 3893.03, 1187.21, 3877.74, 1115.86, 4234.46, 315.792, 4193.7)
@@ -199,18 +199,18 @@ uv = PackedVector2Array(315.792, 3893.03, 1187.21, 3877.74, 1115.86, 4234.46, 31
 
 [node name="ArmR" type="Polygon2D" parent="."]
 position = Vector2(-5430, -1382)
-rotation = -0.095016
-scale = Vector2(7.94333, 8.40791)
-skew = 0.0103152
+rotation = -0.0950158
+scale = Vector2(7.94333, 8.40792)
+skew = 0.0103151
 offset = Vector2(-3500, -950)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(2826.52, 714.086, 3701.5, 598.778, 3687.93, 1290.62, 2935.05, 1249.92)
 uv = PackedVector2Array(2826.52, 714.086, 3701.5, 598.778, 3687.93, 1290.62, 2935.05, 1249.92)
 
 [node name="ForearmR" type="Polygon2D" parent="."]
-position = Vector2(-9226, -914)
-rotation = 0.0895522
-scale = Vector2(7.94289, 8.40832)
+position = Vector2(-9226, -914.004)
+rotation = 0.0895525
+scale = Vector2(7.9429, 8.40833)
 skew = -0.0097276
 offset = Vector2(-2710, -950)
 texture = ExtResource("1_bv472")
@@ -281,7 +281,6 @@ remote_path = NodePath("../../../../ArmR")
 [node name="ForearmR" type="Bone2D" parent="Skeleton2D/Hip/ArmR"]
 position = Vector2(-481.182, 12.5782)
 rotation = 0.174262
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -7, 109)
 auto_calculate_length_and_angle = false
 length = 117.378
@@ -362,13 +361,13 @@ remote_path = NodePath("../../../../../ForearmL")
 [node name="IKTargets" type="Node2D" parent="."]
 
 [node name="FootRTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(-2081, 16901)
+position = Vector2(-55, 17832)
 
 [node name="FootRLookTarget" type="Node2D" parent="IKTargets/FootRTarget"]
-position = Vector2(3617, -409)
+position = Vector2(3015, 522)
 
 [node name="FootLTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(4299, 17247)
+position = Vector2(8132, 17302)
 rotation = -0.0630668
 
 [node name="FootLLookTarget" type="Node2D" parent="IKTargets/FootLTarget"]
