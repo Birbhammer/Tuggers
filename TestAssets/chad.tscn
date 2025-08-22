@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5dx4vt50kq1d"]
+[gd_scene load_steps=11 format=3 uid="uid://bxgqfaudjfnbg"]
 
 [ext_resource type="Texture2D" uid="uid://bho2uhs0sjyfa" path="res://Visual Assets/Chad/Chad1-partsSheet.png" id="1_bv472"]
 
@@ -95,10 +95,10 @@ modifications/7 = SubResource("SkeletonModification2DLookAt_tg56s")
 [node name="Chad" type="Node2D"]
 
 [node name="ArmL" type="Polygon2D" parent="."]
-position = Vector2(nan, nan)
-rotation = nan
-scale = Vector2(nan, nan)
-skew = nan
+position = Vector2(5316.02, -1182)
+rotation = 0.55772
+scale = Vector2(7.20943e-06, 4.46629e+17)
+skew = -0.0505005
 offset = Vector2(-1729.55, -300)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(1605.23, 579.735, 2419.54, 619.457, 2449.33, -65.7582, 1575.43, -16.1049)
@@ -181,8 +181,8 @@ uv = PackedVector2Array(334.256, 3158.91, 1123.52, 3189.74, 907.708, 3824.85, 30
 
 [node name="FootL" type="Polygon2D" parent="."]
 position = Vector2(4537.99, 16798)
-rotation = 0.0106749
-scale = Vector2(7.93966, 8.41162)
+rotation = 0.0106746
+scale = Vector2(7.93954, 8.41151)
 offset = Vector2(-4385, -3945)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(4101, 4160.64, 4167.13, 3889.15, 5047.73, 3951.8, 4967.68, 4216.33, 4125.36, 4223.29)
@@ -191,7 +191,7 @@ uv = PackedVector2Array(4101, 4160.64, 4167.13, 3889.15, 5047.73, 3951.8, 4967.6
 [node name="FootR" type="Polygon2D" parent="."]
 position = Vector2(-1805, 16367)
 rotation = 0.395072
-scale = Vector2(7.93963, 8.40996)
+scale = Vector2(7.93963, 8.40995)
 offset = Vector2(-620, -3915)
 texture = ExtResource("1_bv472")
 polygon = PackedVector2Array(315.792, 3893.03, 1187.21, 3877.74, 1115.86, 4234.46, 315.792, 4193.7)

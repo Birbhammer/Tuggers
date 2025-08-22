@@ -1,0 +1,156 @@
+[gd_scene load_steps=7 format=3 uid="uid://bboh3jxf5ggkn"]
+
+[ext_resource type="Script" uid="uid://pwiesp36xapq" path="res://Scripts/Player/arm_pin.gd" id="1_nwfvi"]
+[ext_resource type="Texture2D" uid="uid://dmo0q181y71t4" path="res://Visual Assets/Chad/Chad2/Chad2-partsSheet.png" id="2_1tp0g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
+radius = 5.83458
+height = 16.9618
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jykfp"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1r5jd"]
+radius = 8.95231
+height = 19.7677
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vufbg"]
+radius = 6.0
+height = 18.2199
+
+[node name="ChadArms" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_nwfvi")
+
+[node name="ArmR" type="PinJoint2D" parent="."]
+position = Vector2(-33.75, -14)
+node_a = NodePath("../..")
+node_b = NodePath("../UpperArmR")
+bias = 0.9
+
+[node name="ElbowR" type="PinJoint2D" parent="."]
+position = Vector2(-37, 14)
+node_a = NodePath("../UpperArmR")
+node_b = NodePath("../LowerArmR")
+bias = 0.9
+
+[node name="ElbowL" type="PinJoint2D" parent="."]
+position = Vector2(27.75, 10.5)
+node_a = NodePath("../UpperArmL")
+node_b = NodePath("../LowerArmL")
+bias = 0.9
+
+[node name="ArmL" type="PinJoint2D" parent="."]
+position = Vector2(23.5, -13.25)
+node_a = NodePath("../..")
+node_b = NodePath("../UpperArmL")
+bias = 0.9
+
+[node name="UpperArmR" type="RigidBody2D" parent="."]
+position = Vector2(-33.75, -14)
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="Polygon2D" type="Polygon2D" parent="UpperArmR"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-1, 9.53674e-07)
+rotation = -1.24696
+scale = Vector2(0.05, 0.05)
+offset = Vector2(-88.9986, -103.215)
+antialiased = true
+texture = ExtResource("2_1tp0g")
+polygon = PackedVector2Array(-461.708, 422.266, -602.51, 94.5155, -301.797, -127.799, 232.28, -146.951, 294.776, 320.408, -81.1894, 499.946)
+uv = PackedVector2Array(2957.76, 601.801, 2915.15, 247.64, 3266.38, 119.207, 3784.16, 251.529, 3712.24, 717.531, 3300.9, 783.692)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArmR"]
+position = Vector2(-3, 5.25)
+rotation = 0.147846
+shape = SubResource("CapsuleShape2D_m5bqa")
+
+[node name="UpperArmL" type="RigidBody2D" parent="."]
+position = Vector2(23.25, -13.25)
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="Polygon2D" type="Polygon2D" parent="UpperArmL"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-0.15108, -0.364067)
+rotation = -1.24696
+scale = Vector2(0.05, 0.05)
+offset = Vector2(-101.304, -116.994)
+antialiased = true
+texture = ExtResource("2_1tp0g")
+polygon = PackedVector2Array(248.736, 59.3673, 338.647, 273.008, -95.0903, 590.378, -444.717, 547.144, -486.9, 405.931, -505.993, 344.633, -525.166, 226.838, -365.013, -48.701, 107.507, -147.658)
+uv = PackedVector2Array(1674.93, 1171.13, 1666.51, 939.49, 2184.53, 796.297, 2496.19, 960.548, 2485.63, 1107.55, 2481.78, 1171.64, 2457.99, 1288.59, 2210.63, 1489.55, 1733.69, 1414.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArmL"]
+position = Vector2(1.25, 5.25)
+rotation = -0.243078
+shape = SubResource("CapsuleShape2D_jykfp")
+
+[node name="LowerArmR" type="RigidBody2D" parent="."]
+position = Vector2(-37.25, 13.75)
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Polygon2D" type="Polygon2D" parent="LowerArmR"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-6.55651e-07, -3.8147e-06)
+rotation = -1.60041
+scale = Vector2(0.05, 0.05)
+offset = Vector2(-82.1378, -141.037)
+antialiased = true
+texture = ExtResource("2_1tp0g")
+polygon = PackedVector2Array(164.229, 106.416, 193.459, 278.53, -78.8871, 443.862, -611.407, 355.901, -620.916, 70.6222, -231.036, -131.45, 111.301, -64.8862)
+uv = PackedVector2Array(2928.88, 404.367, 2958.11, 576.481, 2685.77, 741.813, 2153.25, 653.853, 2143.74, 368.574, 2533.62, 166.502, 2875.96, 233.065)
+
+[node name="Polygon2D2" type="Polygon2D" parent="LowerArmR/Polygon2D"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-653.268, 100.698)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("2_1tp0g")
+polygon = PackedVector2Array(148.508, 35.7457, 144.297, 275.805, -500.073, 473.749, -622.209, -56.9088, -230.533, -56.9088, -192.629, -195.891, 60.0652, -187.467)
+uv = PackedVector2Array(2119.52, 426.516, 2115.31, 666.576, 1470.94, 864.519, 1348.8, 333.862, 1740.48, 333.862, 1778.38, 194.88, 2031.08, 203.303)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArmR"]
+position = Vector2(4.5, 27)
+rotation = -0.152566
+shape = SubResource("CapsuleShape2D_1r5jd")
+
+[node name="LowerArmL" type="RigidBody2D" parent="."]
+position = Vector2(27.75, 10.5)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="Polygon2D" type="Polygon2D" parent="LowerArmL"]
+z_index = 4
+z_as_relative = false
+position = Vector2(1.19209e-07, 4.65665e-10)
+rotation = -1.60041
+scale = Vector2(0.05, 0.05)
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("2_1tp0g")
+polygon = PackedVector2Array(149.206, 33.1593, 163.659, 137.021, 128.792, 259.372, -72.2517, 410.082, -457.605, 417.791, -639.275, 269.992, -655.825, -5.0555, 52.362, -185.937)
+uv = PackedVector2Array(2479.03, 1191.95, 2489.61, 1087.62, 2552.48, 977.019, 2783.52, 878.259, 3159.72, 962.114, 3301.18, 1148.76, 3252.06, 1419.9, 2521.18, 1427.75)
+
+[node name="Polygon2D2" type="Polygon2D" parent="LowerArmL/Polygon2D"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-663.412, 105.4)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("2_1tp0g")
+polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83, -66.2159, 377.307, -464.432, 444.211, -641.736, 1.812, -11.6449, -164.415)
+uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArmL"]
+position = Vector2(9.25, 42.5)
+rotation = -0.373014
+shape = SubResource("CapsuleShape2D_vufbg")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1rm83uam4f4p" path="res://Scripts/Player/player_controller.gd" id="1_a1q1g"]
 [ext_resource type="PackedScene" uid="uid://dxa4uiine0vdd" path="res://Player/player_ik_body.tscn" id="2_cxhyj"]
-[ext_resource type="PackedScene" uid="uid://dawqqrx62ng5e" path="res://TestAssets/nerd_body.tscn" id="3_cxhyj"]
+[ext_resource type="PackedScene" uid="uid://dawqqrx62ng5e" path="res://Player/Nerd/nerd_body.tscn" id="3_cxhyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 780)

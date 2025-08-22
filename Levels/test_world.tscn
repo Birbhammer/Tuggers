@@ -1,38 +1,22 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhi8dmlwr0rwd"]
+[gd_scene load_steps=20 format=3 uid="uid://dhi8dmlwr0rwd"]
 
 [ext_resource type="PackedScene" uid="uid://cv5nq34dxhxxy" path="res://LevelAssets/game_manager.tscn" id="1_mggor"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_1ot53"]
 [ext_resource type="PackedScene" uid="uid://uj1fawcq85y6" path="res://LevelAssets/PlatformPrefabs/moving_platform_horizontal.tscn" id="3_jykfp"]
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/player_controller.tscn" id="4_1r5jd"]
-[ext_resource type="Texture2D" uid="uid://66e4fa7ivjkp" path="res://TestAssets/Gbot/gBot_arm_l.png" id="5_1mxxg"]
-[ext_resource type="Texture2D" uid="uid://tsijpijbye5p" path="res://TestAssets/Gbot/gBot_arm_r.png" id="6_0ipmq"]
-[ext_resource type="Texture2D" uid="uid://sqgrktxua2t5" path="res://TestAssets/Gbot/gBot_forearm_l.png" id="9_optmq"]
 [ext_resource type="PackedScene" uid="uid://bd1jbyhhia6mf" path="res://LevelAssets/PlatformPrefabs/moving_platform_vertical.tscn" id="9_vufbg"]
-[ext_resource type="Texture2D" uid="uid://upbd0mslu5wl" path="res://TestAssets/Gbot/gBot_forearm_r.png" id="10_dr4kj"]
+[ext_resource type="PackedScene" uid="uid://306fmxpk8rtm" path="res://Player/Nerd/nerd_arms.tscn" id="10_84vo3"]
 [ext_resource type="Script" uid="uid://b6dx56hhodcuf" path="res://Scripts/idiot_box.gd" id="10_eokls"]
+[ext_resource type="PackedScene" uid="uid://bboh3jxf5ggkn" path="res://Player/Chad/chad_arms.tscn" id="11_84vo3"]
 [ext_resource type="PackedScene" uid="uid://cd4hpvqe7x1h3" path="res://LevelAssets/PlatformPrefabs/path_platform.tscn" id="11_v3cm4"]
 [ext_resource type="PackedScene" uid="uid://wn1hxr4fpbkk" path="res://LevelAssets/PlatformPrefabs/falling_platform.tscn" id="12_v3cm4"]
+[ext_resource type="PackedScene" uid="uid://do064j7is2sns" path="res://Player/Chad/chad_body.tscn" id="13_8fijo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3sr"]
 size = Vector2(412, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84vo3"]
 size = Vector2(15951, 461)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
-height = 33.3345
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jykfp"]
-radius = 6.0
-height = 20.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1r5jd"]
-radius = 7.07068
-height = 19.7677
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vufbg"]
-radius = 6.0
-height = 18.2199
 
 [sub_resource type="LabelSettings" id="LabelSettings_jykfp"]
 font_size = 80
@@ -122,92 +106,8 @@ collision_layer = 1
 [node name="Camera2D" type="Camera2D" parent="LeftSide/Player1"]
 zoom = Vector2(0.75, 0.75)
 
-[node name="Arms" type="Node2D" parent="LeftSide/Player1"]
-position = Vector2(0, -68)
-scale = Vector2(4, 4)
-
-[node name="ArmR" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-28, -14)
-node_a = NodePath("../..")
-node_b = NodePath("../UpperArmR")
-bias = 0.9
-
-[node name="ElbowR" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-33, 9)
-node_a = NodePath("../UpperArmR")
-node_b = NodePath("../LowerArmR")
-bias = 0.9
-
-[node name="ElbowL" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(21, 14)
-node_a = NodePath("../UpperArmL")
-node_b = NodePath("../LowerArmL")
-bias = 0.9
-
-[node name="ArmL" type="PinJoint2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(25, -14)
-node_a = NodePath("../..")
-node_b = NodePath("../UpperArmL")
-bias = 0.9
-
-[node name="UpperArmR" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-27, -14)
-collision_layer = 16384
-collision_mask = 16384
-
-[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/UpperArmR"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_0ipmq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/UpperArmR"]
-position = Vector2(-2, 3)
-rotation = 0.147846
-shape = SubResource("CapsuleShape2D_m5bqa")
-
-[node name="UpperArmL" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(25, -14)
-collision_layer = 8192
-collision_mask = 8192
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/UpperArmL"]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_jykfp")
-
-[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/UpperArmL"]
-z_index = -1
-position = Vector2(0, 5)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_1mxxg")
-
-[node name="LowerArmR" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(-30, 30)
-collision_layer = 32768
-collision_mask = 32768
-
-[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/LowerArmR"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("10_dr4kj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/LowerArmR"]
-position = Vector2(-1, 9)
-rotation = -0.152566
-shape = SubResource("CapsuleShape2D_1r5jd")
-
-[node name="LowerArmL" type="RigidBody2D" parent="LeftSide/Player1/Arms"]
-position = Vector2(21, 23)
-collision_layer = 4096
-collision_mask = 4096
-
-[node name="Sprite2D" type="Sprite2D" parent="LeftSide/Player1/Arms/LowerArmL"]
-z_index = -1
-position = Vector2(4, 8)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_optmq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Player1/Arms/LowerArmL"]
-position = Vector2(2, 7)
-rotation = -0.373014
-shape = SubResource("CapsuleShape2D_vufbg")
+[node name="Arms" parent="LeftSide/Player1" instance=ExtResource("10_84vo3")]
+position = Vector2(0, -96)
 
 [node name="RightSide" type="Node" parent="."]
 
@@ -398,5 +298,22 @@ shape = SubResource("RectangleShape2D_v3cm4")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
 texture = ExtResource("2_1ot53")
+
+[node name="Chad_body" type="RigidBody2D" parent="."]
+disable_mode = 1
+collision_layer = 4096
+collision_mask = 4096
+mass = 0.001
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+
+[node name="Chad" parent="Chad_body" instance=ExtResource("13_8fijo")]
+position = Vector2(-771, -131)
+scale = Vector2(0.05, 0.05)
+
+[node name="ChadArms" parent="Chad_body" instance=ExtResource("11_84vo3")]
+position = Vector2(-765, -115)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="LeftSide/IdiotBox" to="LeftSide/IdiotBox" method="_on_body_entered"]
