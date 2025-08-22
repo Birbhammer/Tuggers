@@ -1,7 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dawqqrx62ng5e"]
 
-[ext_resource type="Texture2D" uid="uid://dll40sfkhu02d" path="res://Visual Assets/Virgin/Virgin1-partsSheet2.0.png" id="1_a1rp7"]
-[ext_resource type="Texture2D" uid="uid://bkw68ongbhc5r" path="res://Visual Assets/Virgin/Virgin1-partsSheet.png" id="1_wcn26"]
+[ext_resource type="Texture2D" uid="uid://kjf5bqhn1rq1" path="res://Visual Assets/Virgin/Virgin2/Virgin2-partsSheet.png" id="1_wcn26"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wcn26"]
+size = Vector3(50000, 500000, 1)
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_a1rp7"]
 target_nodepath = NodePath("../IKTargets/FootRTarget")
@@ -10,12 +12,20 @@ ccdik_data_chain_length = 2
 joint_data/0/bone_index = 2
 joint_data/0/bone2d_node = NodePath("Chest/LegR")
 joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -260.425
+joint_data/0/constraint_angle_max = 275.745
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 joint_data/1/bone_index = 3
 joint_data/1/bone2d_node = NodePath("Chest/LegR/ShinR")
 joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = 173.815
+joint_data/1/constraint_angle_max = 360.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_vklcm"]
@@ -25,12 +35,20 @@ ccdik_data_chain_length = 2
 joint_data/0/bone_index = 5
 joint_data/0/bone2d_node = NodePath("Chest/LegL")
 joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -260.426
+joint_data/0/constraint_angle_max = 283.404
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 joint_data/1/bone_index = 6
 joint_data/1/bone2d_node = NodePath("Chest/LegL/ShinL")
 joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = 153.251
+joint_data/1/constraint_angle_max = 337.021
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_w8vh2"]
@@ -43,59 +61,63 @@ modifications/1 = SubResource("SkeletonModification2DCCDIK_vklcm")
 
 [node name="Body" type="Node2D" parent="."]
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Body"]
+visible = false
+mesh = SubResource("BoxMesh_wcn26")
+
 [node name="FootR" type="Polygon2D" parent="Body"]
-position = Vector2(-580.011, 2334.01)
-rotation = 0.920863
-scale = Vector2(1, 1)
+position = Vector2(-440, 2269)
+rotation = 0.704233
+scale = Vector2(0.999971, 0.999971)
 offset = Vector2(-1700.87, -3938)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(1539.54, 3707.91, 2137.05, 3693.33, 2137.39, 4050.32, 1539.33, 4051.01)
-uv = PackedVector2Array(1717, 3034.52, 2314.62, 3043.78, 2300.72, 3400.5, 1703.1, 3377.34)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(1629.26, 4031.25, 2157.62, 4023.59, 2138.48, 3839.82, 1904.93, 3732.61, 1843.67, 3774.73, 1625.43, 3786.21)
+uv = PackedVector2Array(1563.97, 4101.87, 2092.33, 4094.21, 2073.18, 3910.43, 1839.63, 3803.23, 1778.37, 3845.34, 1560.14, 3856.83)
 
 [node name="FootL" type="Polygon2D" parent="Body"]
-position = Vector2(641.996, 2424.04)
-rotation = 0.116241
-scale = Vector2(0.999999, 0.999999)
+position = Vector2(617, 2217)
+rotation = 0.101922
+scale = Vector2(0.999971, 0.999971)
 offset = Vector2(-3091, -3847)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(2895.69, 3703.29, 2943.66, 4020.71, 3540.58, 3968.7, 3499.21, 3741.31, 3208.91, 3598.02)
-uv = PackedVector2Array(2591.17, 3133.25, 2615.79, 3453.33, 3214.91, 3445.12, 3190.29, 3215.32, 2911.25, 3051.18)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(2976.59, 3988.28, 3523.14, 3983.05, 3504.83, 3805.23, 3279.94, 3677.09, 2979.2, 3721.55)
+uv = PackedVector2Array(2608.29, 4139.21, 3154.84, 4133.98, 3136.53, 3956.15, 2911.64, 3828.02, 2610.91, 3872.47)
 
 [node name="LegL" type="Polygon2D" parent="Body"]
-position = Vector2(240, 1389)
-rotation = -0.369378
-scale = Vector2(1, 1)
+position = Vector2(125, 1281)
+rotation = -0.569682
+scale = Vector2(0.999971, 0.999971)
 offset = Vector2(-2786, -2059)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(2514.64, 1938.69, 3039.89, 1914.06, 3269.7, 2660.92, 2892.17, 2784.02)
-uv = PackedVector2Array(2142.39, 1547.09, 2667.64, 1522.47, 2897.44, 2269.32, 2519.92, 2392.43)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(2538.65, 2051.64, 2911.71, 1888.86, 3264.41, 2736.7, 2918.49, 2852.01)
+uv = PackedVector2Array(2179.17, 2397.56, 2552.22, 2234.78, 2904.92, 3082.62, 2559, 3197.93)
 
 [node name="ShinL" type="Polygon2D" parent="Body"]
-position = Vector2(695.475, 1845.34)
-rotation = 0.116241
-scale = Vector2(0.999999, 0.999999)
+position = Vector2(662.185, 1637.61)
+rotation = 0.101922
+scale = Vector2(0.999971, 0.999971)
 offset = Vector2(-3082, -2940)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(2847.19, 2892.85, 3007.51, 2738.69, 3328.15, 2806.52, 3260.33, 3521.79, 2927.35, 3484.8)
-uv = PackedVector2Array(2529.05, 2441.7, 2689.37, 2287.55, 3010.01, 2355.37, 2942.18, 3070.65, 2609.21, 3033.65)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(2866.59, 2865.16, 3265, 2795.67, 3292.8, 3495.21, 2959.24, 3513.74)
+uv = PackedVector2Array(2519.14, 3198.71, 2917.55, 3129.22, 2945.35, 3828.76, 2611.79, 3847.29)
 
 [node name="LegR" type="Polygon2D" parent="Body"]
-position = Vector2(-76, 1416)
-rotation = 0.2321
-scale = Vector2(0.999999, 0.999999)
+position = Vector2(-63, 1254)
+rotation = 0.150527
+scale = Vector2(0.999966, 0.999966)
 offset = Vector2(-1678, -2063)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(1459.65, 2236.51, 1666.02, 2691.36, 1939.77, 2687.15, 1838.69, 1992.23, 1779.73, 1937.48, 1666.01, 1916.43, 1543.88, 1916.43, 1497.55, 1937.48, 1455.44, 2013.29, 1442.8, 2084.89)
-uv = PackedVector2Array(1505.97, 1857.47, 1712.34, 2312.32, 1986.09, 2308.11, 1885.02, 1613.19, 1826.05, 1558.44, 1712.34, 1537.39, 1590.21, 1537.39, 1543.88, 1558.44, 1501.76, 1634.25, 1489.13, 1705.85)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(1352.87, 2263.5, 1539.4, 1920.29, 1927.38, 1912.83, 1994.53, 2845.46, 1666.24, 2890.23)
+uv = PackedVector2Array(1233.5, 2614.17, 1420.02, 2270.96, 1808, 2263.5, 1875.15, 3196.13, 1546.86, 3240.9)
 
 [node name="ShinR" type="Polygon2D" parent="Body"]
-position = Vector2(-92.3649, 2028.66)
-rotation = 0.920863
-scale = Vector2(1, 1)
+position = Vector2(-29.3935, 1865.99)
+rotation = 0.704233
+scale = Vector2(0.999971, 0.999971)
 offset = Vector2(-1791, -3157.85)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(1556.01, 2982.76, 1971.11, 2939.06, 1949.26, 3638.18, 1610.62, 3605.41)
-uv = PackedVector2Array(1663.19, 2381.95, 2078.3, 2338.26, 2056.45, 3037.38, 1717.81, 3004.61)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(1627.26, 3688.41, 1886.15, 3688.41, 1995.46, 3205.15, 1894.78, 3058.44, 1653.15, 3144.74)
+uv = PackedVector2Array(1535.21, 3846.62, 1794.1, 3846.62, 1903.41, 3363.36, 1802.73, 3216.65, 1561.1, 3302.95)
 
 [node name="ArmL" type="Polygon2D" parent="Body"]
 rotation = 1.3747
@@ -123,16 +145,16 @@ uv = PackedVector2Array(3678.47, 1304.93, 4182.98, 1294.74, 4147.3, 1717.71, 366
 [node name="Chest" type="Polygon2D" parent="."]
 position = Vector2(81, 581)
 offset = Vector2(-673, -1925)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(-238.308, 1369.89, 679.285, 1074.95, 1323.78, 1424.51, 1014.69, 3012.09, 177.556, 2979.26)
-uv = PackedVector2Array(-106.994, 1231.94, 810.6, 936.996, 1455.1, 1286.56, 1146, 2874.14, 308.871, 2841.31)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(-56.1007, 1643.44, 43.2055, 1444.82, 765.435, 1336.49, 1216.83, 1589.27, 1036.27, 2952.48, 178.625, 2780.95)
+uv = PackedVector2Array(-29.0171, 1381.63, 70.2891, 1183.02, 792.519, 1074.68, 1243.91, 1327.46, 1063.36, 2690.67, 205.708, 2519.14)
 
 [node name="Head" type="Polygon2D" parent="."]
-position = Vector2(2, -54)
+position = Vector2(30, 104)
 offset = Vector2(-421, -1061)
-texture = ExtResource("1_a1rp7")
-polygon = PackedVector2Array(187.331, 1130.94, 686.789, 1118.6, 1001.26, 619.146, 988.93, 95.0229, 138.001, 51.8598, 20.8435, 847.294)
-uv = PackedVector2Array(14.6785, 1069.28, 514.137, 1056.94, 828.611, 557.485, 816.278, 33.3613, -34.6519, -9.80176, -151.809, 785.632)
+texture = ExtResource("1_wcn26")
+polygon = PackedVector2Array(435.392, 1279.9, 84.1642, 1131.18, 207.446, 170.721, 981.111, 115.128, 916.253, 1074.1)
+uv = PackedVector2Array(287.145, 1154.81, -64.083, 1006.09, 59.1985, 45.6375, 832.864, -9.95518, 768.006, 949.018)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 position = Vector2(81, 579)
@@ -142,14 +164,16 @@ modification_stack = SubResource("SkeletonModificationStack2D_w8vh2")
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/Chest"]
-position = Vector2(-79, -633)
+position = Vector2(-51, -475)
 rest = Transform2D(1, 0, 0, 1, -82, -584)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Chest/Head"]
 remote_path = NodePath("../../../../Head")
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Chest"]
-position = Vector2(-157, 837)
+position = Vector2(-144, 675)
+rotation = 0.086688
+scale = Vector2(0.99997, 0.99997)
 rest = Transform2D(1, 0, 0, 1, -157, 837)
 metadata/_local_pose_override_enabled_ = true
 
@@ -175,7 +199,9 @@ bone_angle = 0.0
 remote_path = NodePath("../../../../../../Body/FootR")
 
 [node name="LegL" type="Bone2D" parent="Skeleton2D/Chest"]
-position = Vector2(159, 810)
+position = Vector2(44, 702)
+rotation = 0.107645
+scale = Vector2(0.999996, 0.999996)
 rest = Transform2D(1, 0, 0, 1, 159, 810)
 metadata/_local_pose_override_enabled_ = true
 
@@ -203,9 +229,9 @@ remote_path = NodePath("../../../../../../Body/FootL")
 [node name="IKTargets" type="Node2D" parent="."]
 
 [node name="FootRTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(-580, 2334)
+position = Vector2(-440, 2269)
 
 [node name="FootLTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(642, 2424)
+position = Vector2(617, 2217)
 
 [node name="HeadTarget" type="Node2D" parent="IKTargets"]
