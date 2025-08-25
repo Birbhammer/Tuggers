@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://306fmxpk8rtm"]
+[gd_scene load_steps=9 format=3 uid="uid://306fmxpk8rtm"]
 
 [ext_resource type="Script" uid="uid://pwiesp36xapq" path="res://Scripts/Player/arm_pin.gd" id="1_8maj5"]
 [ext_resource type="Texture2D" uid="uid://kjf5bqhn1rq1" path="res://Visual Assets/Virgin/Virgin2/Virgin2-partsSheet.png" id="2_ne7qb"]
+[ext_resource type="Texture2D" uid="uid://bmbye241uvwv7" path="res://Visual Assets/Virgin/Virgin2/Virgin2Hand.png" id="3_4aux1"]
 [ext_resource type="Texture2D" uid="uid://upbd0mslu5wl" path="res://TestAssets/Gbot/gBot_forearm_r.png" id="3_ioxut"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
@@ -113,12 +114,11 @@ uv = PackedVector2Array(1745.97, 322.448, 1798.74, 596.067, 2624.47, 470.733, 25
 z_index = 6
 z_as_relative = false
 position = Vector2(-653.268, 100.698)
-scale = Vector2(1, 1)
 offset = Vector2(-75.6088, -105.006)
 antialiased = true
-texture = ExtResource("2_ne7qb")
-polygon = PackedVector2Array(-387.958, 59.6954, -349.184, 306.187, -224.553, 322.804, 118.872, 214.791, 71.79, -53.8567, -221.784, -48.3176)
-uv = PackedVector2Array(1283.9, 421.549, 1322.67, 668.04, 1447.3, 684.657, 1790.73, 576.644, 1743.65, 307.997, 1450.07, 313.536)
+texture = ExtResource("3_4aux1")
+polygon = PackedVector2Array(-401.833, 35.885, -370.508, 276.049, -147.747, 338.7, 144.626, 279.529, 92.4169, -54.6114)
+uv = PackedVector2Array(283.388, 1722.87, 314.714, 1963.03, 537.475, 2025.69, 829.848, 1966.51, 777.638, 1632.37)
 
 [node name="Sprite2D" type="Sprite2D" parent="LowerArmR"]
 visible = false
@@ -151,7 +151,6 @@ uv = PackedVector2Array(3132.04, 1295.65, 3186.14, 1426.74, 3937.31, 1485.01, 39
 z_index = 4
 z_as_relative = false
 position = Vector2(-663.412, 105.4)
-scale = Vector2(1, 1)
 offset = Vector2(-75.6088, -105.006)
 antialiased = true
 texture = ExtResource("2_ne7qb")

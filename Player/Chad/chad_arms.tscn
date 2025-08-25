@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bboh3jxf5ggkn"]
+[gd_scene load_steps=8 format=3 uid="uid://bboh3jxf5ggkn"]
 
 [ext_resource type="Script" uid="uid://pwiesp36xapq" path="res://Scripts/Player/arm_pin.gd" id="1_nwfvi"]
 [ext_resource type="Texture2D" uid="uid://dmo0q181y71t4" path="res://Visual Assets/Chad/Chad2/Chad2-partsSheet.png" id="2_1tp0g"]
+[ext_resource type="Texture2D" uid="uid://b25dw658x1njw" path="res://Visual Assets/Chad/Chad2/Chad2FullArmL.png" id="3_k5wpc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
 radius = 5.83458
@@ -104,9 +105,9 @@ rotation = -1.60041
 scale = Vector2(0.05, 0.05)
 offset = Vector2(-82.1378, -141.037)
 antialiased = true
-texture = ExtResource("2_1tp0g")
-polygon = PackedVector2Array(164.229, 106.416, 193.459, 278.53, -78.8871, 443.862, -611.407, 355.901, -620.916, 70.6222, -231.036, -131.45, 111.301, -64.8862)
-uv = PackedVector2Array(2928.88, 404.367, 2958.11, 576.481, 2685.77, 741.813, 2153.25, 653.853, 2143.74, 368.574, 2533.62, 166.502, 2875.96, 233.065)
+texture = ExtResource("3_k5wpc")
+polygon = PackedVector2Array(86.7171, 303.319, 90.8941, 104.683, -11.3308, -73.616, -605.661, 52.3822, -608.039, 152.229, -612.793, 221.172, -553.36, 349.547, -477.286, 423.244, 48.1021, 406.603)
+uv = PackedVector2Array(1359.1, 1911.4, 1363.28, 1712.76, 1261.06, 1534.46, 666.727, 1660.46, 664.349, 1760.31, 659.595, 1829.25, 719.028, 1957.62, 795.102, 2031.32, 1320.49, 2014.68)
 
 [node name="Polygon2D2" type="Polygon2D" parent="LowerArmR/Polygon2D"]
 z_index = 6
@@ -114,9 +115,9 @@ z_as_relative = false
 position = Vector2(-653.268, 100.698)
 offset = Vector2(-75.6088, -105.006)
 antialiased = true
-texture = ExtResource("2_1tp0g")
-polygon = PackedVector2Array(148.508, 35.7457, 144.297, 275.805, -500.073, 473.749, -622.209, -56.9088, -230.533, -56.9088, -192.629, -195.891, 60.0652, -187.467)
-uv = PackedVector2Array(2119.52, 426.516, 2115.31, 666.576, 1470.94, 864.519, 1348.8, 333.862, 1740.48, 333.862, 1778.38, 194.88, 2031.08, 203.303)
+texture = ExtResource("3_k5wpc")
+polygon = PackedVector2Array(39.9578, 14.1648, 73.9058, 64.354, 96.0477, 209.015, 89.8486, 390.651, -228.55, 560.445, -630.318, 358.372, -535.225, -62.4151, -33.61, -107.583)
+uv = PackedVector2Array(669.694, 1760.44, 703.642, 1810.63, 725.784, 1955.29, 719.584, 2136.93, 401.186, 2306.72, -0.581909, 2104.65, 94.5104, 1683.86, 596.126, 1638.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArmR"]
 position = Vector2(4.5, 27)
