@@ -162,7 +162,6 @@ z_index = 5
 z_as_relative = false
 position = Vector2(435, 2400)
 rotation = -0.01105
-scale = Vector2(1, 1)
 offset = Vector2(-3091, -3847)
 texture = ExtResource("1_pfijs")
 polygon = PackedVector2Array(2912.86, 3701.58, 2924.34, 4007.87, 3701.57, 3996.39, 3682.42, 3759.01, 3445.04, 3732.21, 3291.9, 3632.66)
@@ -223,7 +222,6 @@ remote_path = NodePath("../../../../../Body/ShinR")
 [node name="FootR" type="Bone2D" parent="Skeleton2D/Chest/LegR/ShinR"]
 position = Vector2(-166.812, 617.168)
 rotation = -0.14929
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -52, 573)
 auto_calculate_length_and_angle = false
 length = 340.366
@@ -246,7 +244,6 @@ remote_path = NodePath("../../../../Body/LegL")
 [node name="ShinL" type="Bone2D" parent="Skeleton2D/Chest/LegL"]
 position = Vector2(260, 590.009)
 rotation = -0.401059
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 260, 590)
 metadata/_local_pose_override_enabled_ = true
 
