@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://rbhwo0aoyqx1"]
+
+[ext_resource type="TileSet" uid="uid://bgfo55g2jd2hn" path="res://Levels/TTGTileSet.tres" id="1_yhdvb"]
+
+[node name="TestLevelTTG" type="Node2D"]
+
+[node name="Tilesets" type="Node2D" parent="."]
+
+[node name="TileMapLayer-Foreground" type="TileMapLayer" parent="Tilesets"]
+tile_map_data = PackedByteArray(0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_yhdvb")
+
+[node name="TileMapLayer-BackGround" type="TileMapLayer" parent="Tilesets"]
+tile_set = ExtResource("1_yhdvb")
