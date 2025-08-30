@@ -17,13 +17,15 @@ script = ExtResource("1_fiyor")
 [node name="Players" type="Node" parent="."]
 
 [node name="Nerd" parent="Players" instance=ExtResource("1_6isyr")]
-position = Vector2(-5806, 0)
+position = Vector2(40, -251)
+scale = Vector2(0.25, 0.25)
 
 [node name="NerdArms" parent="Players/Nerd" instance=ExtResource("2_5ubxa")]
 position = Vector2(-9, -91)
 
 [node name="Chad" parent="Players" instance=ExtResource("3_jycte")]
 position = Vector2(-5262, 0)
+scale = Vector2(0.25, 0.25)
 
 [node name="ChadArms" parent="Players/Chad" instance=ExtResource("4_ev4ff")]
 position = Vector2(-16, -9)
@@ -39,7 +41,3 @@ MaxRoomNum = 10
 position = Vector2(0, -558)
 
 [node name="ChadLevelGenerator" type="Node" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(7593, 0)
-zoom = Vector2(0.1, 0.1)

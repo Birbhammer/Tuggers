@@ -1,11 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmvfroiw3ypng"]
+[gd_scene load_steps=3 format=3 uid="uid://dmvfroiw3ypng"]
 
 [ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="2_rr30a"]
+[ext_resource type="PackedScene" uid="uid://uj1fawcq85y6" path="res://LevelAssets/PlatformPrefabs/moving_platform_horizontal.tscn" id="3_rr30a"]
 
 [node name="Room0" type="Node2D"]
 
 [node name="Floor" parent="." instance=ExtResource("2_rr30a")]
 position = Vector2(813, 0)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor2" parent="." instance=ExtResource("2_rr30a")]
+position = Vector2(2408, 0)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor3" parent="." instance=ExtResource("2_rr30a")]
+position = Vector2(499, -77)
+scale = Vector2(0.264422, 4.08248)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor4" parent="." instance=ExtResource("2_rr30a")]
+position = Vector2(907, -154)
+scale = Vector2(0.264422, 4.08248)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor5" parent="." instance=ExtResource("2_rr30a")]
+position = Vector2(1286, -242)
+scale = Vector2(0.264422, 4.08248)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor6" parent="." instance=ExtResource("2_rr30a")]
+position = Vector2(1637, -291)
+scale = Vector2(0.264422, 4.08248)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor7" parent="." instance=ExtResource("2_rr30a")]
+position = Vector2(1917, -357)
+scale = Vector2(0.264422, 4.08248)
+constant_linear_velocity = Vector2(0, 0)
 
 [node name="End" type="Marker2D" parent="."]
-position = Vector2(1602, 0)
+position = Vector2(3391, 0)
+
+[node name="MovingPlatformHorizontal" parent="." instance=ExtResource("3_rr30a")]
+position = Vector2(2261, -356)
+SPEED = 10

@@ -5,4 +5,5 @@ extends Node
 
 
 func _ready() -> void:
-	Nerd.position = Vector2(NerdStart.position.x, NerdStart.position.y - 50)
+	pass
+	#Nerd.position = Vector2(NerdStart.position.x, NerdStart.position.y - 50)

@@ -1,12 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf8dhgactf4iu"]
+[gd_scene load_steps=3 format=3 uid="uid://cf8dhgactf4iu"]
 
 [ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="1_2lcec"]
+[ext_resource type="PackedScene" uid="uid://wn1hxr4fpbkk" path="res://LevelAssets/PlatformPrefabs/falling_platform.tscn" id="2_hajes"]
 
 [node name="Room4" type="Node2D"]
 
 [node name="End" type="Marker2D" parent="."]
-position = Vector2(1916, 0)
+position = Vector2(12299, 0)
 
 [node name="Floor" parent="." instance=ExtResource("1_2lcec")]
-position = Vector2(813, 0)
+position = Vector2(852, 127)
 scale = Vector2(1, 10.48)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="FallingPlatform" parent="." instance=ExtResource("2_hajes")]
+position = Vector2(2927, 98)
+scale = Vector2(9.52, 1)
+
+[node name="Floor2" parent="." instance=ExtResource("1_2lcec")]
+position = Vector2(4386, 127)
+scale = Vector2(1, 10.48)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="FallingPlatform2" parent="." instance=ExtResource("2_hajes")]
+position = Vector2(6456, 98)
+scale = Vector2(9.52, 1)
+
+[node name="Floor3" parent="." instance=ExtResource("1_2lcec")]
+position = Vector2(7915, 127)
+scale = Vector2(1, 10.48)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="FallingPlatform3" parent="." instance=ExtResource("2_hajes")]
+position = Vector2(10002, 98)
+scale = Vector2(9.52, 1)
+
+[node name="Floor4" parent="." instance=ExtResource("1_2lcec")]
+position = Vector2(11461, 127)
+scale = Vector2(1, 10.48)
+constant_linear_velocity = Vector2(0, 0)

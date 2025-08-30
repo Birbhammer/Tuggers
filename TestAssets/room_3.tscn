@@ -1,24 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://bddv7hcv6pfwt"]
+[gd_scene load_steps=4 format=3 uid="uid://bddv7hcv6pfwt"]
 
 [ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="1_rmjx4"]
+[ext_resource type="PackedScene" uid="uid://cd4hpvqe7x1h3" path="res://LevelAssets/PlatformPrefabs/path_platform.tscn" id="3_nsi0b"]
+
+[sub_resource type="Curve2D" id="Curve2D_ie43x"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 182, 9, 0, 0, 0, 0, -314, -148, 0, 0, 0, 0, -634, -242, 0, 0, 0, 0, -805, -416, 0, 0, 0, 0, -762, -738, 0, 0, 0, 0, -197, -752, 0, 0, 0, 0, 2721, -775, 0, 0, 0, 0, 2550, -333, 0, 0, 0, 0, 1951, -113, 0, 0, 0, 0, 1740, 1, 0, 0, 0, 0, 182, 9)
+}
+point_count = 11
 
 [node name="Room3" type="Node2D"]
 
 [node name="End" type="Marker2D" parent="."]
-position = Vector2(779, 0)
+position = Vector2(7409, 0)
 
 [node name="Floor" parent="." instance=ExtResource("1_rmjx4")]
-position = Vector2(107, 0)
-scale = Vector2(0.0800012, 1)
+position = Vector2(226, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
 
 [node name="Floor2" parent="." instance=ExtResource("1_rmjx4")]
-position = Vector2(284, -82)
-scale = Vector2(0.0800012, 1)
+position = Vector2(675, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
 
 [node name="Floor3" parent="." instance=ExtResource("1_rmjx4")]
-position = Vector2(500, -82)
-scale = Vector2(0.0800012, 1)
+position = Vector2(1121, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
 
 [node name="Floor4" parent="." instance=ExtResource("1_rmjx4")]
-position = Vector2(677, 0)
-scale = Vector2(0.0800012, 1)
+position = Vector2(1567, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor5" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(2014, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor6" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(5397, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor7" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(5846, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor8" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(6292, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor9" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(6738, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="Floor10" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(7185, 14)
+scale = Vector2(0.28, 2.16)
+constant_linear_velocity = Vector2(0, 0)
+
+[node name="PathPlatform" parent="." instance=ExtResource("3_nsi0b")]
+position = Vector2(2881, 121)
+curve = SubResource("Curve2D_ie43x")
