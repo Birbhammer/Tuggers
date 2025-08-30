@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu7khapage27h"]
+
+[ext_resource type="Script" uid="uid://css7ax4avui87" path="res://Scripts/General/menu_manager.gd" id="1_r1q1u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vyd41"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1q1u"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_sbixa"]
+font_size = 50
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_r1q1u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Base" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Base"]
+offset_left = -908.0
+offset_top = -511.0
+offset_right = -391.0
+offset_bottom = -306.0
+text = "M'Lady"
+label_settings = SubResource("LabelSettings_vyd41")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Base"]
+offset_left = -666.0
+offset_top = -338.0
+offset_right = -35.0
+offset_bottom = -133.0
+text = "Mayhem"
+label_settings = SubResource("LabelSettings_r1q1u")
+
+[node name="StartButton" type="Button" parent="Base"]
+offset_left = -879.0
+offset_top = -63.0
+offset_right = -434.0
+offset_bottom = 54.0
+
+[node name="Label" type="Label" parent="Base/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -34.5
+offset_right = 58.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = SubResource("LabelSettings_sbixa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButton" type="Button" parent="Base"]
+offset_left = -879.0
+offset_top = 77.0
+offset_right = -434.0
+offset_bottom = 194.0
+
+[node name="Label" type="Label" parent="Base/OptionsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -34.5
+offset_right = 58.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+label_settings = SubResource("LabelSettings_sbixa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="Base"]
+offset_left = -879.0
+offset_top = 219.0
+offset_right = -434.0
+offset_bottom = 336.0
+
+[node name="Label" type="Label" parent="Base/CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -34.5
+offset_right = 58.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_sbixa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="Base"]
+offset_left = -879.0
+offset_top = 359.0
+offset_right = -434.0
+offset_bottom = 476.0
+
+[node name="Label" type="Label" parent="Base/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -34.5
+offset_right = 58.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = SubResource("LabelSettings_sbixa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Node2D" parent="."]
+
+[node name="Options" type="Node2D" parent="."]
+
+[connection signal="pressed" from="Base/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Base/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Base/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Base/QuitButton" to="." method="_on_quit_button_pressed"]

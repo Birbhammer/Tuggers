@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://o4cjsts555ch"]
+
+[ext_resource type="Script" uid="uid://c1rm83uam4f4p" path="res://Scripts/Player/player_controller.gd" id="1_52lw0"]
+[ext_resource type="Resource" uid="uid://c75d01x10o7fi" path="res://Player/Resources/chad_controls.tres" id="2_evj1t"]
+[ext_resource type="PackedScene" uid="uid://do064j7is2sns" path="res://Player/IkBodies/chad_body.tscn" id="3_cm8xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
+size = Vector2(353, 780)
+
+[node name="Chad" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_52lw0")
+controls = ExtResource("2_evj1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -28)
+shape = SubResource("RectangleShape2D_a1q1g")
+
+[node name="Chad" parent="." instance=ExtResource("3_cm8xq")]
+position = Vector2(0, -195)
+scale = Vector2(0.22, 0.22)

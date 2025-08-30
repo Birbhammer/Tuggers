@@ -6,13 +6,14 @@ const Acceleration = 1200 #Jarryd Added
 const friction = 3500 #Jarryd Added
 const JUMP_VELOCITY = -900
 
-@onready var handL: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmL/HandL
-@onready var handR: Marker2D = $PlayerIKBody/CharacterContainer/Body/GBotForearmR/HandR
-@onready var gameManager: Node = $"../../GameManager"
+#++++++++++++Assigning Player Controls from a resource +++++++++++++++++++++++++
+@export var controls: Resource = null
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#------------Jumping Test Concept----------------
+
+#------------Jumping Test Concept-----------------------------------------------
 var canJump: bool = false
-#--------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,14 +35,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and canJump == false:       #Lets player jump once even if
 		canJump = true                           #ground isnt under them
 	
-	if Input.is_action_just_pressed("Jump1") and canJump:
+	if Input.is_action_just_pressed(controls.jump) and canJump:
 		velocity.y = JUMP_VELOCITY
 		canJump = false
 	#--------------------------------------------------------------------------
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("Left1", "Right1")
+	var direction := Input.get_axis(controls.left, controls.right)
 	if direction:
 		#Check if the player's direction input and current velocity are opposite of each other
 		#If so apply friction to the player (This could be done in 2 lines, not sure how right now)

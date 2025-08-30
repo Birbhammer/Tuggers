@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerInputs" load_steps=2 format=3 uid="uid://c75d01x10o7fi"]
+
+[ext_resource type="Script" uid="uid://cjpuiseiiuais" path="res://Scripts/Player/player_inputs.gd" id="1_dmcyc"]
+
+[resource]
+script = ExtResource("1_dmcyc")
+playerIndex = 1
+left = "Left-Key2"
+right = "Right-Key2"
+jump = "Jump-Key2"
+metadata/_custom_type_script = "uid://cjpuiseiiuais"

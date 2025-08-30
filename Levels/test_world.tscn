@@ -1,22 +1,22 @@
 [gd_scene load_steps=20 format=3 uid="uid://dhi8dmlwr0rwd"]
 
-[ext_resource type="PackedScene" uid="uid://cv5nq34dxhxxy" path="res://LevelAssets/game_manager.tscn" id="1_mggor"]
+[ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="1_84vo3"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_1ot53"]
 [ext_resource type="PackedScene" uid="uid://uj1fawcq85y6" path="res://LevelAssets/PlatformPrefabs/moving_platform_horizontal.tscn" id="3_jykfp"]
-[ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/player_controller.tscn" id="4_1r5jd"]
+[ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/Nerd/nerd.tscn" id="4_1r5jd"]
+[ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="5_eokls"]
 [ext_resource type="PackedScene" uid="uid://bd1jbyhhia6mf" path="res://LevelAssets/PlatformPrefabs/moving_platform_vertical.tscn" id="9_vufbg"]
 [ext_resource type="PackedScene" uid="uid://306fmxpk8rtm" path="res://Player/Nerd/nerd_arms.tscn" id="10_84vo3"]
-[ext_resource type="Script" uid="uid://b6dx56hhodcuf" path="res://Scripts/idiot_box.gd" id="10_eokls"]
+[ext_resource type="Script" uid="uid://b6dx56hhodcuf" path="res://Scripts/General/idiot_box.gd" id="10_eokls"]
 [ext_resource type="PackedScene" uid="uid://bboh3jxf5ggkn" path="res://Player/Chad/chad_arms.tscn" id="11_84vo3"]
 [ext_resource type="PackedScene" uid="uid://cd4hpvqe7x1h3" path="res://LevelAssets/PlatformPrefabs/path_platform.tscn" id="11_v3cm4"]
 [ext_resource type="PackedScene" uid="uid://wn1hxr4fpbkk" path="res://LevelAssets/PlatformPrefabs/falling_platform.tscn" id="12_v3cm4"]
-[ext_resource type="PackedScene" uid="uid://do064j7is2sns" path="res://Player/Chad/chad_body.tscn" id="13_8fijo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3sr"]
-size = Vector2(412, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84vo3"]
 size = Vector2(15951, 461)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3sr"]
+size = Vector2(412, 60)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jykfp"]
 font_size = 80
@@ -69,23 +69,10 @@ size = Vector2(133, 128)
 
 [node name="TestWorld" type="Node2D"]
 
-[node name="GameManager" parent="." instance=ExtResource("1_mggor")]
-
 [node name="LeftSide" type="Node" parent="."]
 
-[node name="Floor" type="StaticBody2D" parent="LeftSide"]
+[node name="Floor" parent="LeftSide" instance=ExtResource("1_84vo3")]
 position = Vector2(-1035, 11)
-constant_linear_velocity = Vector2(500, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide/Floor"]
-position = Vector2(-10, 20)
-scale = Vector2(3.87411, 1)
-shape = SubResource("RectangleShape2D_gy3sr")
-
-[node name="Icon" type="Sprite2D" parent="LeftSide/Floor/CollisionShape2D"]
-position = Vector2(-7.62939e-06, 0.500001)
-scale = Vector2(3.21875, 0.476563)
-texture = ExtResource("2_1ot53")
 
 [node name="IdiotBox" type="Area2D" parent="LeftSide"]
 position = Vector2(1286, 1384)
@@ -98,16 +85,18 @@ shape = SubResource("RectangleShape2D_84vo3")
 [node name="ResetPOS" type="Marker2D" parent="LeftSide/IdiotBox"]
 position = Vector2(-2042, -1944)
 
-[node name="Player1" parent="LeftSide" instance=ExtResource("4_1r5jd")]
+[node name="Nerd" parent="LeftSide" instance=ExtResource("4_1r5jd")]
 position = Vector2(-470, -133)
 scale = Vector2(0.25, 0.25)
 collision_layer = 1
 
-[node name="Camera2D" type="Camera2D" parent="LeftSide/Player1"]
-zoom = Vector2(0.75, 0.75)
-
-[node name="Arms" parent="LeftSide/Player1" instance=ExtResource("10_84vo3")]
+[node name="Arms" parent="LeftSide/Nerd" instance=ExtResource("10_84vo3")]
 position = Vector2(0, -96)
+
+[node name="Chad" parent="LeftSide" instance=ExtResource("5_eokls")]
+scale = Vector2(0.25, 0.25)
+
+[node name="ChadArms" parent="LeftSide/Chad" instance=ExtResource("11_84vo3")]
 
 [node name="RightSide" type="Node" parent="."]
 
@@ -298,22 +287,5 @@ shape = SubResource("RectangleShape2D_v3cm4")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
 texture = ExtResource("2_1ot53")
-
-[node name="Chad_body" type="RigidBody2D" parent="."]
-disable_mode = 1
-collision_layer = 4096
-collision_mask = 4096
-mass = 0.001
-gravity_scale = 0.0
-lock_rotation = true
-freeze = true
-
-[node name="Chad" parent="Chad_body" instance=ExtResource("13_8fijo")]
-position = Vector2(-771, -131)
-scale = Vector2(0.05, 0.05)
-
-[node name="ChadArms" parent="Chad_body" instance=ExtResource("11_84vo3")]
-position = Vector2(-765, -115)
-scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="LeftSide/IdiotBox" to="LeftSide/IdiotBox" method="_on_body_entered"]

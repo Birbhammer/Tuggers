@@ -25,31 +25,31 @@ scale = Vector2(4, 4)
 script = ExtResource("1_nwfvi")
 
 [node name="ArmR" type="PinJoint2D" parent="."]
-position = Vector2(-33.75, -14)
+position = Vector2(-29.75, -42)
 node_a = NodePath("../..")
 node_b = NodePath("../UpperArmR")
 bias = 0.9
 
 [node name="ElbowR" type="PinJoint2D" parent="."]
-position = Vector2(-37, 14)
+position = Vector2(-33, -14)
 node_a = NodePath("../UpperArmR")
 node_b = NodePath("../LowerArmR")
 bias = 0.9
 
 [node name="ElbowL" type="PinJoint2D" parent="."]
-position = Vector2(27.75, 10.5)
+position = Vector2(39, -20)
 node_a = NodePath("../UpperArmL")
 node_b = NodePath("../LowerArmL")
 bias = 0.9
 
 [node name="ArmL" type="PinJoint2D" parent="."]
-position = Vector2(23.5, -13.25)
+position = Vector2(34.75, -43.75)
 node_a = NodePath("../..")
 node_b = NodePath("../UpperArmL")
 bias = 0.9
 
 [node name="UpperArmR" type="RigidBody2D" parent="."]
-position = Vector2(-33.75, -14)
+position = Vector2(-29.75, -42)
 collision_layer = 16384
 collision_mask = 16384
 
@@ -71,7 +71,7 @@ rotation = 0.147846
 shape = SubResource("CapsuleShape2D_m5bqa")
 
 [node name="UpperArmL" type="RigidBody2D" parent="."]
-position = Vector2(23.25, -13.25)
+position = Vector2(34.5, -43.75)
 collision_layer = 8192
 collision_mask = 8192
 
@@ -93,7 +93,7 @@ rotation = -0.243078
 shape = SubResource("CapsuleShape2D_jykfp")
 
 [node name="LowerArmR" type="RigidBody2D" parent="."]
-position = Vector2(-37.25, 13.75)
+position = Vector2(-33.25, -14.25)
 collision_layer = 32768
 collision_mask = 32768
 
@@ -125,7 +125,7 @@ rotation = -0.152566
 shape = SubResource("CapsuleShape2D_1r5jd")
 
 [node name="LowerArmL" type="RigidBody2D" parent="."]
-position = Vector2(27.75, 10.5)
+position = Vector2(39, -20)
 collision_layer = 4096
 collision_mask = 4096
 

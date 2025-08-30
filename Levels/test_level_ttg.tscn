@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rbhwo0aoyqx1"]
 
-[ext_resource type="TileSet" uid="uid://bgfo55g2jd2hn" path="res://Levels/TTGTileSet.tres" id="1_yhdvb"]
+[ext_resource type="TileSet" uid="uid://bgfo55g2jd2hn" path="res://LevelAssets/Tilesets/TTGTileSet.tres" id="1_yhdvb"]
 
 [node name="TestLevelTTG" type="Node2D"]
 

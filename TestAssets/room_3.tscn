@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bddv7hcv6pfwt"]
+
+[ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="1_rmjx4"]
+
+[node name="Room3" type="Node2D"]
+
+[node name="End" type="Marker2D" parent="."]
+position = Vector2(779, 0)
+
+[node name="Floor" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(107, 0)
+scale = Vector2(0.0800012, 1)
+
+[node name="Floor2" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(284, -82)
+scale = Vector2(0.0800012, 1)
+
+[node name="Floor3" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(500, -82)
+scale = Vector2(0.0800012, 1)
+
+[node name="Floor4" parent="." instance=ExtResource("1_rmjx4")]
+position = Vector2(677, 0)
+scale = Vector2(0.0800012, 1)
