@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://uj1fawcq85y6"]
+[gd_scene load_steps=5 format=3 uid="uid://dgrvb2hehiuy3"]
 
-[ext_resource type="Script" uid="uid://brfmhlrs2xj8t" path="res://Scripts/Platform/moving_platform_horizontal.gd" id="1_r0i6p"]
-[ext_resource type="Texture2D" uid="uid://c6s5bom82m44e" path="res://Visual Assets/Levels/TTG level/TileSet1.png" id="2_r0i6p"]
+[ext_resource type="Script" uid="uid://dssmq5lcqkx7i" path="res://Scripts/Platform/moving_platform_vertical.gd" id="1_y3dw6"]
+[ext_resource type="Texture2D" uid="uid://c6s5bom82m44e" path="res://Visual Assets/Levels/TTG level/TileSet1.png" id="2_6v6g1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1lwx6"]
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsnr4"]
-size = Vector2(696, 154)
+size = Vector2(689, 154)
 
-[node name="MovingPlatformHorizontal" type="AnimatableBody2D"]
+[node name="MovingPlatformVertical" type="AnimatableBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_1lwx6")
-script = ExtResource("1_r0i6p")
+script = ExtResource("1_y3dw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_dsnr4")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-texture = ExtResource("2_r0i6p")
+texture = ExtResource("2_6v6g1")
 polygon = PackedVector2Array(-351.151, -77.0695, -350.242, 82.0214, 363.396, 83.838, 349.759, -85.2529)
 uv = PackedVector2Array(292.664, 65.2199, 293.573, 224.311, 1007.21, 226.127, 993.574, 57.0365)

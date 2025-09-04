@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cljvamqrr2ld4"]
+
+[ext_resource type="Script" uid="uid://do7k0yny00aww" path="res://Scripts/Platform/falling_platform.gd" id="1_5evwf"]
+[ext_resource type="Texture2D" uid="uid://c6s5bom82m44e" path="res://Visual Assets/Levels/TTG level/TileSet1.png" id="2_ek57b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmkp6"]
+size = Vector2(260, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3qg"]
+size = Vector2(260, 19)
+
+[node name="FallingPlatform" type="AnimatableBody2D"]
+script = ExtResource("1_5evwf")
+health = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tmkp6")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+position = Vector2(0, -138)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_ft3qg")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+position = Vector2(-29.5, -1)
+texture = ExtResource("2_ek57b")
+polygon = PackedVector2Array(-98.2373, -125.602, 158.021, -125.514, 158, 129.709, -98.5032, 129.726)
+uv = PackedVector2Array(257.34, 1029.26, 513.599, 1029.35, 513.577, 1284.57, 257.074, 1284.59)
+
+[connection signal="body_entered" from="CollisionShape2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CollisionShape2D/Area2D" to="." method="_on_area_2d_body_exited"]

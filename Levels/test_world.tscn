@@ -232,51 +232,51 @@ speed_scale = 0.1
 
 [node name="FallingPlatform" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-1966, 195)
-health = 25
+health = 0
 
 [node name="FallingPlatform2" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-2265, 66)
-health = 25
+health = 0
 
 [node name="FallingPlatform3" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-2499, 62)
-health = 25
+health = 0
 
 [node name="FallingPlatform4" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-2751, 80)
-health = 25
+health = 0
 
 [node name="FallingPlatform5" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-3017, 183)
-health = 25
+health = 0
 
 [node name="FallingPlatform6" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-3279, 321)
-health = 25
+health = 0
 
 [node name="FallingPlatform7" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-3550, 438)
-health = 25
+health = 0
 
 [node name="FallingPlatform8" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-3821, 413)
-health = 25
+health = 0
 
 [node name="FallingPlatform9" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-4094, 328)
-health = 25
+health = 0
 
 [node name="FallingPlatform10" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-4330, 234)
-health = 25
+health = 0
 
 [node name="FallingPlatform11" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-4576, 124)
-health = 25
+health = 0
 
 [node name="FallingPlatform12" parent="MovingPlatforms" instance=ExtResource("12_v3cm4")]
 position = Vector2(-4835, 92)
-health = 25
+health = 0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(-1350, -110)

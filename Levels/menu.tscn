@@ -60,6 +60,30 @@ label_settings = SubResource("LabelSettings_sbixa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TutorialButton" type="Button" parent="Base"]
+offset_left = -391.0
+offset_top = -63.0
+offset_right = 54.0
+offset_bottom = 54.0
+
+[node name="Label" type="Label" parent="Base/TutorialButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -34.5
+offset_right = 58.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_sbixa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="OptionsButton" type="Button" parent="Base"]
 offset_left = -879.0
 offset_top = 77.0
@@ -137,6 +161,7 @@ vertical_alignment = 1
 [node name="Options" type="Node2D" parent="."]
 
 [connection signal="pressed" from="Base/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Base/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Base/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Base/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Base/QuitButton" to="." method="_on_quit_button_pressed"]

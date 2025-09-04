@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://doo83siwwwqic"]
+[gd_scene load_steps=2 format=3 uid="uid://doo83siwwwqic"]
 
 [ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="1_80b7g"]
-[ext_resource type="PackedScene" uid="uid://bd1jbyhhia6mf" path="res://LevelAssets/PlatformPrefabs/moving_platform_vertical.tscn" id="3_ap2uj"]
 
 [node name="Room1" type="Node2D"]
 
 [node name="End" type="Marker2D" parent="."]
-position = Vector2(3435, -2384)
+position = Vector2(2470, 572)
 
 [node name="Floor" parent="." instance=ExtResource("1_80b7g")]
 position = Vector2(260, 20)
@@ -32,67 +31,3 @@ constant_linear_velocity = Vector2(0, 0)
 position = Vector2(2043, 517)
 scale = Vector2(0.301919, 1.628)
 constant_linear_velocity = Vector2(0, 0)
-
-[node name="MovingPlatformVertical" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 552)
-SPEED = -2
-
-[node name="MovingPlatformVertical2" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 927)
-SPEED = -2
-
-[node name="MovingPlatformVertical3" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 1304)
-SPEED = -2
-
-[node name="MovingPlatformVertical4" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 1675)
-SPEED = -2
-
-[node name="MovingPlatformVertical5" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 1993)
-SPEED = -2
-
-[node name="MovingPlatformVertical6" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 2368)
-SPEED = -2
-
-[node name="MovingPlatformVertical7" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 2745)
-SPEED = -2
-
-[node name="MovingPlatformVertical8" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 3116)
-SPEED = -2
-
-[node name="MovingPlatformVertical9" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 3567)
-SPEED = -2
-
-[node name="MovingPlatformVertical10" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 3942)
-SPEED = -2
-
-[node name="MovingPlatformVertical11" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 4319)
-SPEED = -2
-
-[node name="MovingPlatformVertical12" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 4690)
-SPEED = -2
-
-[node name="MovingPlatformVertical13" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 5008)
-SPEED = -2
-
-[node name="MovingPlatformVertical14" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 5383)
-SPEED = -2
-
-[node name="MovingPlatformVertical15" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 5760)
-SPEED = -2
-
-[node name="MovingPlatformVertical16" parent="." instance=ExtResource("3_ap2uj")]
-position = Vector2(2455, 6131)
-SPEED = -2

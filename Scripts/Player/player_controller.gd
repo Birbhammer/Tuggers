@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		canJump = true                           #ground isnt under them
 	
 	if Input.is_action_just_pressed(controls.jump) and canJump:
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY - 500
 		canJump = false
 	#--------------------------------------------------------------------------
 	

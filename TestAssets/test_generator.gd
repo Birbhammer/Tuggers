@@ -1,5 +1,10 @@
 extends Node
 
+#---------------------------------------------------------------------------------------------------
+#---------------------Add logic for collection of array for powerups -------------------------------
+#---------------------------------------------------------------------------------------------------
+
+
 @export var RoomList: Array[PackedScene] = []
 @export var MaxRoomNum: int
 @onready var StartPos: Marker2D = $RoomStart

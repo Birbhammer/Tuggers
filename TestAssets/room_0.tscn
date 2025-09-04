@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmvfroiw3ypng"]
+[gd_scene load_steps=2 format=3 uid="uid://dmvfroiw3ypng"]
 
 [ext_resource type="PackedScene" uid="uid://degnwgdqx2llp" path="res://LevelAssets/PlatformPrefabs/floor.tscn" id="2_rr30a"]
-[ext_resource type="PackedScene" uid="uid://uj1fawcq85y6" path="res://LevelAssets/PlatformPrefabs/moving_platform_horizontal.tscn" id="3_rr30a"]
 
 [node name="Room0" type="Node2D"]
 
@@ -40,7 +39,3 @@ constant_linear_velocity = Vector2(0, 0)
 
 [node name="End" type="Marker2D" parent="."]
 position = Vector2(3391, 0)
-
-[node name="MovingPlatformHorizontal" parent="." instance=ExtResource("3_rr30a")]
-position = Vector2(2261, -356)
-SPEED = 10

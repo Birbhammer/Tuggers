@@ -2,8 +2,14 @@ extends Node
 
 @onready var viewport1: SubViewport = $VBoxContainer/SubViewportContainer/SubViewport
 @onready var viewport2: SubViewport = $VBoxContainer/SubViewportContainer2/SubViewport
-@onready var camera1: Camera2D = $VBoxContainer/SubViewportContainer/SubViewport/Camera2D
-@onready var camera2: Camera2D = $VBoxContainer/SubViewportContainer2/SubViewport/Camera2D
+
+#Camera Tracking
+@onready var camera1: Camera2D = $VBoxContainer/SubViewportContainer/SubViewport/NerdCamera
+@onready var camera2: Camera2D = $VBoxContainer/SubViewportContainer2/SubViewport/ChadCamera
+@export var NerdTrackingPOS: Vector2
+@export var ChadTrackingPOS: Vector2
+@export var CameraSpeed: float
+
 @onready var chad: CharacterBody2D = $VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad
 @onready var nerd: CharacterBody2D = $VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd
 
@@ -11,5 +17,10 @@ func _ready() -> void:
 	viewport2.world_2d = viewport1.world_2d
 
 func _process(delta: float) -> void:
-	camera1.position = nerd.position
-	camera2.position = chad.position
+	#--This could use a normalized vector of projected velocity instead of hard coded position-------
+	NerdTrackingPOS = Vector2(nerd.position.x + 900, nerd.position.y)
+	ChadTrackingPOS = Vector2(chad.position.x + 900, chad.position.y)
+			#Idea will be for camera to track where player is going not just infront of them
+	#------------------------------------------------------------------------------------------------
+	camera1.position = camera1.position.lerp(NerdTrackingPOS, CameraSpeed * delta)
+	camera2.position = camera2.position.lerp(ChadTrackingPOS, CameraSpeed * delta)
