@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c57qm7ior2kux"]
+
+[ext_resource type="Script" uid="uid://cvt4sx5qk6djc" path="res://Scripts/walking_enemy.gd" id="1_fk0j3"]
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_0v08q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wos5x"]
+
+[node name="WalkingEnemy" type="Node2D"]
+script = ExtResource("1_fk0j3")
+
+[node name="LeftMax" type="Marker2D" parent="."]
+
+[node name="RightMax" type="Marker2D" parent="."]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="AnimatableBody2D"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Hitbox"]
+shape = SubResource("RectangleShape2D_wos5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(9.53674e-07, -4.76837e-07)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("2_0v08q")
+
+[connection signal="body_entered" from="AnimatableBody2D/Hitbox" to="." method="_on_hitbox_body_entered"]

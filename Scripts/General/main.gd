@@ -18,9 +18,19 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	#--This could use a normalized vector of projected velocity instead of hard coded position-------
-	NerdTrackingPOS = Vector2(nerd.position.x + 900, nerd.position.y)
-	ChadTrackingPOS = Vector2(chad.position.x + 900, chad.position.y)
+
+	#NerdTrackingPOS = Vector2(nerd.position.x + 900, nerd.position.y)
+	#ChadTrackingPOS = Vector2(chad.position.x + 900, chad.position.y)
 			#Idea will be for camera to track where player is going not just infront of them
+	
+	#************************************Velocity Tracking******************************************
+	#Camera Y offset is controlled by normalized vector. Might need some playing with to get feeling smooth
+	var NerdVelocity = Vector2(nerd.get_real_velocity().x, nerd.get_real_velocity().y)
+	var NerdNormalizedVel = NerdVelocity.normalized()
+	var NerdAdjust = Vector2(nerd.position.x + 900, (nerd.position.y + NerdNormalizedVel.y * 1500))
+	NerdTrackingPOS = NerdAdjust + Vector2(NerdNormalizedVel.x, (-NerdNormalizedVel.y * .10) * 900)
 	#------------------------------------------------------------------------------------------------
 	camera1.position = camera1.position.lerp(NerdTrackingPOS, CameraSpeed * delta)
 	camera2.position = camera2.position.lerp(ChadTrackingPOS, CameraSpeed * delta)
+	
+	

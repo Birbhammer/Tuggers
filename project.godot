@@ -22,6 +22,10 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
 
+[global_group]
+
+Player=""
+
 [input]
 
 Left-Key1={

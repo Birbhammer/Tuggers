@@ -7,10 +7,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 780)
 
-[node name="Nerd" type="CharacterBody2D"]
+[node name="Nerd" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 4
 script = ExtResource("1_a1q1g")
 controls = ExtResource("2_cxhyj")
+KnockbackDir = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.5, -28)

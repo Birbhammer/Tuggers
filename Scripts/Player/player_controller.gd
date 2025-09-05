@@ -15,23 +15,49 @@ const JUMP_VELOCITY = -900
 var canJump: bool = false
 #-------------------------------------------------------------------------------
 
+
+#/-/-/-/-/-/-/-/-/-/-/-/-/-/-/Stun Logic/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+var IsStunned: bool
+#100 = 1 Sec
+var MaxStun: int = 200
+var CurrentStun: int
+@export var KnockbackDir: int
+#/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+func _ready() -> void:
+	IsStunned = false
+	CurrentStun = MaxStun
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+		# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * 2 * delta #changed gravity
 		var grav = get_gravity()
 		
 		#Keeps player from gaining infinite speed downward 
 		velocity.y = clamp(velocity.y, grav.y * -2, grav.y * 2)
+	
+	if IsStunned == false:
+		PlayerMovement(delta)
+	else:
+		#Stun degrade logic
+		if CurrentStun == MaxStun:
+			Knockback(1000)
+		if CurrentStun <= (MaxStun - 10):
+			if is_on_floor():
+				velocity.x = 0
+		CurrentStun = CurrentStun - (1 * delta)
+		if CurrentStun <= 0:
+			IsStunned = false
+			CurrentStun = MaxStun
+	
+	move_and_slide()
 
-	
-	#--------------Annotated out for test--------------------------------------
-	# Handle jump.
-	#if Input.is_action_just_pressed("Jump1") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-	#--------------------------------------------------------------------------
-	
-	#----------------Jump Test Logic-------------------------------------------
+func Knockback(knockbackforce: int):
+	self.velocity = Vector2((knockbackforce * KnockbackDir),(-knockbackforce))
+
+func PlayerMovement(delta: float):	
+	#----------------------Jump Logic-------------------------------------------
 	if is_on_floor() and canJump == false:       #Lets player jump once even if
 		canJump = true                           #ground isnt under them
 	
@@ -56,4 +82,3 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)#Jarryd Change
 	
-	move_and_slide()
