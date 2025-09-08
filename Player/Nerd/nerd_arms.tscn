@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://bmbye241uvwv7" path="res://Visual Assets/Virgin/Virgin2/Virgin2Hand.png" id="3_4aux1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5bqa"]
-radius = 5.83458
-height = 16.9618
+radius = 3.49865
+height = 11.0273
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jykfp"]
-radius = 6.0
-height = 20.0
+radius = 4.85105
+height = 9.7021
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1r5jd"]
 radius = 8.95231
@@ -66,7 +66,7 @@ polygon = PackedVector2Array(-592.704, 18.4299, -525.868, 331.724, 196.796, 239.
 uv = PackedVector2Array(2596.81, 166.435, 2663.64, 479.729, 3386.31, 387.829, 3369.6, 62.0037)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArmR"]
-position = Vector2(-3, 5.25)
+position = Vector2(-6.25, 27)
 rotation = 0.147846
 shape = SubResource("CapsuleShape2D_m5bqa")
 
@@ -88,19 +88,19 @@ polygon = PackedVector2Array(301.013, 189.102, 93.5849, -91.6904, -509.693, 336.
 uv = PackedVector2Array(2386.47, 997.03, 2370.25, 1345.75, 3108.25, 1394.41, 3132.58, 1094.35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArmL"]
-position = Vector2(1.25, 5.25)
+position = Vector2(4.5, 23.75)
 rotation = -0.243078
 shape = SubResource("CapsuleShape2D_jykfp")
 
 [node name="LowerArmR" type="RigidBody2D" parent="."]
-position = Vector2(-30, 30)
+position = Vector2(-33.25, 13)
 collision_layer = 32768
 collision_mask = 32768
 
 [node name="Polygon2D" type="Polygon2D" parent="LowerArmR"]
 z_index = 6
 z_as_relative = false
-position = Vector2(-3.25, -16.5)
+position = Vector2(-2.3935e-07, 1.49012e-08)
 rotation = -1.60041
 scale = Vector2(0.05, 0.05)
 offset = Vector2(-75.6088, -105.006)
@@ -120,7 +120,7 @@ polygon = PackedVector2Array(-401.833, 35.885, -370.508, 276.049, -147.747, 338.
 uv = PackedVector2Array(283.388, 1722.87, 314.714, 1963.03, 537.475, 2025.69, 829.848, 1966.51, 777.638, 1632.37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArmR"]
-position = Vector2(4.5, 27)
+position = Vector2(8.5, 41.5)
 rotation = -0.152566
 shape = SubResource("CapsuleShape2D_1r5jd")
 

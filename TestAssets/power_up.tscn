@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwvem5c4tp7c1"]
+
+[ext_resource type="PackedScene" uid="uid://b5kx8rc0u1rws" path="res://PowerUp/Components/power_up_hit_box.tscn" id="1_vtkri"]
+
+[node name="PowerUp" type="Node2D"]
+
+[node name="PowerUpHitBox" parent="." instance=ExtResource("1_vtkri")]
