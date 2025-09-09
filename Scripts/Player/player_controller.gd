@@ -1,22 +1,27 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 1000
-const SprintSpeed = 1600
-const Acceleration = 1200 #Jarryd Added
-const friction = 3500 #Jarryd Added
-const JUMP_VELOCITY = -900
+@export var SPEED = 1000
+@export var SprintSpeed = 1600
+@export var Acceleration = 1200 #Jarryd Added
+@export var friction = 3500 #Jarryd Added
+@export var JUMP_VELOCITY = -900
 
 #++++++++++++Assigning Player Controls from a resource +++++++++++++++++++++++++
 @export var controls: Resource = null
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-#------------Jumping Variable-----------------------------------------------
+#------------Jumping Variable---------------------------------------------------
 var canJump: bool = false
 var MaxJump: int = 1
 var JumpNum: int = 0
 #-------------------------------------------------------------------------------
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$Confusion Logic$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+# 1 = Standard Controls, -1 = Reversed
+var confusion: int = 1
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
 #/-/-/-/-/-/-/-/-/-/-/-/-/-/-/Stun Logic/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
@@ -74,7 +79,7 @@ func PlayerMovement(delta: float):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(controls.left, controls.right)
+	var direction := Input.get_axis(controls.left, controls.right) * confusion
 	if direction:
 		#Check if the player's direction input and current velocity are opposite of each other
 		#If so apply friction to the player (This could be done in 2 lines, not sure how right now)

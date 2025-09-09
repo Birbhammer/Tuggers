@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn033t7tkn7ml"]
+
+[ext_resource type="Script" uid="uid://caowwnyg8mr8k" path="res://Scripts/PowerUp/confusion.gd" id="1_k3s7f"]
+
+[node name="Confusion" type="Node" groups=["PowerUp"]]
+script = ExtResource("1_k3s7f")
+NerfTime = 10

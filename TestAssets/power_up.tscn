@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwvem5c4tp7c1"]
+[gd_scene load_steps=3 format=3 uid="uid://cwvem5c4tp7c1"]
 
 [ext_resource type="PackedScene" uid="uid://b5kx8rc0u1rws" path="res://PowerUp/Components/power_up_hit_box.tscn" id="1_vtkri"]
-[ext_resource type="PackedScene" uid="uid://l4ye71kkt6bs" path="res://PowerUp/Buffs/double_jump.tscn" id="2_iyq87"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_ptocy"]
 
 [node name="PowerUp" type="Node2D"]
@@ -12,8 +11,6 @@ collision_mask = 5
 
 [node name="CollisionShape2D" parent="PowerUpHitBox" index="0"]
 position = Vector2(0, 0.5)
-
-[node name="DoubleJump" parent="PowerUpHitBox" groups=["PowerUp"] instance=ExtResource("2_iyq87")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_ptocy")

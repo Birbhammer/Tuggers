@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://byxair753vxxv"]
+[gd_scene load_steps=11 format=3 uid="uid://byxair753vxxv"]
 
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/Nerd/nerd.tscn" id="1_6isyr"]
 [ext_resource type="Script" uid="uid://c0xu5l8lic4ap" path="res://Scripts/General/game_manager.gd" id="1_fiyor"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://doo83siwwwqic" path="res://TestAssets/room_1.tscn" id="7_fiyor"]
 [ext_resource type="PackedScene" uid="uid://bddv7hcv6pfwt" path="res://TestAssets/room_3.tscn" id="8_e33e4"]
 [ext_resource type="PackedScene" uid="uid://cf8dhgactf4iu" path="res://TestAssets/room_4.tscn" id="9_7apmo"]
-[ext_resource type="PackedScene" uid="uid://bjn6dmw02e2sf" path="res://TestAssets/room_5.tscn" id="11_e33e4"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fiyor")
@@ -25,16 +24,16 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(-9, -91)
 
 [node name="Chad" parent="Players" instance=ExtResource("3_jycte")]
-position = Vector2(-5262, -334)
+position = Vector2(-5262, 0)
 scale = Vector2(0.25, 0.25)
 
 [node name="ChadArms" parent="Players/Chad" instance=ExtResource("4_ev4ff")]
 position = Vector2(-16, -9)
 
-[node name="NerdRoomGenerator" type="Node" parent="." groups=["NerdGenerator"]]
+[node name="NerdRoomGenerator" type="Node" parent="."]
 script = ExtResource("5_ev4ff")
-RoomList = Array[PackedScene]([ExtResource("6_jycte"), ExtResource("7_fiyor"), ExtResource("8_e33e4"), ExtResource("9_7apmo"), ExtResource("11_e33e4")])
-MaxRoomNum = 50
+RoomList = Array[PackedScene]([ExtResource("6_jycte"), ExtResource("7_fiyor"), ExtResource("8_e33e4"), ExtResource("9_7apmo")])
+MaxRoomNum = 10
 
 [node name="RoomStart" type="Marker2D" parent="NerdRoomGenerator"]
 

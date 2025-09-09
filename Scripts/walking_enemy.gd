@@ -32,4 +32,4 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		#Some Kind of injury logic
 		body.IsStunned = true
 		var player: CharacterBody2D = body
-		#player.Knockback(KnockbackForce)
+		player.Knockback(KnockbackForce)
