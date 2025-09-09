@@ -25,6 +25,7 @@ window/size/resizable=false
 [global_group]
 
 Player=""
+PowerUp=""
 
 [input]
 

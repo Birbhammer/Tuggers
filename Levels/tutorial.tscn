@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bdt0gjkeobk80"]
+[gd_scene load_steps=17 format=4 uid="uid://bdt0gjkeobk80"]
 
 [ext_resource type="Script" uid="uid://duvepg55lu7s5" path="res://Scripts/Tutorial/tutorial_manager.gd" id="1_avars"]
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/Nerd/nerd.tscn" id="1_lalqu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://co83e103383aj" path="res://LevelAssets/CCGHOUSE/CCG_moving_platform_horizontal.tscn" id="8_j0mkc"]
 [ext_resource type="PackedScene" uid="uid://byk44m1ut3yvk" path="res://LevelAssets/CCGHOUSE/CCG_path_platform.tscn" id="8_lojvt"]
 [ext_resource type="PackedScene" uid="uid://c57qm7ior2kux" path="res://LevelAssets/Hazards/walking_enemy.tscn" id="10_avars"]
+[ext_resource type="PackedScene" uid="uid://cwvem5c4tp7c1" path="res://TestAssets/power_up.tscn" id="11_3hhjp"]
 
 [sub_resource type="Curve2D" id="Curve2D_avars"]
 _data = {
@@ -710,6 +711,9 @@ position = Vector2(-156.333, 0)
 
 [node name="RightMax" parent="WalkingEnemy" index="1"]
 position = Vector2(151.667, 0)
+
+[node name="PowerUp" parent="." instance=ExtResource("11_3hhjp")]
+position = Vector2(375, -93)
 
 [connection signal="body_entered" from="Game/Platforms/End" to="." method="_on_end_body_entered"]
 

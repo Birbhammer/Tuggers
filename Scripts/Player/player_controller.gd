@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const SPEED = 1000
 const SprintSpeed = 1600
@@ -11,8 +12,10 @@ const JUMP_VELOCITY = -900
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-#------------Jumping Test Concept-----------------------------------------------
+#------------Jumping Variable-----------------------------------------------
 var canJump: bool = false
+var MaxJump: int = 1
+var JumpNum: int = 0
 #-------------------------------------------------------------------------------
 
 
@@ -60,10 +63,13 @@ func PlayerMovement(delta: float):
 	#----------------------Jump Logic-------------------------------------------
 	if is_on_floor() and canJump == false:       #Lets player jump once even if
 		canJump = true                           #ground isnt under them
+		JumpNum = 0
 	
 	if Input.is_action_just_pressed(controls.jump) and canJump:
 		velocity.y = JUMP_VELOCITY - 500
-		canJump = false
+		JumpNum += 1
+		if JumpNum >= MaxJump:
+			canJump = false
 	#--------------------------------------------------------------------------
 	
 	# Get the input direction and handle the movement/deceleration.
