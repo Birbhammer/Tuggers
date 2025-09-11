@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="3_jycte"]
 [ext_resource type="PackedScene" uid="uid://bboh3jxf5ggkn" path="res://Player/Chad/chad_arms.tscn" id="4_ev4ff"]
 [ext_resource type="Script" uid="uid://dgcaxq02xtd7p" path="res://Scripts/General/room_generator.gd" id="5_ev4ff"]
-[ext_resource type="PackedScene" uid="uid://dmvfroiw3ypng" path="res://TestAssets/room_0.tscn" id="6_jycte"]
-[ext_resource type="PackedScene" uid="uid://doo83siwwwqic" path="res://TestAssets/room_1.tscn" id="7_fiyor"]
-[ext_resource type="PackedScene" uid="uid://bddv7hcv6pfwt" path="res://TestAssets/room_3.tscn" id="8_e33e4"]
-[ext_resource type="PackedScene" uid="uid://cf8dhgactf4iu" path="res://TestAssets/room_4.tscn" id="9_7apmo"]
-[ext_resource type="PackedScene" uid="uid://bjn6dmw02e2sf" path="res://TestAssets/room_5.tscn" id="11_e33e4"]
+[ext_resource type="PackedScene" uid="uid://dmvfroiw3ypng" path="res://TestAssets/TTGS Levels/room_0.tscn" id="6_jycte"]
+[ext_resource type="PackedScene" uid="uid://doo83siwwwqic" path="res://TestAssets/TTGS Levels/room_1.tscn" id="7_fiyor"]
+[ext_resource type="PackedScene" uid="uid://bddv7hcv6pfwt" path="res://TestAssets/TTGS Levels/room_3.tscn" id="8_e33e4"]
+[ext_resource type="PackedScene" uid="uid://cf8dhgactf4iu" path="res://TestAssets/TTGS Levels/room_4.tscn" id="9_7apmo"]
+[ext_resource type="PackedScene" uid="uid://bjn6dmw02e2sf" path="res://TestAssets/TTGS Levels/room_5.tscn" id="11_e33e4"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fiyor")

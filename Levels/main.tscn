@@ -1,13 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://comvul6246hhp"]
+[gd_scene load_steps=4 format=3 uid="uid://comvul6246hhp"]
 
 [ext_resource type="Script" uid="uid://cj1g4gflivcat" path="res://Scripts/General/main.gd" id="1_lwy2l"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_gnif3"]
 [ext_resource type="PackedScene" uid="uid://byxair753vxxv" path="res://Levels/game.tscn" id="2_lwy2l"]
-[ext_resource type="PackedScene" uid="uid://dmvfroiw3ypng" path="res://TestAssets/room_0.tscn" id="3_nj2yk"]
-[ext_resource type="PackedScene" uid="uid://doo83siwwwqic" path="res://TestAssets/room_1.tscn" id="4_hbaan"]
-[ext_resource type="PackedScene" uid="uid://bddv7hcv6pfwt" path="res://TestAssets/room_3.tscn" id="5_he5fp"]
-[ext_resource type="PackedScene" uid="uid://cf8dhgactf4iu" path="res://TestAssets/room_4.tscn" id="6_u05pv"]
-[ext_resource type="PackedScene" uid="uid://bjn6dmw02e2sf" path="res://TestAssets/room_5.tscn" id="7_mykqc"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_lwy2l")
@@ -27,9 +22,6 @@ size = Vector2i(1920, 540)
 render_target_update_mode = 4
 
 [node name="Game" parent="VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_lwy2l")]
-
-[node name="NerdRoomGenerator" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" index="1"]
-RoomList = Array[PackedScene]([ExtResource("3_nj2yk"), ExtResource("4_hbaan"), ExtResource("5_he5fp"), ExtResource("6_u05pv"), ExtResource("7_mykqc")])
 
 [node name="RoomStart" type="Marker2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/ChadLevelGenerator" index="0"]
 position = Vector2(-5262, 0)

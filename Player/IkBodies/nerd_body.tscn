@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dawqqrx62ng5e"]
+[gd_scene load_steps=9 format=3 uid="uid://dawqqrx62ng5e"]
 
 [ext_resource type="Texture2D" uid="uid://kjf5bqhn1rq1" path="res://Visual Assets/Virgin/Virgin2/Virgin2-partsSheet.png" id="1_em0gd"]
 
@@ -66,6 +66,14 @@ modifications/1 = SubResource("SkeletonModification2DCCDIK_vklcm")
 modifications/2 = SubResource("SkeletonModification2DLookAt_kemxp")
 modifications/3 = SubResource("SkeletonModification2DLookAt_47a4i")
 
+[sub_resource type="Animation" id="Animation_em0gd"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhc7f"]
+_data = {
+&"Idle": SubResource("Animation_em0gd")
+}
+
 [node name="Nerd" type="Node2D"]
 
 [node name="Body" type="Node2D" parent="."]
@@ -73,9 +81,9 @@ modifications/3 = SubResource("SkeletonModification2DLookAt_47a4i")
 [node name="FootR" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(-151, 2360)
-rotation = 0.0617768
-scale = Vector2(0.99996, 0.99996)
+position = Vector2(-200, 2350)
+rotation = 0.0419924
+scale = Vector2(0.999966, 0.999966)
 offset = Vector2(-1700.87, -3938)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -85,9 +93,9 @@ uv = PackedVector2Array(1563.97, 4101.87, 2092.33, 4094.21, 2073.18, 3910.43, 18
 [node name="FootL" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(327, 2348)
-rotation = 0.0433387
-scale = Vector2(0.999982, 0.999982)
+position = Vector2(400, 2350)
+rotation = 0.0382475
+scale = Vector2(0.999959, 0.999959)
 offset = Vector2(-3091, -3847)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -98,8 +106,8 @@ uv = PackedVector2Array(2608.29, 4139.21, 3154.84, 4133.98, 3136.53, 3956.15, 29
 z_index = 5
 z_as_relative = false
 position = Vector2(185, 1162)
-rotation = 0.0806121
-scale = Vector2(0.999991, 0.999991)
+rotation = 0.0697373
+scale = Vector2(0.999988, 0.999988)
 offset = Vector2(-2786, -2059)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -109,9 +117,9 @@ uv = PackedVector2Array(2179.17, 2397.56, 2552.22, 2234.78, 2904.92, 3082.62, 25
 [node name="ShinL" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(396.645, 1771.02)
-rotation = 0.144217
-scale = Vector2(0.999991, 0.999991)
+position = Vector2(403.283, 1768.76)
+rotation = 0.0297365
+scale = Vector2(0.999997, 0.999997)
 offset = Vector2(-3082, -2940)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -122,8 +130,8 @@ uv = PackedVector2Array(2519.14, 3198.71, 2917.55, 3129.22, 2945.35, 3828.76, 26
 z_index = 5
 z_as_relative = false
 position = Vector2(-63, 1254)
-rotation = -0.0692943
-scale = Vector2(0.999963, 0.999963)
+rotation = -0.0354703
+scale = Vector2(0.999952, 0.999952)
 offset = Vector2(-1678, -2063)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -133,9 +141,9 @@ uv = PackedVector2Array(1233.5, 2614.17, 1420.02, 2270.96, 1808, 2263.5, 1875.15
 [node name="ShinR" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(103.238, 1843.89)
-rotation = 0.367205
-scale = Vector2(0.999962, 0.999962)
+position = Vector2(83.2005, 1849.19)
+rotation = 0.424143
+scale = Vector2(0.999951, 0.999951)
 offset = Vector2(-1791, -3157.85)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -230,13 +238,18 @@ remote_path = NodePath("../../../../../../Body/FootL")
 [node name="IKTargets" type="Node2D" parent="."]
 
 [node name="FootRTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(-151, 2360)
+position = Vector2(-200, 2350)
 
 [node name="FootRLookTarget" type="Node2D" parent="IKTargets/FootRTarget"]
-position = Vector2(291, 18)
+position = Vector2(357, 15)
 
 [node name="FootLTarget" type="Node2D" parent="IKTargets"]
-position = Vector2(327, 2348)
+position = Vector2(400, 2350)
 
 [node name="FootLLookTarget" type="Node2D" parent="IKTargets/FootLTarget"]
-position = Vector2(392, 17)
+position = Vector2(392, 15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yhc7f")
+}
