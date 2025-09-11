@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dgrvb2hehiuy3" path="res://LevelAssets/CCGHOUSE/CCG_moving_platform_vertical.tscn" id="7_e312d"]
 [ext_resource type="PackedScene" uid="uid://co83e103383aj" path="res://LevelAssets/CCGHOUSE/CCG_moving_platform_horizontal.tscn" id="8_j0mkc"]
 [ext_resource type="PackedScene" uid="uid://byk44m1ut3yvk" path="res://LevelAssets/CCGHOUSE/CCG_path_platform.tscn" id="8_lojvt"]
-[ext_resource type="PackedScene" uid="uid://c57qm7ior2kux" path="res://LevelAssets/Hazards/walking_enemy.tscn" id="10_avars"]
+[ext_resource type="PackedScene" uid="uid://c57qm7ior2kux" path="res://LevelAssets/PowerUps/Hazards/walking_enemy.tscn" id="10_avars"]
 [ext_resource type="PackedScene" uid="uid://cwvem5c4tp7c1" path="res://TestAssets/TTGS Levels/power_up.tscn" id="11_3hhjp"]
 [ext_resource type="PackedScene" uid="uid://dn033t7tkn7ml" path="res://PowerUp/Nerfs/confusion.tscn" id="12_to5w2"]
 

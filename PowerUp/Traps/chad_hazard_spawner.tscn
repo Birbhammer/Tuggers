@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c43mau1ebt2f2"]
+
+[ext_resource type="Script" uid="uid://i3qrwl4s1urt" path="res://Scripts/PowerUp/chad_hazard_spawner.gd" id="1_28v33"]
+
+[node name="ChadHazardSpawner" type="Node"]
+script = ExtResource("1_28v33")

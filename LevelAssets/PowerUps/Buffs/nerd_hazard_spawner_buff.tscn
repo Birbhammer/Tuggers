@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfs8kcmws57sx"]
+
+[ext_resource type="PackedScene" uid="uid://b5kx8rc0u1rws" path="res://PowerUp/Components/power_up_hit_box.tscn" id="1_t5fuq"]
+[ext_resource type="PackedScene" uid="uid://cp0a0fitmauwc" path="res://PowerUp/Traps/nerd_hazard_spawner.tscn" id="2_p7ote"]
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_p7ote"]
+
+[node name="NerdHazardSpawnerBuff" type="Node2D"]
+
+[node name="PowerUpHitBox" parent="." instance=ExtResource("1_t5fuq")]
+collision_layer = 5
+collision_mask = 5
+
+[node name="NerdHazardSpawner" parent="PowerUpHitBox" groups=["PowerUp"] instance=ExtResource("2_p7ote")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_p7ote")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-79, -81)
+texture = ExtResource("3_p7ote")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(94, -92)
+texture = ExtResource("3_p7ote")
+
+[editable path="PowerUpHitBox"]

@@ -1,6 +1,6 @@
 extends Node
 
-@export var BuffTime: int
+@export var BuffTime: int = 5
 var player = null
 
 func Activate(body: Player) -> void:

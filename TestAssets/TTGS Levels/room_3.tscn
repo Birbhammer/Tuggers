@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=4 uid="uid://bddv7hcv6pfwt"]
+[gd_scene load_steps=5 format=4 uid="uid://bddv7hcv6pfwt"]
 
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="1_rmjx4"]
+[ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/nerd_room_start.gd" id="2_8vgf1"]
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_c6ey1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ey1"]
+size = Vector2(114, 1537)
 
 [node name="Room3" type="Node2D"]
 
@@ -26,3 +31,19 @@ position = Vector2(3957, -22)
 
 [node name="Hazard1" type="Marker2D" parent="Hazards"]
 position = Vector2(1916, -28)
+
+[node name="Start" type="Area2D" parent="."]
+position = Vector2(19, -15)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_8vgf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+position = Vector2(47, -758.5)
+shape = SubResource("RectangleShape2D_c6ey1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Start"]
+position = Vector2(42, -482)
+texture = ExtResource("3_c6ey1")
+
+[connection signal="body_entered" from="Start" to="Start" method="_on_body_entered"]

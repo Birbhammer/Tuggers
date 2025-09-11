@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://babjegcqcrucl"]
+
+[ext_resource type="PackedScene" uid="uid://b5kx8rc0u1rws" path="res://PowerUp/Components/power_up_hit_box.tscn" id="1_kfr52"]
+[ext_resource type="PackedScene" uid="uid://l4ye71kkt6bs" path="res://PowerUp/Buffs/double_jump.tscn" id="2_ehv28"]
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_ehv28"]
+
+[node name="DoubleJumpBuff" type="Node2D"]
+
+[node name="PowerUpHitBox" parent="." instance=ExtResource("1_kfr52")]
+collision_layer = 5
+collision_mask = 5
+
+[node name="DoubleJump" parent="PowerUpHitBox" instance=ExtResource("2_ehv28")]
+BuffTime = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ehv28")
+
+[editable path="PowerUpHitBox"]

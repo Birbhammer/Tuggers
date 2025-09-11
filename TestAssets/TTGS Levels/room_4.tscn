@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://cf8dhgactf4iu"]
+[gd_scene load_steps=5 format=4 uid="uid://cf8dhgactf4iu"]
 
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="1_2lcec"]
-[ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/room_start.gd" id="2_biptk"]
+[ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/nerd_room_start.gd" id="2_biptk"]
+[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_u2x5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcec"]
 size = Vector2(114, 1537)
@@ -21,16 +22,6 @@ tile_set = ExtResource("1_2lcec")
 [node name="End" type="Marker2D" parent="Locations"]
 position = Vector2(13057, 0)
 
-[node name="Start" type="Area2D" parent="Locations"]
-position = Vector2(19, -15)
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("2_biptk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Locations/Start"]
-position = Vector2(47, -758.5)
-shape = SubResource("RectangleShape2D_2lcec")
-
 [node name="PowerUps" type="Node" parent="."]
 
 [node name="PowerUp1" type="Marker2D" parent="PowerUps"]
@@ -41,4 +32,18 @@ position = Vector2(5029, 1155)
 [node name="Hazard1" type="Marker2D" parent="Hazards"]
 position = Vector2(5294, 3781)
 
-[connection signal="body_entered" from="Locations/Start" to="Locations/Start" method="_on_body_entered"]
+[node name="Start" type="Area2D" parent="."]
+position = Vector2(19, -15)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_biptk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+position = Vector2(47, -758.5)
+shape = SubResource("RectangleShape2D_2lcec")
+
+[node name="Sprite2D" type="Sprite2D" parent="Start"]
+position = Vector2(42, -482)
+texture = ExtResource("3_u2x5h")
+
+[connection signal="body_entered" from="Start" to="Start" method="_on_body_entered"]
