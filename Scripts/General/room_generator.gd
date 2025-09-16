@@ -21,11 +21,9 @@ func _ready() -> void:
 		var new_room = RoomList[randi_range(0, RoomList.size() -1)].instantiate()
 		if i == 0:
 			new_room.position = StartPos.position
-			#add_child.call_deferred(new_room)
 			add_child(new_room)
 		else:
 			var NewRoomStart = last_room.find_child("End")
-			#last_room.add_child.call_deferred(new_room)
 			last_room.add_child(new_room)
 			new_room.position = NewRoomStart.position
 		
@@ -40,4 +38,6 @@ func _ready() -> void:
 			HazardLocations.append(new_room.find_child("Hazards").get_child(k))
 		
 		last_room = new_room
+	
+	#------Next Level Logic------------------------------------------------------------------------
 	

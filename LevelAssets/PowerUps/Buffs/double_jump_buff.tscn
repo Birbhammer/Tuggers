@@ -13,7 +13,7 @@ collision_mask = 5
 [node name="DoubleJump" parent="PowerUpHitBox" instance=ExtResource("2_ehv28")]
 BuffTime = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="PowerUpHitBox"]
 texture = ExtResource("3_ehv28")
 
 [editable path="PowerUpHitBox"]

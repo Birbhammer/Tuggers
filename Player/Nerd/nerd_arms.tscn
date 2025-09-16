@@ -20,9 +20,11 @@ height = 19.7677
 radius = 6.0
 height = 18.2199
 
-[node name="NerdArms" type="Node2D"]
+[node name="NerdArms" type="Node2D" node_paths=PackedStringArray("RightFacingPoly", "LeftFacingPoly")]
 scale = Vector2(4, 4)
 script = ExtResource("1_8maj5")
+RightFacingPoly = [NodePath("UpperArmR/UpperArmRPoly"), NodePath("UpperArmL/UpperArmLPoly"), NodePath("LowerArmR/LowerArmRPoly"), NodePath("LowerArmR/LowerArmRPoly/HandR"), NodePath("LowerArmL/LowerArmLPoly"), NodePath("LowerArmL/LowerArmLPoly/HandL")]
+LeftFacingPoly = [NodePath("UpperArmR/UpperArmLPoly"), NodePath("UpperArmL/UpperArmRPoly"), NodePath("LowerArmR/LowerArmLPoly"), NodePath("LowerArmR/LowerArmLPoly/HandL"), NodePath("LowerArmL/LowerArmRPoly"), NodePath("LowerArmL/LowerArmRPoly/HandR")]
 
 [node name="ArmR" type="PinJoint2D" parent="."]
 position = Vector2(-28, -14)
@@ -53,7 +55,8 @@ position = Vector2(-27, -14)
 collision_layer = 16384
 collision_mask = 16384
 
-[node name="Polygon2D" type="Polygon2D" parent="UpperArmR"]
+[node name="UpperArmRPoly" type="Polygon2D" parent="UpperArmR"]
+visible = false
 z_index = 6
 z_as_relative = false
 position = Vector2(-1, 9.53674e-07)
@@ -65,6 +68,18 @@ texture = ExtResource("2_ne7qb")
 polygon = PackedVector2Array(-592.704, 18.4299, -525.868, 331.724, 196.796, 239.824, 180.087, -86.0014)
 uv = PackedVector2Array(2596.81, 166.435, 2663.64, 479.729, 3386.31, 387.829, 3369.6, 62.0037)
 
+[node name="UpperArmLPoly" type="Polygon2D" parent="UpperArmR"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-0.15107918, -0.36406708)
+rotation = -0.8413942
+scale = Vector2(0.049999997, 0.049999997)
+offset = Vector2(-101.304, -116.994)
+antialiased = true
+texture = ExtResource("2_ne7qb")
+polygon = PackedVector2Array(301.013, 189.102, 93.5849, -91.6904, -509.693, 336.165, -339.256, 584.321)
+uv = PackedVector2Array(2386.47, 997.03, 2370.25, 1345.75, 3108.25, 1394.41, 3132.58, 1094.35)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArmR"]
 position = Vector2(-6.25, 27)
 rotation = 0.147846
@@ -75,7 +90,8 @@ position = Vector2(23.25, -13.25)
 collision_layer = 8192
 collision_mask = 8192
 
-[node name="Polygon2D" type="Polygon2D" parent="UpperArmL"]
+[node name="UpperArmLPoly" type="Polygon2D" parent="UpperArmL"]
+visible = false
 z_index = 4
 z_as_relative = false
 position = Vector2(-0.15108, -0.364067)
@@ -87,6 +103,18 @@ texture = ExtResource("2_ne7qb")
 polygon = PackedVector2Array(301.013, 189.102, 93.5849, -91.6904, -509.693, 336.165, -339.256, 584.321)
 uv = PackedVector2Array(2386.47, 997.03, 2370.25, 1345.75, 3108.25, 1394.41, 3132.58, 1094.35)
 
+[node name="UpperArmRPoly" type="Polygon2D" parent="UpperArmL"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-1, 9.536743e-07)
+rotation = -1.6923306
+scale = Vector2(0.049999997, 0.049999997)
+offset = Vector2(-88.9986, -103.215)
+antialiased = true
+texture = ExtResource("2_ne7qb")
+polygon = PackedVector2Array(-592.704, 18.4299, -525.868, 331.724, 196.796, 239.824, 180.087, -86.0014)
+uv = PackedVector2Array(2596.81, 166.435, 2663.64, 479.729, 3386.31, 387.829, 3369.6, 62.0037)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArmL"]
 position = Vector2(4.5, 23.75)
 rotation = -0.243078
@@ -96,8 +124,10 @@ shape = SubResource("CapsuleShape2D_jykfp")
 position = Vector2(-33.25, 13)
 collision_layer = 32768
 collision_mask = 32768
+mass = 5.0
 
-[node name="Polygon2D" type="Polygon2D" parent="LowerArmR"]
+[node name="LowerArmRPoly" type="Polygon2D" parent="LowerArmR"]
+visible = false
 z_index = 6
 z_as_relative = false
 position = Vector2(-2.3935e-07, 1.49012e-08)
@@ -109,7 +139,7 @@ texture = ExtResource("2_ne7qb")
 polygon = PackedVector2Array(-668.552, 71.2505, -615.776, 344.87, 209.953, 219.536, 158.345, -79.0537)
 uv = PackedVector2Array(1745.97, 322.448, 1798.74, 596.067, 2624.47, 470.733, 2572.86, 172.143)
 
-[node name="Polygon2D2" type="Polygon2D" parent="LowerArmR/Polygon2D"]
+[node name="HandR" type="Polygon2D" parent="LowerArmR/LowerArmRPoly"]
 z_index = 6
 z_as_relative = false
 position = Vector2(-653.268, 100.698)
@@ -118,6 +148,28 @@ antialiased = true
 texture = ExtResource("3_4aux1")
 polygon = PackedVector2Array(-401.833, 35.885, -370.508, 276.049, -147.747, 338.7, 144.626, 279.529, 92.4169, -54.6114)
 uv = PackedVector2Array(283.388, 1722.87, 314.714, 1963.03, 537.475, 2025.69, 829.848, 1966.51, 777.638, 1632.37)
+
+[node name="LowerArmLPoly" type="Polygon2D" parent="LowerArmR"]
+z_index = 4
+z_as_relative = false
+position = Vector2(0.2500038, 0)
+rotation = 1.2097862
+scale = Vector2(-0.05, 0.05)
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("2_ne7qb")
+polygon = PackedVector2Array(160.145, 50.7728, 66.2213, -55.483, -662.835, 134.607, -677.583, 232.157, -597.428, 343.166, 124.536, 228.169)
+uv = PackedVector2Array(3132.04, 1295.65, 3186.14, 1426.74, 3937.31, 1485.01, 3983.09, 1397.61, 3943.55, 1266.52, 3223.59, 1139.59)
+
+[node name="HandL" type="Polygon2D" parent="LowerArmR/LowerArmLPoly"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-663.412, 105.4)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("2_ne7qb")
+polygon = PackedVector2Array(96.339, 85.7836, 140.208, 214.464, -125.599, 380.969, -364.801, 266.483, -398.113, 45.3336, 48.498, -10.058)
+uv = PackedVector2Array(3973.33, 1416.9, 3978.49, 1281.04, 4286.31, 1220.85, 4468.6, 1413.46, 4420.45, 1631.86, 3983.65, 1523.52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArmR"]
 position = Vector2(8.5, 41.5)
@@ -128,8 +180,10 @@ shape = SubResource("CapsuleShape2D_1r5jd")
 position = Vector2(27.75, 10.5)
 collision_layer = 4096
 collision_mask = 4096
+mass = 5.0
 
-[node name="Polygon2D" type="Polygon2D" parent="LowerArmL"]
+[node name="LowerArmLPoly" type="Polygon2D" parent="LowerArmL"]
+visible = false
 z_index = 4
 z_as_relative = false
 position = Vector2(0.250002, 0)
@@ -141,7 +195,7 @@ texture = ExtResource("2_ne7qb")
 polygon = PackedVector2Array(160.145, 50.7728, 66.2213, -55.483, -662.835, 134.607, -677.583, 232.157, -597.428, 343.166, 124.536, 228.169)
 uv = PackedVector2Array(3132.04, 1295.65, 3186.14, 1426.74, 3937.31, 1485.01, 3983.09, 1397.61, 3943.55, 1266.52, 3223.59, 1139.59)
 
-[node name="Polygon2D2" type="Polygon2D" parent="LowerArmL/Polygon2D"]
+[node name="HandL" type="Polygon2D" parent="LowerArmL/LowerArmLPoly"]
 z_index = 4
 z_as_relative = false
 position = Vector2(-663.412, 105.4)
@@ -150,6 +204,27 @@ antialiased = true
 texture = ExtResource("2_ne7qb")
 polygon = PackedVector2Array(96.339, 85.7836, 140.208, 214.464, -125.599, 380.969, -364.801, 266.483, -398.113, 45.3336, 48.498, -10.058)
 uv = PackedVector2Array(3973.33, 1416.9, 3978.49, 1281.04, 4286.31, 1220.85, 4468.6, 1413.46, 4420.45, 1631.86, 3983.65, 1523.52)
+
+[node name="LowerArmRPoly" type="Polygon2D" parent="LowerArmL"]
+z_index = 6
+z_as_relative = false
+rotation = 1.2020004
+scale = Vector2(-0.05, 0.05)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("2_ne7qb")
+polygon = PackedVector2Array(-668.552, 71.2505, -615.776, 344.87, 209.953, 219.536, 158.345, -79.0537)
+uv = PackedVector2Array(1745.97, 322.448, 1798.74, 596.067, 2624.47, 470.733, 2572.86, 172.143)
+
+[node name="HandR" type="Polygon2D" parent="LowerArmL/LowerArmRPoly"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-653.268, 100.698)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("3_4aux1")
+polygon = PackedVector2Array(-401.833, 35.885, -370.508, 276.049, -147.747, 338.7, 144.626, 279.529, 92.4169, -54.6114)
+uv = PackedVector2Array(283.388, 1722.87, 314.714, 1963.03, 537.475, 2025.69, 829.848, 1966.51, 777.638, 1632.37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArmL"]
 position = Vector2(9.25, 42.5)

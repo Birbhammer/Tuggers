@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dawqqrx62ng5e"]
+[gd_scene load_steps=25 format=3 uid="uid://dawqqrx62ng5e"]
 
 [ext_resource type="Texture2D" uid="uid://kjf5bqhn1rq1" path="res://Visual Assets/Virgin/Virgin2/Virgin2-partsSheet.png" id="1_em0gd"]
 
@@ -10,8 +10,8 @@ joint_data/0/bone_index = 1
 joint_data/0/bone2d_node = NodePath("Chest/LegR")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -260.425
-joint_data/0/constraint_angle_max = 275.745
+joint_data/0/constraint_angle_min = -260.42496
+joint_data/0/constraint_angle_max = 275.74496
 joint_data/0/constraint_angle_invert = true
 joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
@@ -19,7 +19,7 @@ joint_data/1/bone_index = 2
 joint_data/1/bone2d_node = NodePath("Chest/LegR/ShinR")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 173.815
+joint_data/1/constraint_angle_min = 173.81499
 joint_data/1/constraint_angle_max = 360.0
 joint_data/1/constraint_angle_invert = true
 joint_data/1/constraint_in_localspace = true
@@ -33,7 +33,7 @@ joint_data/0/bone_index = 4
 joint_data/0/bone2d_node = NodePath("Chest/LegL")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -260.426
+joint_data/0/constraint_angle_min = -260.42596
 joint_data/0/constraint_angle_max = 283.404
 joint_data/0/constraint_angle_invert = true
 joint_data/0/constraint_in_localspace = true
@@ -42,8 +42,8 @@ joint_data/1/bone_index = 5
 joint_data/1/bone2d_node = NodePath("Chest/LegL/ShinL")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 153.251
-joint_data/1/constraint_angle_max = 337.021
+joint_data/1/constraint_angle_min = 153.25099
+joint_data/1/constraint_angle_max = 337.02097
 joint_data/1/constraint_angle_invert = true
 joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
@@ -112,11 +112,16 @@ states/Walk/position = Vector2(455, 10)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_yhc7f"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_j30sk"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_em0gd"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_kvb6t"), "Jump", "Walk", SubResource("AnimationNodeStateMachineTransition_mtiab"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_q7cik"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_4auiy")]
 graph_offset = Vector2(-96, -84)
 
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_em0gd"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_j30sk"]
-graph_offset = Vector2(-145, 83)
+graph_offset = Vector2(-475.3531, -3.0867538)
+nodes/output/position = Vector2(320, 120)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_kvb6t")
 nodes/StateMachine/position = Vector2(-140, 120)
-node_connections = [&"output", 0, &"StateMachine"]
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_em0gd")
+nodes/TimeScale/position = Vector2(140, 120)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"StateMachine"]
 
 [sub_resource type="Animation" id="Animation_em0gd"]
 resource_name = "Idle"
@@ -400,7 +405,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -477), Vector2(0, -477)]
+"values": [Vector2(0, -10), Vector2(0, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -421,10 +426,10 @@ tracks/2/path = NodePath("IKTargets/FootRTarget:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-517.593, 2350)]
+"values": [Vector2(-517.593, 2350), Vector2(-517.593, 2350)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -433,10 +438,10 @@ tracks/3/path = NodePath("IKTargets/FootRTarget:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -445,10 +450,10 @@ tracks/4/path = NodePath("IKTargets/FootRTarget/FootRLookTarget:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(357, 15)]
+"values": [Vector2(357, 15), Vector2(357, 15)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -457,10 +462,10 @@ tracks/5/path = NodePath("IKTargets/FootRTarget/FootRLookTarget:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -469,10 +474,10 @@ tracks/6/path = NodePath("IKTargets/FootLTarget:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(787, 1516)]
+"values": [Vector2(787, 1516), Vector2(787, 1516)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -481,10 +486,10 @@ tracks/7/path = NodePath("IKTargets/FootLTarget:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -493,10 +498,10 @@ tracks/8/path = NodePath("IKTargets/FootLTarget/FootLLookTarget:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(392, 15)]
+"values": [Vector2(392, 15), Vector2(392, 15)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -505,10 +510,10 @@ tracks/9/path = NodePath("IKTargets/FootLTarget/FootLLookTarget:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -1206,9 +1211,9 @@ _data = {
 [node name="FootR" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(-203.818, 2366.43)
-rotation = 0.0419959
-scale = Vector2(0.999575, 0.999575)
+position = Vector2(-426.9371, 2527.3718)
+rotation = 0.8517651
+scale = Vector2(0.999554, 0.999554)
 offset = Vector2(-1700.87, -3938)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1218,9 +1223,9 @@ uv = PackedVector2Array(1563.97, 4101.87, 2092.33, 4094.21, 2073.18, 3910.43, 18
 [node name="FootL" type="Polygon2D" parent="Body"]
 z_index = 4
 z_as_relative = false
-position = Vector2(402.612, 2365.5)
-rotation = 0.0541211
-scale = Vector2(0.999582, 0.999582)
+position = Vector2(786.92316, 1982.825)
+rotation = 0.03824998
+scale = Vector2(0.9995383, 0.9995383)
 offset = Vector2(-3091, -3847)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1230,9 +1235,9 @@ uv = PackedVector2Array(2608.29, 4139.21, 3154.84, 4133.98, 3136.53, 3956.15, 29
 [node name="LegL" type="Polygon2D" parent="Body"]
 z_index = 4
 z_as_relative = false
-position = Vector2(240, 1314.66)
-rotation = -0.229938
-scale = Vector2(0.999853, 0.999853)
+position = Vector2(240, 1379)
+rotation = -1.10766
+scale = Vector2(0.99983484, 0.99983484)
 offset = Vector2(-2786, -2059)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1242,9 +1247,9 @@ uv = PackedVector2Array(2179.17, 2397.56, 2552.22, 2234.78, 2904.92, 3082.62, 25
 [node name="ShinL" type="Polygon2D" parent="Body"]
 z_index = 4
 z_as_relative = false
-position = Vector2(627.578, 1829.81)
-rotation = 0.421679
-scale = Vector2(0.999713, 0.999713)
+position = Vector2(883.90784, 1409.9692)
+rotation = 0.19179997
+scale = Vector2(0.9996952, 0.9996952)
 offset = Vector2(-3082, -2940)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1254,9 +1259,9 @@ uv = PackedVector2Array(2519.14, 3198.71, 2917.55, 3129.22, 2945.35, 3828.76, 26
 [node name="LegR" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(-76, 1341.66)
-rotation = -0.169862
-scale = Vector2(0.99985, 0.99985)
+position = Vector2(-76, 1406)
+rotation = 0.365459
+scale = Vector2(0.99983174, 0.99983174)
 offset = Vector2(-1678, -2063)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1266,9 +1271,9 @@ uv = PackedVector2Array(1233.5, 2614.17, 1420.02, 2270.96, 1808, 2263.5, 1875.15
 [node name="ShinR" type="Polygon2D" parent="Body"]
 z_index = 5
 z_as_relative = false
-position = Vector2(148.599, 1911.82)
-rotation = 0.568945
-scale = Vector2(0.999723, 0.999723)
+position = Vector2(-173.66681, 2010.9501)
+rotation = 0.3654591
+scale = Vector2(0.9997005, 0.9997005)
 offset = Vector2(-1791, -3157.85)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1278,7 +1283,7 @@ uv = PackedVector2Array(1535.21, 3846.62, 1794.1, 3846.62, 1903.41, 3363.36, 180
 [node name="Chest" type="Polygon2D" parent="."]
 z_index = 5
 z_as_relative = false
-position = Vector2(81, 504.66)
+position = Vector2(81, 569)
 offset = Vector2(-673, -1925)
 antialiased = true
 texture = ExtResource("1_em0gd")
@@ -1306,7 +1311,7 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Chest"]
 position = Vector2(-157, 837.001)
 rotation = -0.255107
-scale = Vector2(0.99985, 0.99985)
+scale = Vector2(0.99983174, 0.99983174)
 rest = Transform2D(1, 0, 0, 1, -157, 837)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Chest/LegR"]
@@ -1315,7 +1320,7 @@ remote_path = NodePath("../../../../Body/LegR")
 [node name="ShinR" type="Bone2D" parent="Skeleton2D/Chest/LegR"]
 position = Vector2(125.001, 600.006)
 rotation = 0.924572
-scale = Vector2(0.999873, 0.999873)
+scale = Vector2(0.99986875, 0.99986875)
 rest = Transform2D(1, 0, 0, 1, 125, 600)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Chest/LegR/ShinR"]
@@ -1324,7 +1329,7 @@ remote_path = NodePath("../../../../../Body/ShinR")
 [node name="FootR" type="Bone2D" parent="Skeleton2D/Chest/LegR/ShinR"]
 position = Vector2(-51.9999, 573.011)
 rotation = -0.627474
-scale = Vector2(0.999852, 0.999852)
+scale = Vector2(0.99985343, 0.99985343)
 rest = Transform2D(1, 0, 0, 1, -52, 573)
 auto_calculate_length_and_angle = false
 length = 340.366
@@ -1336,7 +1341,7 @@ remote_path = NodePath("../../../../../../Body/FootR")
 [node name="LegL" type="Bone2D" parent="Skeleton2D/Chest"]
 position = Vector2(159, 810.001)
 rotation = -0.317889
-scale = Vector2(0.999853, 0.999853)
+scale = Vector2(0.99983484, 0.99983484)
 rest = Transform2D(1, 0, 0, 1, 159, 810)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Chest/LegL"]
@@ -1345,7 +1350,7 @@ remote_path = NodePath("../../../../Body/LegL")
 [node name="ShinL" type="Bone2D" parent="Skeleton2D/Chest/LegL"]
 position = Vector2(260.002, 590.01)
 rotation = 0.827833
-scale = Vector2(0.99986, 0.99986)
+scale = Vector2(0.9998603, 0.9998603)
 rest = Transform2D(1, 0, 0, 1, 260, 590)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Chest/LegL/ShinL"]
@@ -1354,7 +1359,7 @@ remote_path = NodePath("../../../../../Body/ShinL")
 [node name="FootL" type="Bone2D" parent="Skeleton2D/Chest/LegL/ShinL"]
 position = Vector2(13.9983, 581.008)
 rotation = -0.471697
-scale = Vector2(0.999869, 0.999869)
+scale = Vector2(0.99984306, 0.99984306)
 rest = Transform2D(1, 0, 0, 1, 14, 581)
 auto_calculate_length_and_angle = false
 length = 309.177
@@ -1387,8 +1392,14 @@ parameters/StateMachine/conditions/GroundedMoving = true
 parameters/StateMachine/conditions/Idle = false
 parameters/StateMachine/conditions/IsJumping = false
 parameters/StateMachine/conditions/IsMoving = false
+parameters/TimeScale/scale = 1.0
 
 [node name="NerdAnim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_yhc7f")
 }
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Node"]
+position = Vector2(-452, 305)

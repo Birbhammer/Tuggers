@@ -12,14 +12,14 @@ collision_mask = 5
 
 [node name="NerdHazardSpawner" parent="PowerUpHitBox" groups=["PowerUp"] instance=ExtResource("2_p7ote")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="PowerUpHitBox"]
 texture = ExtResource("3_p7ote")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="PowerUpHitBox"]
 position = Vector2(-79, -81)
 texture = ExtResource("3_p7ote")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="PowerUpHitBox"]
 position = Vector2(94, -92)
 texture = ExtResource("3_p7ote")
 
