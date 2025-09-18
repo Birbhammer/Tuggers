@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bboh3jxf5ggkn"]
 
-[ext_resource type="Script" uid="uid://pwiesp36xapq" path="res://Scripts/Player/arm_pin.gd" id="1_nwfvi"]
+[ext_resource type="Script" uid="uid://b2gb6mcqqrhlm" path="res://Scripts/Player/chad_arms.gd" id="1_k5wpc"]
 [ext_resource type="Texture2D" uid="uid://dmo0q181y71t4" path="res://Visual Assets/Chad/Chad2/Chad2-partsSheet.png" id="2_1tp0g"]
 [ext_resource type="Texture2D" uid="uid://b25dw658x1njw" path="res://Visual Assets/Chad/Chad2/Chad2FullArmL.png" id="3_k5wpc"]
 
@@ -20,11 +20,9 @@ height = 19.7677
 radius = 6.0
 height = 18.2199
 
-[node name="ChadArms" type="Node2D" node_paths=PackedStringArray("RightFacingPoly", "LeftFacingPoly")]
+[node name="ChadArms" type="Node2D"]
 scale = Vector2(4, 4)
-script = ExtResource("1_nwfvi")
-RightFacingPoly = [NodePath("UpperArmR/UpperArmRPoly"), NodePath("UpperArmL/UpperArmLPoly"), NodePath("LowerArmR/LowerArmRPoly"), NodePath("LowerArmR/LowerArmRPoly/HandR"), NodePath("LowerArmL/LowerArmLPoly"), NodePath("LowerArmL/LowerArmLPoly/HandL")]
-LeftFacingPoly = [NodePath("UpperArmR/UpperArmLPoly"), NodePath("UpperArmL/UpperArmRPoly"), NodePath("LowerArmR/LowerArmLPoly"), NodePath("LowerArmR/LowerArmLPoly/HandL"), NodePath("LowerArmL/LowerArmRPoly"), NodePath("LowerArmL/LowerArmRPoly/HandR")]
+script = ExtResource("1_k5wpc")
 
 [node name="ArmR" type="PinJoint2D" parent="."]
 position = Vector2(-29.75, -42)

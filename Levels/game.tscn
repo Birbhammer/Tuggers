@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://byxair753vxxv"]
+[gd_scene load_steps=12 format=4 uid="uid://byxair753vxxv"]
 
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/Nerd/nerd.tscn" id="1_6isyr"]
-[ext_resource type="Script" uid="uid://c0xu5l8lic4ap" path="res://Scripts/General/game_manager.gd" id="1_fiyor"]
 [ext_resource type="PackedScene" uid="uid://306fmxpk8rtm" path="res://Player/Nerd/nerd_arms.tscn" id="2_5ubxa"]
 [ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="3_jycte"]
 [ext_resource type="PackedScene" uid="uid://bboh3jxf5ggkn" path="res://Player/Chad/chad_arms.tscn" id="4_ev4ff"]
@@ -14,7 +13,6 @@
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="12_7apmo"]
 
 [node name="Game" type="Node"]
-script = ExtResource("1_fiyor")
 
 [node name="Players" type="Node" parent="."]
 

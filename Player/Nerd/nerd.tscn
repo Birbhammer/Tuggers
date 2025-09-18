@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 751)
 
-[node name="Nerd" type="CharacterBody2D" node_paths=PackedStringArray("AnimTree", "AnimPlayer", "IKBody") groups=["Player"]]
+[node name="Nerd" type="CharacterBody2D" node_paths=PackedStringArray("AnimTree", "AnimPlayer", "IKBody") groups=["Nerd", "Player"]]
 collision_layer = 4
 script = ExtResource("1_a1q1g")
 AnimTree = NodePath("Nerd/AnimationTree")
@@ -25,54 +25,54 @@ position = Vector2(-12, -216)
 scale = Vector2(0.22, 0.22)
 
 [node name="FootR" parent="Nerd/Body" index="0"]
-position = Vector2(-203.48329, 2364.8398)
-rotation = 0.04199612
-scale = Vector2(0.9995492, 0.9995492)
+position = Vector2(-203.59685, 2365.355)
+rotation = 0.041992646
+scale = Vector2(0.99955374, 0.99955374)
 
 [node name="FootL" parent="Nerd/Body" index="1"]
-position = Vector2(402.37988, 2364.0044)
-rotation = 0.058774207
-scale = Vector2(0.9995509, 0.9995509)
+position = Vector2(402.45496, 2364.4875)
+rotation = 0.057105724
+scale = Vector2(0.99952656, 0.99952656)
 
 [node name="LegL" parent="Nerd/Body" index="2"]
-position = Vector2(240, 1327.8242)
-rotation = -0.25359666
-scale = Vector2(0.9998462, 0.9998462)
+position = Vector2(240, 1323.93)
+rotation = -0.24660066
+scale = Vector2(0.9998299, 0.9998299)
 
 [node name="ShinL" parent="Nerd/Body" index="3"]
-position = Vector2(639.6531, 1833.6587)
-rotation = 0.4447725
-scale = Vector2(0.9997026, 0.9997026)
+position = Vector2(636.09906, 1832.541)
+rotation = 0.43794563
+scale = Vector2(0.99968976, 0.99968976)
 
 [node name="LegR" parent="Nerd/Body" index="4"]
-position = Vector2(-76, 1354.8242)
-rotation = -0.19182244
-scale = Vector2(0.9998456, 0.9998456)
+position = Vector2(-76, 1350.93)
+rotation = -0.18532997
+scale = Vector2(0.99982995, 0.99982995)
 
 [node name="ShinR" parent="Nerd/Body" index="5"]
-position = Vector2(161.06375, 1919.9117)
-rotation = 0.59592813
-scale = Vector2(0.99970543, 0.99970543)
+position = Vector2(157.38553, 1917.5354)
+rotation = 0.58794874
+scale = Vector2(0.99969816, 0.99969816)
 
 [node name="Chest" parent="Nerd" index="1"]
-position = Vector2(81, 517.82324)
+position = Vector2(81, 513.92914)
 
 [node name="LegR" parent="Nerd/Skeleton2D/Chest" index="0"]
-scale = Vector2(0.9998457, 0.9998457)
+scale = Vector2(0.99982995, 0.99982995)
 
 [node name="ShinR" parent="Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998598, 0.9998598)
+scale = Vector2(0.9998681, 0.9998681)
 
 [node name="FootR" parent="Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998437, 0.9998437)
+scale = Vector2(0.9998556, 0.9998556)
 
 [node name="LegL" parent="Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998462, 0.9998462)
+scale = Vector2(0.9998299, 0.9998299)
 
 [node name="ShinL" parent="Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99985635, 0.99985635)
+scale = Vector2(0.99985987, 0.99985987)
 
 [node name="FootL" parent="Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998483, 0.9998483)
+scale = Vector2(0.9998368, 0.9998368)
 
 [editable path="Nerd"]

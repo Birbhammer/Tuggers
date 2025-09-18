@@ -7,7 +7,6 @@ extends Node
 func _ready() -> void:
 	if NewRoomStart != null:
 		var rand_num = randi_range(0, 10)
-		print(rand_num)
 		if rand_num == 10:
 			return
 		var new_room = RoomList[0].instantiate()

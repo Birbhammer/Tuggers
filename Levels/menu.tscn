@@ -1,6 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu7khapage27h"]
+[gd_scene load_steps=19 format=3 uid="uid://cu7khapage27h"]
 
 [ext_resource type="Script" uid="uid://css7ax4avui87" path="res://Scripts/General/menu_manager.gd" id="1_r1q1u"]
+[ext_resource type="Script" uid="uid://b7kjoe7tojar1" path="res://InputSettings/input_settings.gd" id="2_16q67"]
+[ext_resource type="Resource" uid="uid://dve6kkr083vs6" path="res://Player/Resources/p1_menu_inputs.tres" id="2_afki1"]
+[ext_resource type="Resource" uid="uid://btf11kiaw72ww" path="res://Player/Resources/p2_menu_inputs.tres" id="3_2x4ia"]
+[ext_resource type="PackedScene" uid="uid://c32ro7mk8nkji" path="res://InputSettings/input_button.tscn" id="3_m1ans"]
+[ext_resource type="PackedScene" uid="uid://do064j7is2sns" path="res://Player/IkBodies/chad_body.tscn" id="4_xarby"]
+[ext_resource type="PackedScene" uid="uid://dawqqrx62ng5e" path="res://Player/IkBodies/nerd_body.tscn" id="5_k63d0"]
+[ext_resource type="Texture2D" uid="uid://dmo0q181y71t4" path="res://Visual Assets/Chad/Chad2/Chad2-partsSheet.png" id="5_mjoy5"]
+[ext_resource type="Texture2D" uid="uid://kjf5bqhn1rq1" path="res://Visual Assets/Virgin/Virgin2/Virgin2-partsSheet.png" id="6_18qad"]
+[ext_resource type="Texture2D" uid="uid://b25dw658x1njw" path="res://Visual Assets/Chad/Chad2/Chad2FullArmL.png" id="6_o0bt4"]
+[ext_resource type="Texture2D" uid="uid://bmbye241uvwv7" path="res://Visual Assets/Virgin/Virgin2/Virgin2Hand.png" id="7_3s77f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vyd41"]
 font_size = 150
@@ -11,12 +21,27 @@ font_size = 150
 [sub_resource type="LabelSettings" id="LabelSettings_sbixa"]
 font_size = 50
 
+[sub_resource type="LabelSettings" id="LabelSettings_m1ans"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_xarby"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjoy5"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_16q67"]
+font_size = 50
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_r1q1u")
+P1_Controls = ExtResource("2_afki1")
+P2_Controls = ExtResource("3_2x4ia")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Base" type="Node2D" parent="."]
+visible = false
 
 [node name="Label" type="Label" parent="Base"]
 offset_left = -908.0
@@ -157,11 +182,538 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="Node2D" parent="."]
+visible = false
 
 [node name="Options" type="Node2D" parent="."]
+visible = false
+
+[node name="InputSettings" type="Control" parent="Options"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_16q67")
+
+[node name="PanelContainer" type="PanelContainer" parent="Options/InputSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -728.0
+offset_top = -389.0
+offset_right = 636.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Options/InputSettings/PanelContainer"]
+layout_mode = 2
+current_tab = 0
+
+[node name="Keybinds" type="MarginContainer" parent="Options/InputSettings/PanelContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds"]
+layout_mode = 2
+
+[node name="ActionList" type="VBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="InputButton" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds/VBoxContainer/ActionList" instance=ExtResource("3_m1ans")]
+layout_mode = 2
+
+[node name="InputButton2" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds/VBoxContainer/ActionList" instance=ExtResource("3_m1ans")]
+layout_mode = 2
+
+[node name="InputButton3" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds/VBoxContainer/ActionList" instance=ExtResource("3_m1ans")]
+layout_mode = 2
+
+[node name="InputButton4" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds/VBoxContainer/ActionList" instance=ExtResource("3_m1ans")]
+layout_mode = 2
+
+[node name="InputButton5" parent="Options/InputSettings/PanelContainer/TabContainer/Keybinds/VBoxContainer/ActionList" instance=ExtResource("3_m1ans")]
+layout_mode = 2
+
+[node name="Graphics" type="MarginContainer" parent="Options/InputSettings/PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resolution "
+label_settings = SubResource("LabelSettings_m1ans")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResolutionList" type="OptionButton" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+selected = 0
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 720"
+popup/item_1/id = 1
+popup/item_2/text = "640 x 480 "
+popup/item_2/id = 2
+
+[node name="Control" type="Control" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Display Mode"
+label_settings = SubResource("LabelSettings_m1ans")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DisplayModeList" type="OptionButton" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+selected = 0
+item_count = 2
+popup/item_0/text = "Full Screeen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+
+[node name="Control2" type="Control" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ApplyGraphicsButton" type="Button" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 318.0
+offset_top = 175.0
+offset_right = 585.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/Control2/ApplyGraphicsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -45.0
+offset_right = 134.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Apply"
+label_settings = SubResource("LabelSettings_xarby")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="MarginContainer" parent="Options/InputSettings/PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Audio"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Options/InputSettings/PanelContainer/TabContainer/Audio/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Options/InputSettings/PanelContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="CharacterSelectMenu" type="Node2D" parent="."]
+
+[node name="Chad" parent="CharacterSelectMenu" instance=ExtResource("4_xarby")]
+position = Vector2(-484, -306)
+scale = Vector2(0.15, 0.15)
+
+[node name="LegL" parent="CharacterSelectMenu/Chad/Body" index="0"]
+position = Vector2(345, 1398.5256)
+rotation = -0.2377706
+scale = Vector2(0.9998308, 0.9998308)
+
+[node name="ShinL" parent="CharacterSelectMenu/Chad/Body" index="1"]
+position = Vector2(736.58984, 1910.6069)
+rotation = 0.35634732
+scale = Vector2(0.9996853, 0.9996853)
+
+[node name="LegR" parent="CharacterSelectMenu/Chad/Body" index="2"]
+position = Vector2(-303.00024, 1394.5256)
+rotation = -0.25832006
+scale = Vector2(0.9998349, 0.9998349)
+
+[node name="ShinR" parent="CharacterSelectMenu/Chad/Body" index="3"]
+position = Vector2(-28.90625, 1942.6208)
+rotation = 0.35930544
+scale = Vector2(0.9996917, 0.9996917)
+
+[node name="FootR" parent="CharacterSelectMenu/Chad/Body" index="4"]
+position = Vector2(-278.99512, 2460.5977)
+scale = Vector2(0.99953, 0.99953)
+
+[node name="FootL" parent="CharacterSelectMenu/Chad/Body" index="5"]
+position = Vector2(547.0835, 2459.8281)
+scale = Vector2(0.99952257, 0.99952257)
+
+[node name="Chest" parent="CharacterSelectMenu/Chad/Body" index="6"]
+position = Vector2(80.999756, 154.52563)
+
+[node name="UpperArmLPoly" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc" index="0"]
+z_index = 5
+z_as_relative = false
+position = Vector2(-614.3333, -533.83984)
+rotation = -1.0409102
+scale = Vector2(0.95, 0.95)
+offset = Vector2(-101.304, -116.994)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(248.736, 59.3673, 338.647, 273.008, -95.0903, 590.378, -444.717, 547.144, -486.9, 405.931, -505.993, 344.633, -525.166, 226.838, -365.013, -48.701, 107.507, -147.658)
+uv = PackedVector2Array(1674.93, 1171.13, 1666.51, 939.49, 2184.53, 796.297, 2496.19, 960.548, 2485.63, 1107.55, 2481.78, 1171.64, 2457.99, 1288.59, 2210.63, 1489.55, 1733.69, 1414.75)
+
+[node name="LowerArmRPoly" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmLPoly"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-519.02563, 226.40381)
+rotation = -0.5594998
+scale = Vector2(1.0000001, 1.0000001)
+offset = Vector2(-82.1378, -141.037)
+antialiased = true
+texture = ExtResource("6_o0bt4")
+polygon = PackedVector2Array(86.7171, 303.319, 90.8941, 104.683, -11.3308, -73.616, -605.661, 52.3822, -608.039, 152.229, -612.793, 221.172, -553.36, 349.547, -477.286, 423.244, 48.1021, 406.603)
+uv = PackedVector2Array(1359.1, 1911.4, 1363.28, 1712.76, 1261.06, 1534.46, 666.727, 1660.46, 664.349, 1760.31, 659.595, 1829.25, 719.028, 1957.62, 795.102, 2031.32, 1320.49, 2014.68)
+
+[node name="HandR" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmLPoly/LowerArmRPoly"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-653.268, 100.698)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("6_o0bt4")
+polygon = PackedVector2Array(39.9578, 14.1648, 73.9058, 64.354, 96.0477, 209.015, 89.8486, 390.651, -228.55, 560.445, -630.318, 358.372, -535.225, -62.4151, -33.61, -107.583)
+uv = PackedVector2Array(669.694, 1760.44, 703.642, 1810.63, 725.784, 1955.29, 719.584, 2136.93, 401.186, 2306.72, -0.581909, 2104.65, 94.5104, 1683.86, 596.126, 1638.7)
+
+[node name="UpperArmRPoly" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc" index="1"]
+z_index = 4
+z_as_relative = false
+position = Vector2(545.66656, -435.65967)
+rotation = -1.5346414
+scale = Vector2(0.95000005, 0.95000005)
+offset = Vector2(-88.9986, -103.215)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(-461.708, 422.266, -602.51, 94.5155, -301.797, -127.799, 232.28, -146.951, 294.776, 320.408, -81.1894, 499.946)
+uv = PackedVector2Array(2957.76, 601.801, 2915.15, 247.64, 3266.38, 119.207, 3784.16, 251.529, 3712.24, 717.531, 3300.9, 783.692)
+
+[node name="LowerArmLPoly" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-470.71326, 127.0979)
+rotation = -0.06576859
+scale = Vector2(1.0000001, 1.0000001)
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(149.206, 33.1593, 163.659, 137.021, 128.792, 259.372, -72.2517, 410.082, -457.605, 417.791, -639.275, 269.992, -655.825, -5.0555, 52.362, -185.937)
+uv = PackedVector2Array(2479.03, 1191.95, 2489.61, 1087.62, 2552.48, 977.019, 2783.52, 878.259, 3159.72, 962.114, 3301.18, 1148.76, 3252.06, 1419.9, 2521.18, 1427.75)
+
+[node name="HandL" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly/LowerArmLPoly"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-663.412, 105.4)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83, -66.2159, 377.307, -464.432, 444.211, -641.736, 1.812, -11.6449, -164.415)
+uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
+
+[node name="LegR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.99983484, 0.99983484)
+
+[node name="ShinR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegR" index="1"]
+scale = Vector2(0.9998569, 0.9998569)
+
+[node name="FootR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
+scale = Vector2(0.9998382, 0.9998382)
+
+[node name="LegL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest" index="2"]
+scale = Vector2(0.9998307, 0.9998307)
+
+[node name="ShinL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegL" index="1"]
+scale = Vector2(0.9998545, 0.9998545)
+
+[node name="FootL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
+scale = Vector2(0.99983716, 0.99983716)
+
+[node name="Nerd" parent="CharacterSelectMenu" instance=ExtResource("5_k63d0")]
+position = Vector2(495, -294)
+scale = Vector2(-0.15, 0.15)
+
+[node name="FootR" parent="CharacterSelectMenu/Nerd/Body" index="0"]
+z_index = 6
+position = Vector2(-201.99829, 2358.3157)
+scale = Vector2(0.99954796, 0.99954796)
+
+[node name="FootL" parent="CharacterSelectMenu/Nerd/Body" index="1"]
+z_index = 6
+position = Vector2(401.3755, 2357.8435)
+rotation = 0.07037246
+scale = Vector2(0.9995396, 0.9995396)
+
+[node name="LegL" parent="CharacterSelectMenu/Nerd/Body" index="2"]
+position = Vector2(240, 1360.6343)
+rotation = -0.31256405
+scale = Vector2(0.99983335, 0.99983335)
+
+[node name="ShinL" parent="CharacterSelectMenu/Nerd/Body" index="3"]
+position = Vector2(668.7632, 1842.0303)
+rotation = 0.50233215
+scale = Vector2(0.9996937, 0.9996937)
+
+[node name="LegR" parent="CharacterSelectMenu/Nerd/Body" index="4"]
+position = Vector2(-76, 1387.6343)
+rotation = -0.246559
+scale = Vector2(0.9998303, 0.9998303)
+
+[node name="ShinR" parent="CharacterSelectMenu/Nerd/Body" index="5"]
+position = Vector2(191.62012, 1938.8971)
+rotation = 0.66318136
+scale = Vector2(0.99969345, 0.99969345)
+
+[node name="Chest" parent="CharacterSelectMenu/Nerd" index="1"]
+position = Vector2(81, 550.6333)
+
+[node name="UpperArmRPoly" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc" index="0"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-557, -235.24377)
+rotation = -1.24696
+scale = Vector2(0.84999996, 0.84999996)
+offset = Vector2(-88.9986, -103.215)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(-592.704, 18.4299, -525.868, 331.724, 196.796, 239.824, 180.087, -86.0014)
+uv = PackedVector2Array(2596.81, 166.435, 2663.64, 479.729, 3386.31, 387.829, 3369.6, 62.0037)
+
+[node name="LowerArmRPoly" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-545.3434, 72.28906)
+rotation = -0.35344997
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(-668.552, 71.2505, -615.776, 344.87, 209.953, 219.536, 158.345, -79.0537)
+uv = PackedVector2Array(1745.97, 322.448, 1798.74, 596.067, 2624.47, 470.733, 2572.86, 172.143)
+
+[node name="HandR" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly/LowerArmRPoly"]
+z_index = 6
+z_as_relative = false
+position = Vector2(-653.268, 100.698)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("7_3s77f")
+polygon = PackedVector2Array(-401.833, 35.885, -370.508, 276.049, -147.747, 338.7, 144.626, 279.529, 92.4169, -54.6114)
+uv = PackedVector2Array(283.388, 1722.87, 314.714, 1963.03, 537.475, 2025.69, 829.848, 1966.51, 777.638, 1632.37)
+
+[node name="UpperArmLPoly" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc" index="1"]
+z_index = 4
+z_as_relative = false
+position = Vector2(311.68164, -228.68292)
+rotation = -1.24696
+scale = Vector2(0.84999996, 0.84999996)
+offset = Vector2(-101.304, -116.994)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(301.013, 189.102, 93.5849, -91.6904, -509.693, 336.165, -339.256, 584.321)
+uv = PackedVector2Array(2386.47, 997.03, 2370.25, 1345.75, 3108.25, 1394.41, 3132.58, 1094.35)
+
+[node name="LowerArmLPoly" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc/UpperArmLPoly"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-426.0222, 246.39124)
+rotation = -0.35344997
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(160.145, 50.7728, 66.2213, -55.483, -662.835, 134.607, -677.583, 232.157, -597.428, 343.166, 124.536, 228.169)
+uv = PackedVector2Array(3132.04, 1295.65, 3186.14, 1426.74, 3937.31, 1485.01, 3983.09, 1397.61, 3943.55, 1266.52, 3223.59, 1139.59)
+
+[node name="HandL" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc/UpperArmLPoly/LowerArmLPoly"]
+z_index = 3
+z_as_relative = false
+position = Vector2(-663.412, 105.4)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(96.339, 85.7836, 140.208, 214.464, -125.599, 380.969, -364.801, 266.483, -398.113, 45.3336, 48.498, -10.058)
+uv = PackedVector2Array(3973.33, 1416.9, 3978.49, 1281.04, 4286.31, 1220.85, 4468.6, 1413.46, 4420.45, 1631.86, 3983.65, 1523.52)
+
+[node name="LegR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.9998303, 0.9998303)
+
+[node name="ShinR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegR" index="1"]
+scale = Vector2(0.9998631, 0.9998631)
+
+[node name="FootR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
+scale = Vector2(0.99985445, 0.99985445)
+
+[node name="LegL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest" index="2"]
+scale = Vector2(0.99983335, 0.99983335)
+
+[node name="ShinL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegL" index="1"]
+scale = Vector2(0.9998604, 0.9998604)
+
+[node name="FootL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
+scale = Vector2(0.99984586, 0.99984586)
+
+[node name="SelectionPOS" type="Node2D" parent="CharacterSelectMenu"]
+
+[node name="ChadPOS" type="Marker2D" parent="CharacterSelectMenu/SelectionPOS"]
+position = Vector2(-452, 170)
+
+[node name="NerdPOS" type="Marker2D" parent="CharacterSelectMenu/SelectionPOS"]
+position = Vector2(460, 170)
+
+[node name="ResetPOSP1" type="Marker2D" parent="CharacterSelectMenu/SelectionPOS"]
+
+[node name="ResetPOSP2" type="Marker2D" parent="CharacterSelectMenu/SelectionPOS"]
+position = Vector2(0, 138)
+
+[node name="SelectionControllers" type="Node2D" parent="CharacterSelectMenu"]
+
+[node name="P1" type="Marker2D" parent="CharacterSelectMenu/SelectionControllers"]
+
+[node name="Label" type="Label" parent="CharacterSelectMenu/SelectionControllers/P1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "P1"
+label_settings = SubResource("LabelSettings_mjoy5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2" type="Marker2D" parent="CharacterSelectMenu/SelectionControllers"]
+position = Vector2(0, 138)
+
+[node name="Label" type="Label" parent="CharacterSelectMenu/SelectionControllers/P2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "P2"
+label_settings = SubResource("LabelSettings_mjoy5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 656.0
+offset_top = 359.0
+offset_right = 876.0
+offset_bottom = 445.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -42.5
+offset_right = 110.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+label_settings = SubResource("LabelSettings_16q67")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Base/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Base/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Base/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Base/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Base/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="item_selected" from="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer/ResolutionList" to="." method="_on_resolution_list_item_selected"]
+[connection signal="item_selected" from="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2/DisplayModeList" to="." method="_on_display_mode_list_item_selected"]
+[connection signal="pressed" from="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/Control2/ApplyGraphicsButton" to="." method="_on_apply_graphics_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+
+[editable path="CharacterSelectMenu/Chad"]
+[editable path="CharacterSelectMenu/Nerd"]

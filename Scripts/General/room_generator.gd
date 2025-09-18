@@ -11,6 +11,8 @@ var HazardLocations: Array[Marker2D] = []
 
 var CurrentRoom: int = 0
 
+@export var LevelTransition: PackedScene
+
 @export var RoomList: Array[PackedScene] = []
 @export var MaxRoomNum: int
 @onready var StartPos: Marker2D = $RoomStart
@@ -40,4 +42,8 @@ func _ready() -> void:
 		last_room = new_room
 	
 	#------Next Level Logic------------------------------------------------------------------------
+	var new_room = LevelTransition.instantiate()
+	var NewRoomStart = last_room.find_child("End")
+	last_room.add_child(new_room)
+	new_room.position = NewRoomStart.position
 	

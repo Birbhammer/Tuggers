@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://roctksscxjck"]
+
+[ext_resource type="Script" uid="uid://bwhgmqlhp7o3e" path="res://TestAssets/nerd_arm_pin_test.gd" id="1_81vl7"]
+
+[node name="ArmTracker" type="RigidBody2D"]
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_81vl7")

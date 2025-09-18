@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 794)
 
-[node name="Chad" type="CharacterBody2D" node_paths=PackedStringArray("AnimTree", "AnimPlayer", "IKBody") groups=["Player"]]
+[node name="Chad" type="CharacterBody2D" node_paths=PackedStringArray("AnimTree", "AnimPlayer", "IKBody") groups=["Chad", "Player"]]
 collision_layer = 4
 script = ExtResource("1_52lw0")
 AnimTree = NodePath("Chad/AnimationTree")
@@ -24,52 +24,52 @@ position = Vector2(0, -195)
 scale = Vector2(0.22, 0.22)
 
 [node name="LegL" parent="Chad/Body" index="0"]
-position = Vector2(344.99997, 1424.4077)
-rotation = -0.28918323
-scale = Vector2(0.9998452, 0.9998452)
+position = Vector2(344.99997, 1309.7971)
+rotation = -0.06152011
+scale = Vector2(0.99983615, 0.99983615)
 
 [node name="ShinL" parent="Chad/Body" index="1"]
-position = Vector2(762.3953, 1915.6968)
-rotation = 0.40559113
-scale = Vector2(0.999695, 0.999695)
+position = Vector2(640.7344, 1882.605)
+rotation = 0.1875315
+scale = Vector2(0.9996958, 0.9996958)
 
 [node name="LegR" parent="Chad/Body" index="2"]
-position = Vector2(-302.99997, 1420.4077)
-rotation = -0.31548974
-scale = Vector2(0.99983627, 0.99983627)
+position = Vector2(-302.99997, 1305.7971)
+rotation = -0.062333588
+scale = Vector2(0.9998351, 0.9998351)
 
 [node name="ShinR" parent="Chad/Body" index="3"]
-position = Vector2(1.9643263, 1951.9474)
-rotation = 0.41979846
-scale = Vector2(0.99971145, 0.99971145)
+position = Vector2(-140.88683, 1896.773)
+rotation = 0.151926
+scale = Vector2(0.99969006, 0.99969006)
 
 [node name="FootR" parent="Chad/Body" index="4"]
-position = Vector2(-278.988, 2453.8682)
-scale = Vector2(0.99971104, 0.99971104)
+position = Vector2(-278.9674, 2455.1401)
+scale = Vector2(0.9995311, 0.9995311)
 
 [node name="FootL" parent="Chad/Body" index="5"]
-position = Vector2(546.08124, 2454.9292)
-scale = Vector2(0.99964815, 0.99964815)
+position = Vector2(546.1994, 2455.8638)
+scale = Vector2(0.9995342, 0.9995342)
 
 [node name="Chest" parent="Chad/Body" index="6"]
-position = Vector2(81, 180.40771)
+position = Vector2(81, 65.79718)
 
-[node name="LegR" parent="Chad/Skeleton2D/Chest" index="0"]
-scale = Vector2(0.99983627, 0.99983627)
+[node name="LegR" parent="Chad/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.99983513, 0.99983513)
 
 [node name="ShinR" parent="Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998751, 0.9998751)
+scale = Vector2(0.999855, 0.999855)
 
 [node name="FootR" parent="Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.999841, 0.999841)
 
-[node name="LegL" parent="Chad/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998452, 0.9998452)
+[node name="LegL" parent="Chad/Skeleton2D/Chest" index="2"]
+scale = Vector2(0.99983615, 0.99983615)
 
 [node name="ShinL" parent="Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.9998498, 0.9998498)
+scale = Vector2(0.99985963, 0.99985963)
 
 [node name="FootL" parent="Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9999531, 0.9999531)
+scale = Vector2(0.9998383, 0.9998383)
 
 [editable path="Chad"]

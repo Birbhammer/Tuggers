@@ -59,6 +59,10 @@ func _physics_process(delta: float) -> void:
 		PlayerMovement(delta)
 	else:
 		#Stun degrade logic
+		if AnimTree.get("parameters/StateMachine/conditions/Idle") == false:
+			ResetAnimations()
+		if MaxJump > 1:
+			MaxJump = 1
 		if CurrentStun == MaxStun:
 			Knockback(1000)
 		if CurrentStun <= (MaxStun - 10):
