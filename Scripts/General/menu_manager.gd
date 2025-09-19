@@ -139,3 +139,7 @@ func _on_start_game_button_pressed() -> void:
 	GameManager.NerdIndex = NerdLocalIndex
 	GameManager.ChadIndex = ChadLocalIndex
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))

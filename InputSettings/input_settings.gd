@@ -14,6 +14,7 @@ var input_actions = {
 	"Left-Key2": "P2 Left",
 	"Right-Key2": "P2 Right",
 	"Jump-Key2": "P2 Jump",
+	"Menu": "Menu",
 }
 
 func _ready() -> void:

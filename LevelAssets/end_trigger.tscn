@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbxfese0q83i2"]
+
+[ext_resource type="Script" uid="uid://de7kvns0iit1w" path="res://Scripts/end_trigger.gd" id="1_n83e4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hhjp"]
+size = Vector2(565, 535)
+
+[sub_resource type="LabelSettings" id="LabelSettings_avars"]
+font_size = 150
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="End" type="Area2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_n83e4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(272.5, 31.5)
+shape = SubResource("RectangleShape2D_3hhjp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = -238.0
+offset_right = 554.0
+offset_bottom = 306.0
+color = Color(0.909804, 0.27451, 0.227451, 0.447059)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = -284.0
+offset_right = 420.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_avars")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

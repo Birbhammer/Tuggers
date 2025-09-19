@@ -13,8 +13,14 @@ extends Node
 @onready var chad: CharacterBody2D = $VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad
 @onready var nerd: CharacterBody2D = $VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd
 
+@onready var PauseMenu: Control = $InputSettings
+@onready var MusicBar: HSlider = $InputSettings/PanelContainer/TabContainer/Sound/HSlider
+
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	viewport2.world_2d = viewport1.world_2d
+	PauseMenu.visible = false
+	MusicBar.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 
 func _process(delta: float) -> void:
 	#*******************************Nerd Velocity Tracking******************************************
@@ -35,3 +41,20 @@ func _process(delta: float) -> void:
 	camera2.position = camera2.position.lerp(ChadTrackingPOS, CameraSpeed * delta)
 	
 	
+	if Input.is_action_just_pressed("Menu"):
+		PauseMenu.visible = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+
+
+func _on_resume_button_pressed() -> void:
+	PauseMenu.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Levels/menu.tscn")
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))

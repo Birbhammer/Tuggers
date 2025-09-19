@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bdt0gjkeobk80"]
+[gd_scene load_steps=18 format=4 uid="uid://bdt0gjkeobk80"]
 
 [ext_resource type="Script" uid="uid://duvepg55lu7s5" path="res://Scripts/Tutorial/tutorial_manager.gd" id="1_avars"]
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/Nerd/nerd.tscn" id="1_lalqu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://co83e103383aj" path="res://LevelAssets/CCGHOUSE/CCG_moving_platform_horizontal.tscn" id="8_j0mkc"]
 [ext_resource type="PackedScene" uid="uid://byk44m1ut3yvk" path="res://LevelAssets/CCGHOUSE/CCG_path_platform.tscn" id="8_lojvt"]
 [ext_resource type="PackedScene" uid="uid://c57qm7ior2kux" path="res://LevelAssets/PowerUps/Hazards/walking_enemy.tscn" id="10_avars"]
+[ext_resource type="PackedScene" uid="uid://dbxfese0q83i2" path="res://LevelAssets/end_trigger.tscn" id="11_0tnf1"]
 [ext_resource type="PackedScene" uid="uid://cwvem5c4tp7c1" path="res://TestAssets/TTGS Levels/power_up.tscn" id="11_3hhjp"]
 [ext_resource type="PackedScene" uid="uid://dn033t7tkn7ml" path="res://PowerUp/Nerfs/confusion.tscn" id="12_to5w2"]
 [ext_resource type="PackedScene" uid="uid://babjegcqcrucl" path="res://LevelAssets/PowerUps/Buffs/double_jump_buff.tscn" id="13_4wqju"]
@@ -19,14 +20,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1802, 44, 0, 0, 0, 0, 1230, 48, 0, 0, 0, 0, 791, 299, 0, 0, 0, 0, 6, 374, 0, 0, 0, 0, 48, -696, 0, 0, 0, 0, 3189, -687, 0, 0, 0, 0, 3139, 378, 0, 0, 0, 0, 2834, 203, 0, 0, 0, 0, 2483, 44, 0, 0, 0, 0, 1802, 44)
 }
 point_count = 10
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hhjp"]
-size = Vector2(565, 535)
-
-[sub_resource type="LabelSettings" id="LabelSettings_avars"]
-font_size = 150
-font_color = Color(0, 0, 0, 1)
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hga2d"]
 font_size = 50
@@ -570,37 +563,8 @@ SPEED = -5
 MaxDistance = NodePath("../../MovingPlatformNodes/HorStartPOS")
 StartPOS = NodePath("../../MovingPlatformNodes/HorMaxDist")
 
-[node name="End" type="Area2D" parent="Game/Platforms"]
+[node name="End" parent="Game/Platforms" instance=ExtResource("11_0tnf1")]
 position = Vector2(32216, -2345)
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Platforms/End"]
-position = Vector2(272.5, 31.5)
-shape = SubResource("RectangleShape2D_3hhjp")
-
-[node name="ColorRect" type="ColorRect" parent="Game/Platforms/End"]
-offset_left = -11.0
-offset_top = -238.0
-offset_right = 554.0
-offset_bottom = 306.0
-color = Color(0.909804, 0.27451, 0.227451, 0.447059)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Game/Platforms/End"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 112.0
-offset_top = -284.0
-offset_right = 420.0
-offset_bottom = -79.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "EXIT"
-label_settings = SubResource("LabelSettings_avars")
 
 [node name="ToolTips" type="Node" parent="Game"]
 
@@ -723,8 +687,6 @@ position = Vector2(375, -93)
 
 [node name="DoubleJumpBuff" parent="." instance=ExtResource("13_4wqju")]
 position = Vector2(1509, -239)
-
-[connection signal="body_entered" from="Game/Platforms/End" to="." method="_on_end_body_entered"]
 
 [editable path="Game/Platforms/TileMapLayer/WalkingEnemy"]
 [editable path="PowerUp"]
