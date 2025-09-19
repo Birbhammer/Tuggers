@@ -15,9 +15,8 @@ class_name ArmPin
 
 
 func _ready() -> void:
-	#shoulderL.node_a = ArmPinLoc.get_path()
-	#shoulderR.node_a = ArmPinLoc.get_path()
-	pass
+	shoulderL.node_a = ArmPinLoc.get_path()
+	shoulderR.node_a = ArmPinLoc.get_path()
 
 func _process(delta: float) -> void:
 	if player is CharacterBody2D:

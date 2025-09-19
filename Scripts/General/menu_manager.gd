@@ -20,6 +20,8 @@ var ResolutionSetting = Vector2(1920,1080)
 @onready var ResetPOS1: Marker2D = $CharacterSelectMenu/SelectionPOS/ResetPOSP1
 @onready var ResetPOS2: Marker2D = $CharacterSelectMenu/SelectionPOS/ResetPOSP2
 
+@onready var StartButton: Button = $CharacterSelectMenu/StartGameButton
+
 var NerdLocalIndex: int = 99
 var ChadLocalIndex: int = 98
 
@@ -31,8 +33,6 @@ func _ready() -> void:
 	backbutton.visible = false
 
 func _on_start_button_pressed() -> void:
-	#Add logic for selecting controllers
-	#get_tree().change_scene_to_file("res://Levels/main.tscn")
 	base.visible = false
 	characterselect.visible = true
 	backbutton.visible = true
@@ -125,41 +125,17 @@ func _process(delta: float) -> void:
 			if P2_Selection_Controller.position == ChadPOS.position:
 				P2_Selection_Controller.position = ResetPOS2.position
 				ChadLocalIndex = 98
+	
+	if NerdLocalIndex == 1 || NerdLocalIndex == 0:
+		if ChadLocalIndex == 1 || ChadLocalIndex == 0:
+			StartButton.visible = true
+		else:
+			StartButton.visible = false
+	else:
+		StartButton.visible = false
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if 1 == 5:
-		#Player 1
-		if event.is_action_pressed(P1_Controls.Left):
-			if P1_Selection_Controller.position == ResetPOS1.position:
-				if ChadLocalIndex != 1:
-					P1_Selection_Controller.position = ChadPOS.position
-					ChadLocalIndex = 0
-			if P1_Selection_Controller.position == NerdPOS.position:
-				P1_Selection_Controller.position = ResetPOS1.position
-				NerdLocalIndex = 99
-		if event.is_action_pressed(P1_Controls.Right):
-			if P1_Selection_Controller.position == ChadPOS.position:
-				P1_Selection_Controller.position = ResetPOS1.position
-				ChadLocalIndex = 98
-			if P1_Selection_Controller.position == ResetPOS1.position:
-				if NerdLocalIndex != 1:
-					P1_Selection_Controller.position = NerdPOS.position
-					NerdLocalIndex = 0
-				#Player 2
-		if event.is_action_pressed(P2_Controls.Left):
-			if P2_Selection_Controller.position == ResetPOS2.position:
-				if ChadLocalIndex != 0:
-					P2_Selection_Controller.position = ChadPOS.position
-					ChadLocalIndex = 1
-			if P2_Selection_Controller.position == NerdPOS.position:
-				P2_Selection_Controller.position = ResetPOS2.position
-				NerdLocalIndex = 99
-		if event.is_action_pressed(P2_Controls.Right):
-			if P2_Selection_Controller.position == ChadPOS.position:
-				P2_Selection_Controller.position = ResetPOS2.position
-				ChadLocalIndex = 98
-			if P2_Selection_Controller.position == ResetPOS2.position:
-				if NerdLocalIndex != 0:
-					P2_Selection_Controller.position = NerdPOS.position
-					NerdLocalIndex = 1
+func _on_start_game_button_pressed() -> void:
+	GameManager.NerdIndex = NerdLocalIndex
+	GameManager.ChadIndex = ChadLocalIndex
+	get_tree().change_scene_to_file("res://Levels/main.tscn")

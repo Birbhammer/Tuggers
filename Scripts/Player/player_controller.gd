@@ -15,7 +15,10 @@ class_name Player
 #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #++++++++++++Assigning Player Controls from a resource +++++++++++++++++++++++++
-@export var controls: Resource = null
+@export var P1Controls: Resource = null
+@export var P2Controls: Resource = null
+var controls: Resource = null
+var PersonalIndex
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -40,6 +43,15 @@ var CurrentStun: int
 #/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 func _ready() -> void:
+	if self.is_in_group("Nerd"):
+		PersonalIndex = GameManager.NerdIndex
+	elif self.is_in_group("Chad"):
+		PersonalIndex = GameManager.ChadIndex
+	
+	if PersonalIndex == 1:
+		controls = P1Controls
+	elif PersonalIndex == 0:
+		controls = P2Controls
 	IsStunned = false
 	CurrentStun = MaxStun
 	
@@ -91,8 +103,6 @@ func PlayerMovement(delta: float):
 		if JumpNum >= MaxJump:
 			canJump = false
 	#--------------------------------------------------------------------------
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis(controls.left, controls.right) * confusion
 	if direction:
 		if is_on_floor():

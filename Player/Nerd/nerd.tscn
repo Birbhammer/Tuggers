@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://clkj1kklnkc3d"]
+[gd_scene load_steps=6 format=3 uid="uid://clkj1kklnkc3d"]
 
 [ext_resource type="Script" uid="uid://c1rm83uam4f4p" path="res://Scripts/Player/player_controller.gd" id="1_a1q1g"]
-[ext_resource type="Resource" uid="uid://beu2umkyu0jeo" path="res://Player/Resources/nerd_controls.tres" id="2_cxhyj"]
+[ext_resource type="Resource" uid="uid://c75d01x10o7fi" path="res://Player/Resources/p1_controls.tres" id="2_yaxm2"]
 [ext_resource type="PackedScene" uid="uid://dawqqrx62ng5e" path="res://Player/IkBodies/nerd_body.tscn" id="3_cxhyj"]
+[ext_resource type="Resource" uid="uid://beu2umkyu0jeo" path="res://Player/Resources/p2_controls.tres" id="3_qayj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 751)
@@ -13,7 +14,8 @@ script = ExtResource("1_a1q1g")
 AnimTree = NodePath("Nerd/AnimationTree")
 AnimPlayer = NodePath("Nerd/NerdAnim")
 IKBody = NodePath("Nerd")
-controls = ExtResource("2_cxhyj")
+P1Controls = ExtResource("2_yaxm2")
+P2Controls = ExtResource("3_qayj3")
 KnockbackDir = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,54 +27,53 @@ position = Vector2(-12, -216)
 scale = Vector2(0.22, 0.22)
 
 [node name="FootR" parent="Nerd/Body" index="0"]
-position = Vector2(-203.59685, 2365.355)
-rotation = 0.041992646
-scale = Vector2(0.99955374, 0.99955374)
+position = Vector2(-202.959, 2363.607)
+scale = Vector2(0.9995549, 0.9995549)
 
 [node name="FootL" parent="Nerd/Body" index="1"]
-position = Vector2(402.45496, 2364.4875)
-rotation = 0.057105724
-scale = Vector2(0.99952656, 0.99952656)
+position = Vector2(402.09314, 2362.7993)
+rotation = 0.02766338
+scale = Vector2(0.9995307, 0.9995307)
 
 [node name="LegL" parent="Nerd/Body" index="2"]
-position = Vector2(240, 1323.93)
-rotation = -0.24660066
-scale = Vector2(0.9998299, 0.9998299)
+position = Vector2(240, 1239.8147)
+rotation = -0.095422424
+scale = Vector2(0.999831, 0.999831)
 
 [node name="ShinL" parent="Nerd/Body" index="3"]
-position = Vector2(636.09906, 1832.541)
-rotation = 0.43794563
-scale = Vector2(0.99968976, 0.99968976)
+position = Vector2(554.98303, 1802.2786)
+rotation = 0.2903746
+scale = Vector2(0.99969304, 0.99969304)
 
 [node name="LegR" parent="Nerd/Body" index="4"]
-position = Vector2(-76, 1350.93)
-rotation = -0.18532997
-scale = Vector2(0.99982995, 0.99982995)
+position = Vector2(-76, 1266.8147)
+rotation = -0.044997152
+scale = Vector2(0.99983, 0.99983)
 
 [node name="ShinR" parent="Nerd/Body" index="5"]
-position = Vector2(157.38553, 1917.5354)
-rotation = 0.58794874
-scale = Vector2(0.99969816, 0.99969816)
+position = Vector2(75.83937, 1860.4954)
+rotation = 0.41552812
+scale = Vector2(0.999695, 0.999695)
 
 [node name="Chest" parent="Nerd" index="1"]
-position = Vector2(81, 513.92914)
+position = Vector2(81, 429.81378)
 
-[node name="LegR" parent="Nerd/Skeleton2D/Chest" index="0"]
-scale = Vector2(0.99982995, 0.99982995)
+[node name="LegR" parent="Nerd/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.99983, 0.99983)
 
 [node name="ShinR" parent="Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998681, 0.9998681)
+scale = Vector2(0.9998649, 0.9998649)
 
 [node name="FootR" parent="Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998556, 0.9998556)
+scale = Vector2(0.9998599, 0.9998599)
 
-[node name="LegL" parent="Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998299, 0.9998299)
+[node name="LegL" parent="Nerd/Skeleton2D/Chest" index="2"]
+scale = Vector2(0.9998311, 0.9998311)
 
 [node name="ShinL" parent="Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99985987, 0.99985987)
+scale = Vector2(0.99986196, 0.99986196)
 
 [node name="FootL" parent="Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998368, 0.9998368)
+scale = Vector2(0.9998376, 0.9998376)
 
 [editable path="Nerd"]

@@ -32,6 +32,7 @@ position = Vector2(-16, -9)
 
 [node name="NerdRoomGenerator" type="Node" parent="." groups=["NerdGenerator"]]
 script = ExtResource("5_ev4ff")
+LevelTransition = ExtResource("6_jycte")
 RoomList = Array[PackedScene]([ExtResource("6_jycte"), ExtResource("7_fiyor"), ExtResource("8_e33e4"), ExtResource("9_7apmo"), ExtResource("11_e33e4")])
 MaxRoomNum = 50
 

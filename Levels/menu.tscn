@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu7khapage27h"]
+[gd_scene load_steps=28 format=3 uid="uid://cu7khapage27h"]
 
 [ext_resource type="Script" uid="uid://css7ax4avui87" path="res://Scripts/General/menu_manager.gd" id="1_r1q1u"]
 [ext_resource type="Script" uid="uid://b7kjoe7tojar1" path="res://InputSettings/input_settings.gd" id="2_16q67"]
@@ -21,6 +21,62 @@ font_size = 150
 [sub_resource type="LabelSettings" id="LabelSettings_sbixa"]
 font_size = 50
 
+[sub_resource type="LabelSettings" id="LabelSettings_2x4ia"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxn3h"]
+font_size = 25
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_afki1"]
+target_nodepath = NodePath("../IKTargets/FootRTarget")
+tip_nodepath = NodePath("Chest/LegR/ShinR/FootR")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 1
+joint_data/0/bone2d_node = NodePath("Chest/LegR")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 2
+joint_data/1/bone2d_node = NodePath("Chest/LegR/ShinR")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_2x4ia"]
+target_nodepath = NodePath("../IKTargets/FootLTarget")
+tip_nodepath = NodePath("Chest/LegL/ShinL/FootL")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 4
+joint_data/0/bone2d_node = NodePath("Chest/LegL")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 5
+joint_data/1/bone2d_node = NodePath("Chest/LegL/ShinL")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_kxn3h"]
+bone_index = 3
+bone2d_node = NodePath("Chest/LegR/ShinR/FootR")
+target_nodepath = NodePath("../IKTargets/FootRTarget/FootRLookTarget")
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_q7b3f"]
+bone_index = 6
+bone2d_node = NodePath("Chest/LegL/ShinL/FootL")
+target_nodepath = NodePath("../IKTargets/FootLTarget/FootLLookTarget")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_1obqf"]
+modification_count = 4
+modifications/0 = SubResource("SkeletonModification2DCCDIK_afki1")
+modifications/1 = SubResource("SkeletonModification2DCCDIK_2x4ia")
+modifications/2 = SubResource("SkeletonModification2DLookAt_kxn3h")
+modifications/3 = SubResource("SkeletonModification2DLookAt_q7b3f")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6mykb"]
+font_size = 50
+
 [sub_resource type="LabelSettings" id="LabelSettings_m1ans"]
 font_size = 50
 
@@ -28,6 +84,9 @@ font_size = 50
 font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjoy5"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_afki1"]
 font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_16q67"]
@@ -182,7 +241,243 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="Node2D" parent="."]
+
+[node name="Dylan" type="Label" parent="Credits"]
+offset_left = 464.00003
+offset_top = -126.0
+offset_right = 792.0
+offset_bottom = -57.0
+rotation = 0.503549
+text = "Code Monkey"
+label_settings = SubResource("LabelSettings_2x4ia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Head" type="Polygon2D" parent="Credits/Dylan"]
+z_index = 5
+z_as_relative = false
+position = Vector2(180, 202)
+scale = Vector2(-0.15, 0.15)
+offset = Vector2(-421, -1061)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(435.392, 1279.9, 84.1642, 1131.18, 207.446, 170.721, 981.111, 115.128, 916.253, 1074.1)
+uv = PackedVector2Array(287.145, 1154.81, -64.083, 1006.09, 59.1985, 45.6375, 832.864, -9.95518, 768.006, 949.018)
+
+[node name="Label" type="Label" parent="Credits/Dylan"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 235.0
+offset_right = 270.0
+offset_bottom = 283.0
+text = "Dylan Pulley"
+label_settings = SubResource("LabelSettings_kxn3h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jarryd" type="Label" parent="Credits"]
+offset_left = -751.0
+offset_top = 38.000015
+offset_right = -423.0
+offset_bottom = 107.000015
+rotation = -0.54086435
+text = "Title"
+label_settings = SubResource("LabelSettings_2x4ia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Head" type="Polygon2D" parent="Credits/Jarryd"]
+z_index = 5
+z_as_relative = false
+position = Vector2(140, 202)
+scale = Vector2(0.15, 0.15)
+offset = Vector2(-421, -1061)
+antialiased = true
+texture = ExtResource("6_18qad")
+polygon = PackedVector2Array(435.392, 1279.9, 84.1642, 1131.18, 207.446, 170.721, 981.111, 115.128, 916.253, 1074.1)
+uv = PackedVector2Array(287.145, 1154.81, -64.083, 1006.09, 59.1985, 45.6375, 832.864, -9.95518, 768.006, 949.018)
+
+[node name="Label" type="Label" parent="Credits/Jarryd"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 231.0
+offset_right = 228.0
+offset_bottom = 270.0
+text = "Name"
+label_settings = SubResource("LabelSettings_kxn3h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chad" parent="Credits" instance=ExtResource("4_xarby")]
+position = Vector2(-24, -173)
+scale = Vector2(0.15, 0.15)
+
+[node name="LegL" parent="Credits/Chad/Body" index="0"]
+position = Vector2(345, 1384.6868)
+rotation = -0.21028136
+scale = Vector2(0.9998371, 0.9998371)
+
+[node name="ShinL" parent="Credits/Chad/Body" index="1"]
+position = Vector2(722.3689, 1907.3405)
+rotation = 0.33001754
+scale = Vector2(0.9996929, 0.9996929)
+
+[node name="LegR" parent="Credits/Chad/Body" index="2"]
+position = Vector2(-303.00003, 1380.6868)
+rotation = -0.22775266
+scale = Vector2(0.99983054, 0.99983054)
+
+[node name="ShinR" parent="Credits/Chad/Body" index="3"]
+position = Vector2(-45.786606, 1936.9003)
+rotation = 0.32696104
+scale = Vector2(0.99968696, 0.99968696)
+
+[node name="FootR" parent="Credits/Chad/Body" index="4"]
+position = Vector2(-278.99292, 2462.691)
+scale = Vector2(0.9995261, 0.9995261)
+
+[node name="FootL" parent="Credits/Chad/Body" index="5"]
+position = Vector2(547.38617, 2461.3643)
+scale = Vector2(0.9995335, 0.9995335)
+
+[node name="Chest" parent="Credits/Chad/Body" index="6"]
+position = Vector2(81.00001, 140.68677)
+
+[node name="Skeleton2D" parent="Credits/Chad" index="1"]
+modification_stack = SubResource("SkeletonModificationStack2D_1obqf")
+
+[node name="UpperArmRPoly" type="Polygon2D" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc" index="0"]
+z_index = 4
+z_as_relative = false
+position = Vector2(545.66656, -435.65967)
+rotation = -2.7723846
+scale = Vector2(0.95000005, 0.95000005)
+offset = Vector2(-88.9986, -103.215)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(-461.708, 422.266, -602.51, 94.5155, -301.797, -127.799, 232.28, -146.951, 294.776, 320.408, -81.1894, 499.946)
+uv = PackedVector2Array(2957.76, 601.801, 2915.15, 247.64, 3266.38, 119.207, 3784.16, 251.529, 3712.24, 717.531, 3300.9, 783.692)
+
+[node name="LowerArmLPoly" type="Polygon2D" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-470.71326, 127.0979)
+rotation = -1.4938831
+scale = Vector2(1.0000001, 1.0000001)
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(149.206, 33.1593, 163.659, 137.021, 128.792, 259.372, -72.2517, 410.082, -457.605, 417.791, -639.275, 269.992, -655.825, -5.0555, 52.362, -185.937)
+uv = PackedVector2Array(2479.03, 1191.95, 2489.61, 1087.62, 2552.48, 977.019, 2783.52, 878.259, 3159.72, 962.114, 3301.18, 1148.76, 3252.06, 1419.9, 2521.18, 1427.75)
+
+[node name="HandL" type="Polygon2D" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly/LowerArmLPoly"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-663.412, 105.4)
+rotation = -0.2883566
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83, -66.2159, 377.307, -464.432, 444.211, -641.736, 1.812, -11.6449, -164.415)
+uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
+
+[node name="UpperArmRPoly2" type="Polygon2D" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc" index="1"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-614.33325, -385.45587)
+rotation = -3.2421036
+scale = Vector2(-0.95, 0.95)
+offset = Vector2(-88.9986, -103.215)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(-461.708, 422.266, -602.51, 94.5155, -301.797, -127.799, 232.28, -146.951, 294.776, 320.408, -81.1894, 499.946)
+uv = PackedVector2Array(2957.76, 601.801, 2915.15, 247.64, 3266.38, 119.207, 3784.16, 251.529, 3712.24, 717.531, 3300.9, 783.692)
+
+[node name="LowerArmLPoly" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly2" index="0"]
 visible = false
+z_index = 4
+z_as_relative = false
+position = Vector2(-470.71326, 127.0979)
+rotation = -1.4938831
+scale = Vector2(1.0000001, 1.0000001)
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(149.206, 33.1593, 163.659, 137.021, 128.792, 259.372, -72.2517, 410.082, -457.605, 417.791, -639.275, 269.992, -655.825, -5.0555, 52.362, -185.937)
+uv = PackedVector2Array(2479.03, 1191.95, 2489.61, 1087.62, 2552.48, 977.019, 2783.52, 878.259, 3159.72, 962.114, 3301.18, 1148.76, 3252.06, 1419.9, 2521.18, 1427.75)
+
+[node name="HandL" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly2/LowerArmLPoly" index="0"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-663.412, 105.4)
+rotation = -0.2883566
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83, -66.2159, 377.307, -464.432, 444.211, -641.736, 1.812, -11.6449, -164.415)
+uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
+
+[node name="LowerArmLPoly2" type="Polygon2D" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly2"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-467.93866, 42.544495)
+rotation = -1.0958581
+scale = Vector2(1.0526317, 1.0526317)
+offset = Vector2(-73.2986, -105.22)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(149.206, 33.1593, 163.659, 137.021, 128.792, 259.372, -72.2517, 410.082, -457.605, 417.791, -639.275, 269.992, -655.825, -5.0555, 52.362, -185.937)
+uv = PackedVector2Array(2479.03, 1191.95, 2489.61, 1087.62, 2552.48, 977.019, 2783.52, 878.259, 3159.72, 962.114, 3301.18, 1148.76, 3252.06, 1419.9, 2521.18, 1427.75)
+
+[node name="HandL2" type="Polygon2D" parent="Credits/Chad/Skeleton2D/Chest/ArmPinLoc/UpperArmRPoly2/LowerArmLPoly2"]
+z_index = 4
+z_as_relative = false
+position = Vector2(-650.9014, 119.89032)
+rotation = -0.36175013
+scale = Vector2(0.9999998, 0.9999998)
+offset = Vector2(-75.6088, -105.006)
+antialiased = true
+texture = ExtResource("5_mjoy5")
+polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83, -66.2159, 377.307, -464.432, 444.211, -641.736, 1.812, -11.6449, -164.415)
+uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
+
+[node name="LegR" parent="Credits/Chad/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.99983054, 0.99983054)
+
+[node name="ShinR" parent="Credits/Chad/Skeleton2D/Chest/LegR" index="1"]
+scale = Vector2(0.9998564, 0.9998564)
+
+[node name="FootR" parent="Credits/Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
+scale = Vector2(0.999839, 0.999839)
+
+[node name="LegL" parent="Credits/Chad/Skeleton2D/Chest" index="2"]
+scale = Vector2(0.9998371, 0.9998371)
+
+[node name="ShinL" parent="Credits/Chad/Skeleton2D/Chest/LegL" index="1"]
+scale = Vector2(0.99985594, 0.99985594)
+
+[node name="FootL" parent="Credits/Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
+scale = Vector2(0.99984044, 0.99984044)
+
+[node name="Label" type="Label" parent="Credits"]
+offset_left = -265.0
+offset_top = -483.0
+offset_right = 261.0
+offset_bottom = -400.0
+text = "Absolute Chad Gamer"
+label_settings = SubResource("LabelSettings_6mykb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits"]
+offset_left = -265.0
+offset_top = 243.0
+offset_right = 261.0
+offset_bottom = 326.0
+text = "YOU!"
+label_settings = SubResource("LabelSettings_6mykb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Options" type="Node2D" parent="."]
 visible = false
@@ -374,41 +669,42 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CharacterSelectMenu" type="Node2D" parent="."]
+visible = false
 
 [node name="Chad" parent="CharacterSelectMenu" instance=ExtResource("4_xarby")]
 position = Vector2(-484, -306)
 scale = Vector2(0.15, 0.15)
 
 [node name="LegL" parent="CharacterSelectMenu/Chad/Body" index="0"]
-position = Vector2(345, 1398.5256)
-rotation = -0.2377706
-scale = Vector2(0.9998308, 0.9998308)
+position = Vector2(345, 1384.6869)
+rotation = -0.21028136
+scale = Vector2(0.9998371, 0.9998371)
 
 [node name="ShinL" parent="CharacterSelectMenu/Chad/Body" index="1"]
-position = Vector2(736.58984, 1910.6069)
-rotation = 0.35634732
-scale = Vector2(0.9996853, 0.9996853)
+position = Vector2(722.3689, 1907.3406)
+rotation = 0.33001754
+scale = Vector2(0.9996929, 0.9996929)
 
 [node name="LegR" parent="CharacterSelectMenu/Chad/Body" index="2"]
-position = Vector2(-303.00024, 1394.5256)
-rotation = -0.25832006
-scale = Vector2(0.9998349, 0.9998349)
+position = Vector2(-303.00024, 1380.6869)
+rotation = -0.22775266
+scale = Vector2(0.99983054, 0.99983054)
 
 [node name="ShinR" parent="CharacterSelectMenu/Chad/Body" index="3"]
-position = Vector2(-28.90625, 1942.6208)
-rotation = 0.35930544
-scale = Vector2(0.9996917, 0.9996917)
+position = Vector2(-45.786865, 1936.9004)
+rotation = 0.32696104
+scale = Vector2(0.99968696, 0.99968696)
 
 [node name="FootR" parent="CharacterSelectMenu/Chad/Body" index="4"]
-position = Vector2(-278.99512, 2460.5977)
-scale = Vector2(0.99953, 0.99953)
+position = Vector2(-278.99292, 2462.691)
+scale = Vector2(0.9995261, 0.9995261)
 
 [node name="FootL" parent="CharacterSelectMenu/Chad/Body" index="5"]
-position = Vector2(547.0835, 2459.8281)
-scale = Vector2(0.99952257, 0.99952257)
+position = Vector2(547.3862, 2461.3645)
+scale = Vector2(0.9995335, 0.9995335)
 
 [node name="Chest" parent="CharacterSelectMenu/Chad/Body" index="6"]
-position = Vector2(80.999756, 154.52563)
+position = Vector2(80.999756, 140.68689)
 
 [node name="UpperArmLPoly" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc" index="0"]
 z_index = 5
@@ -479,22 +775,22 @@ polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83,
 uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
 
 [node name="LegR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.99983484, 0.99983484)
+scale = Vector2(0.99983054, 0.99983054)
 
 [node name="ShinR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998569, 0.9998569)
+scale = Vector2(0.9998564, 0.9998564)
 
 [node name="FootR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998382, 0.9998382)
+scale = Vector2(0.999839, 0.999839)
 
 [node name="LegL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998307, 0.9998307)
+scale = Vector2(0.9998371, 0.9998371)
 
 [node name="ShinL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.9998545, 0.9998545)
+scale = Vector2(0.99985594, 0.99985594)
 
 [node name="FootL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.99983716, 0.99983716)
+scale = Vector2(0.99984044, 0.99984044)
 
 [node name="Nerd" parent="CharacterSelectMenu" instance=ExtResource("5_k63d0")]
 position = Vector2(495, -294)
@@ -502,37 +798,37 @@ scale = Vector2(-0.15, 0.15)
 
 [node name="FootR" parent="CharacterSelectMenu/Nerd/Body" index="0"]
 z_index = 6
-position = Vector2(-201.99829, 2358.3157)
-scale = Vector2(0.99954796, 0.99954796)
+position = Vector2(-202.85913, 2362.016)
+scale = Vector2(0.9995507, 0.9995507)
 
 [node name="FootL" parent="CharacterSelectMenu/Nerd/Body" index="1"]
 z_index = 6
-position = Vector2(401.3755, 2357.8435)
-rotation = 0.07037246
-scale = Vector2(0.9995396, 0.9995396)
+position = Vector2(401.95093, 2361.346)
+rotation = 0.064380355
+scale = Vector2(0.9995332, 0.9995332)
 
 [node name="LegL" parent="CharacterSelectMenu/Nerd/Body" index="2"]
-position = Vector2(240, 1360.6343)
-rotation = -0.31256405
-scale = Vector2(0.99983335, 0.99983335)
+position = Vector2(240, 1344.245)
+rotation = -0.2831116
+scale = Vector2(0.9998332, 0.9998332)
 
 [node name="ShinL" parent="CharacterSelectMenu/Nerd/Body" index="3"]
-position = Vector2(668.7632, 1842.0303)
-rotation = 0.50233215
-scale = Vector2(0.9996937, 0.9996937)
+position = Vector2(654.40234, 1838.0599)
+rotation = 0.47358528
+scale = Vector2(0.9996946, 0.9996946)
 
 [node name="LegR" parent="CharacterSelectMenu/Nerd/Body" index="4"]
-position = Vector2(-76, 1387.6343)
-rotation = -0.246559
-scale = Vector2(0.9998303, 0.9998303)
+position = Vector2(-76, 1371.245)
+rotation = -0.21922149
+scale = Vector2(0.9998267, 0.9998267)
 
 [node name="ShinR" parent="CharacterSelectMenu/Nerd/Body" index="5"]
-position = Vector2(191.62012, 1938.8971)
-rotation = 0.66318136
-scale = Vector2(0.99969345, 0.99969345)
+position = Vector2(176.44995, 1929.6146)
+rotation = 0.6295899
+scale = Vector2(0.9996925, 0.9996925)
 
 [node name="Chest" parent="CharacterSelectMenu/Nerd" index="1"]
-position = Vector2(81, 550.6333)
+position = Vector2(81, 534.244)
 
 [node name="UpperArmRPoly" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc" index="0"]
 z_index = 6
@@ -601,22 +897,22 @@ polygon = PackedVector2Array(96.339, 85.7836, 140.208, 214.464, -125.599, 380.96
 uv = PackedVector2Array(3973.33, 1416.9, 3978.49, 1281.04, 4286.31, 1220.85, 4468.6, 1413.46, 4420.45, 1631.86, 3983.65, 1523.52)
 
 [node name="LegR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998303, 0.9998303)
+scale = Vector2(0.99982667, 0.99982667)
 
 [node name="ShinR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998631, 0.9998631)
+scale = Vector2(0.99986583, 0.99986583)
 
 [node name="FootR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.99985445, 0.99985445)
+scale = Vector2(0.99985814, 0.99985814)
 
 [node name="LegL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.99983335, 0.99983335)
+scale = Vector2(0.9998332, 0.9998332)
 
 [node name="ShinL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.9998604, 0.9998604)
+scale = Vector2(0.99986136, 0.99986136)
 
 [node name="FootL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.99984586, 0.99984586)
+scale = Vector2(0.9998385, 0.9998385)
 
 [node name="SelectionPOS" type="Node2D" parent="CharacterSelectMenu"]
 
@@ -672,6 +968,29 @@ label_settings = SubResource("LabelSettings_mjoy5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StartGameButton" type="Button" parent="CharacterSelectMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -389.0
+offset_right = 127.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CharacterSelectMenu/StartGameButton"]
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 109.0
+text = "Start"
+label_settings = SubResource("LabelSettings_afki1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BackButton" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -713,7 +1032,9 @@ vertical_alignment = 1
 [connection signal="item_selected" from="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer/ResolutionList" to="." method="_on_resolution_list_item_selected"]
 [connection signal="item_selected" from="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2/DisplayModeList" to="." method="_on_display_mode_list_item_selected"]
 [connection signal="pressed" from="Options/InputSettings/PanelContainer/TabContainer/Graphics/VBoxContainer/Control2/ApplyGraphicsButton" to="." method="_on_apply_graphics_button_pressed"]
+[connection signal="pressed" from="CharacterSelectMenu/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 
+[editable path="Credits/Chad"]
 [editable path="CharacterSelectMenu/Chad"]
 [editable path="CharacterSelectMenu/Nerd"]
