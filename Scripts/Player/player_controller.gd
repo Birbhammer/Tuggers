@@ -6,6 +6,9 @@ class_name Player
 @export var Acceleration = 1200 #Jarryd Added
 @export var friction = 3500 #Jarryd Added
 @export var JUMP_VELOCITY = -900
+@export var JUMP_SOUND : AudioStreamPlayer
+@export var HURT_SOUND : AudioStreamPlayer
+var isScream : bool = false
 
 
 #^^^^^^^^^^^^^^^^^^^^^^^^^^^^Animation Variables^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,6 +74,9 @@ func _physics_process(delta: float) -> void:
 		PlayerMovement(delta)
 	else:
 		#Stun degrade logic
+		if !isScream : 
+			HURT_SOUND.play()
+			isScream = true
 		if AnimTree.get("parameters/StateMachine/conditions/Idle") == false:
 			ResetAnimations()
 		if MaxJump > 1:
@@ -83,6 +89,7 @@ func _physics_process(delta: float) -> void:
 		CurrentStun = CurrentStun - (1 * delta)
 		if CurrentStun <= 0:
 			IsStunned = false
+			isScream = false
 			CurrentStun = MaxStun
 	
 	move_and_slide()
@@ -98,6 +105,7 @@ func PlayerMovement(delta: float):
 	
 	if Input.is_action_just_pressed(controls.jump) and canJump:
 		JumpAnimation()
+		JUMP_SOUND.play()
 		velocity.y = JUMP_VELOCITY - 500
 		JumpNum += 1
 		if JumpNum >= MaxJump:

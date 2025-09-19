@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://o4cjsts555ch"]
+[gd_scene load_steps=8 format=3 uid="uid://o4cjsts555ch"]
 
 [ext_resource type="Script" uid="uid://c1rm83uam4f4p" path="res://Scripts/Player/player_controller.gd" id="1_52lw0"]
 [ext_resource type="Resource" uid="uid://c75d01x10o7fi" path="res://Player/Resources/p1_controls.tres" id="2_evj1t"]
 [ext_resource type="PackedScene" uid="uid://do064j7is2sns" path="res://Player/IkBodies/chad_body.tscn" id="3_cm8xq"]
 [ext_resource type="Resource" uid="uid://beu2umkyu0jeo" path="res://Player/Resources/p2_controls.tres" id="3_msy75"]
+[ext_resource type="AudioStream" uid="uid://crbyiqiqlaw0h" path="res://Audio/Sound Effects/Chad Jump.wav" id="5_cm8xq"]
+[ext_resource type="AudioStream" uid="uid://cqdhqpyhg2m0c" path="res://Audio/Sound Effects/NerdHurt1.wav" id="6_msy75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 794)
 
-[node name="Chad" type="CharacterBody2D" node_paths=PackedStringArray("AnimTree", "AnimPlayer", "IKBody") groups=["Chad", "Player"]]
+[node name="Chad" type="CharacterBody2D" node_paths=PackedStringArray("JUMP_SOUND", "HURT_SOUND", "AnimTree", "AnimPlayer", "IKBody") groups=["Chad", "Player"]]
 collision_layer = 4
 script = ExtResource("1_52lw0")
+JUMP_SOUND = NodePath("Jump")
+HURT_SOUND = NodePath("Hurt")
 AnimTree = NodePath("Chad/AnimationTree")
 AnimPlayer = NodePath("Chad/ChadAnims")
 IKBody = NodePath("Chad")
@@ -26,48 +30,60 @@ position = Vector2(0, -195)
 scale = Vector2(0.22, 0.22)
 
 [node name="LegL" parent="Chad/Body" index="0"]
-position = Vector2(344.99997, 1369.3236)
-rotation = -0.17976387
-scale = Vector2(0.9998351, 0.9998351)
+position = Vector2(344.99997, 1329.779)
+rotation = -0.10121231
+scale = Vector2(0.99983674, 0.99983674)
 
 [node name="ShinL" parent="Chad/Body" index="1"]
-position = Vector2(706.2443, 1903.2466)
-rotation = 0.30078745
-scale = Vector2(0.99969363, 0.99969363)
+position = Vector2(663.2323, 1890.4019)
+rotation = 0.22554933
+scale = Vector2(0.9996899, 0.9996899)
 
 [node name="LegR" parent="Chad/Body" index="2"]
-position = Vector2(-302.99997, 1365.3237)
-rotation = -0.19381794
+position = Vector2(-302.99997, 1325.779)
+rotation = -0.1064704
+scale = Vector2(0.9998323, 0.9998323)
 
 [node name="ShinR" parent="Chad/Body" index="3"]
-position = Vector2(-64.80514, 1929.9457)
-rotation = 0.29105368
-scale = Vector2(0.99969006, 0.99969006)
+position = Vector2(-114.969734, 1909.0254)
+rotation = 0.19862854
+scale = Vector2(0.9996809, 0.9996809)
 
 [node name="FootR" parent="Chad/Body" index="4"]
-position = Vector2(-278.98596, 2463.7705)
-scale = Vector2(0.9995317, 0.9995317)
+position = Vector2(-278.96606, 2460.333)
+scale = Vector2(0.99952126, 0.99952126)
 
 [node name="FootL" parent="Chad/Body" index="5"]
-position = Vector2(547.52826, 2462.1482)
-scale = Vector2(0.9995311, 0.9995311)
+position = Vector2(546.97723, 2459.65)
+scale = Vector2(0.9995282, 0.9995282)
 
 [node name="Chest" parent="Chad/Body" index="6"]
-position = Vector2(81, 125.32367)
+position = Vector2(81, 85.77911)
+
+[node name="LegR" parent="Chad/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.9998323, 0.9998323)
 
 [node name="ShinR" parent="Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.99985516, 0.99985516)
+scale = Vector2(0.99984866, 0.99984866)
 
 [node name="FootR" parent="Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998416, 0.9998416)
+scale = Vector2(0.99984026, 0.99984026)
 
 [node name="LegL" parent="Chad/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998351, 0.9998351)
+scale = Vector2(0.99983674, 0.99983674)
 
 [node name="ShinL" parent="Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99985856, 0.99985856)
+scale = Vector2(0.9998531, 0.9998531)
 
 [node name="FootL" parent="Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998374, 0.9998374)
+scale = Vector2(0.9998383, 0.9998383)
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cm8xq")
+pitch_scale = 0.8
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_msy75")
+pitch_scale = 0.7
 
 [editable path="Chad"]

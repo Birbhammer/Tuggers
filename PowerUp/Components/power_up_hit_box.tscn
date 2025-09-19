@@ -1,13 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5kx8rc0u1rws"]
+[gd_scene load_steps=5 format=3 uid="uid://b5kx8rc0u1rws"]
 
 [ext_resource type="Script" uid="uid://ccs8a1dp22r0m" path="res://Scripts/PowerUp/power_up_hit_box.gd" id="1_bujo1"]
+[ext_resource type="AudioStream" uid="uid://6ebtwyaa6dc" path="res://Audio/Sound Effects/Buff.wav" id="2_8056h"]
+[ext_resource type="AudioStream" uid="uid://c63td8aqtlpmc" path="res://Audio/Sound Effects/Debuff3.ogg" id="3_8pur6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qa6k7"]
 
-[node name="PowerUpHitBox" type="Area2D"]
+[node name="PowerUpHitBox" type="Area2D" node_paths=PackedStringArray("BUFF_SOUND", "NERF_SOUND")]
 script = ExtResource("1_bujo1")
+BUFF_SOUND = NodePath("Buff")
+NERF_SOUND = NodePath("Debuff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qa6k7")
+
+[node name="Buff" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8056h")
+pitch_scale = 0.65
+
+[node name="Debuff" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8pur6")
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

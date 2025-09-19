@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://clkj1kklnkc3d"]
+[gd_scene load_steps=8 format=3 uid="uid://clkj1kklnkc3d"]
 
 [ext_resource type="Script" uid="uid://c1rm83uam4f4p" path="res://Scripts/Player/player_controller.gd" id="1_a1q1g"]
 [ext_resource type="Resource" uid="uid://c75d01x10o7fi" path="res://Player/Resources/p1_controls.tres" id="2_yaxm2"]
 [ext_resource type="PackedScene" uid="uid://dawqqrx62ng5e" path="res://Player/IkBodies/nerd_body.tscn" id="3_cxhyj"]
 [ext_resource type="Resource" uid="uid://beu2umkyu0jeo" path="res://Player/Resources/p2_controls.tres" id="3_qayj3"]
+[ext_resource type="AudioStream" uid="uid://crbyiqiqlaw0h" path="res://Audio/Sound Effects/Chad Jump.wav" id="5_qayj3"]
+[ext_resource type="AudioStream" uid="uid://cqdhqpyhg2m0c" path="res://Audio/Sound Effects/NerdHurt1.wav" id="6_2n0ly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q1g"]
 size = Vector2(353, 751)
 
-[node name="Nerd" type="CharacterBody2D" node_paths=PackedStringArray("AnimTree", "AnimPlayer", "IKBody") groups=["Nerd", "Player"]]
+[node name="Nerd" type="CharacterBody2D" node_paths=PackedStringArray("JUMP_SOUND", "HURT_SOUND", "AnimTree", "AnimPlayer", "IKBody") groups=["Nerd", "Player"]]
 collision_layer = 4
 script = ExtResource("1_a1q1g")
+JUMP_SOUND = NodePath("Jump")
+HURT_SOUND = NodePath("Hurt")
 AnimTree = NodePath("Nerd/AnimationTree")
 AnimPlayer = NodePath("Nerd/NerdAnim")
 IKBody = NodePath("Nerd")
@@ -27,53 +31,61 @@ position = Vector2(-12, -216)
 scale = Vector2(0.22, 0.22)
 
 [node name="FootR" parent="Nerd/Body" index="0"]
-position = Vector2(-202.959, 2363.607)
-scale = Vector2(0.9995549, 0.9995549)
+position = Vector2(-200.086, 2350.414)
+scale = Vector2(0.9995508, 0.9995508)
 
 [node name="FootL" parent="Nerd/Body" index="1"]
-position = Vector2(402.09314, 2362.7993)
-rotation = 0.02766338
-scale = Vector2(0.9995307, 0.9995307)
+position = Vector2(400.08966, 2350.3638)
+rotation = 0.010314588
+scale = Vector2(0.9995461, 0.9995461)
 
 [node name="LegL" parent="Nerd/Body" index="2"]
-position = Vector2(240, 1239.8147)
-rotation = -0.095422424
-scale = Vector2(0.999831, 0.999831)
+position = Vector2(240, 1190.737)
+rotation = -0.00721789
+scale = Vector2(0.99983996, 0.99983996)
 
 [node name="ShinL" parent="Nerd/Body" index="3"]
-position = Vector2(554.98303, 1802.2786)
-rotation = 0.2903746
-scale = Vector2(0.99969304, 0.99969304)
+position = Vector2(504.21356, 1778.7668)
+rotation = 0.20427589
+scale = Vector2(0.9997015, 0.9997015)
 
 [node name="LegR" parent="Nerd/Body" index="4"]
-position = Vector2(-76, 1266.8147)
-rotation = -0.044997152
-scale = Vector2(0.99983, 0.99983)
+position = Vector2(-76, 1217.737)
+rotation = 0.036878735
+scale = Vector2(0.99982685, 0.99982685)
 
 [node name="ShinR" parent="Nerd/Body" index="5"]
-position = Vector2(75.83937, 1860.4954)
-rotation = 0.41552812
-scale = Vector2(0.999695, 0.999695)
+position = Vector2(26.776524, 1821.8452)
+rotation = 0.31492952
+scale = Vector2(0.9996969, 0.9996969)
 
 [node name="Chest" parent="Nerd" index="1"]
-position = Vector2(81, 429.81378)
+position = Vector2(81, 380.73608)
 
 [node name="LegR" parent="Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.99983, 0.99983)
+scale = Vector2(0.99982685, 0.99982685)
 
 [node name="ShinR" parent="Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998649, 0.9998649)
+scale = Vector2(0.99987006, 0.99987006)
 
 [node name="FootR" parent="Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998599, 0.9998599)
+scale = Vector2(0.99985385, 0.99985385)
 
 [node name="LegL" parent="Nerd/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998311, 0.9998311)
+scale = Vector2(0.99983996, 0.99983996)
 
 [node name="ShinL" parent="Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99986196, 0.99986196)
+scale = Vector2(0.99986154, 0.99986154)
 
 [node name="FootL" parent="Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998376, 0.9998376)
+scale = Vector2(0.99984455, 0.99984455)
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qayj3")
+pitch_scale = 1.4
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2n0ly")
+pitch_scale = 1.15
 
 [editable path="Nerd"]
