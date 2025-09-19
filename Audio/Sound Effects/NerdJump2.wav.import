@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf6q2plu0da0s"
+path="res://.godot/imported/NerdJump2.wav-429ea418f66dd207979e861ce84eac15.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/NerdJump2.wav"
+dest_files=["res://.godot/imported/NerdJump2.wav-429ea418f66dd207979e861ce84eac15.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

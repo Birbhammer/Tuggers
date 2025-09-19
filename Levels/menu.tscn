@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://kjf5bqhn1rq1" path="res://Visual Assets/Virgin/Virgin2/Virgin2-partsSheet.png" id="6_18qad"]
 [ext_resource type="Texture2D" uid="uid://b25dw658x1njw" path="res://Visual Assets/Chad/Chad2/Chad2FullArmL.png" id="6_o0bt4"]
 [ext_resource type="Texture2D" uid="uid://bmbye241uvwv7" path="res://Visual Assets/Virgin/Virgin2/Virgin2Hand.png" id="7_3s77f"]
-[ext_resource type="AudioStream" uid="uid://dcth82tww3djx" path="res://Audio/8bit 2.3.mp3" id="12_2x4ia"]
+[ext_resource type="AudioStream" uid="uid://dcth82tww3djx" path="res://Audio/Songs/8bit 2.3.mp3" id="12_2x4ia"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vyd41"]
 font_size = 150
@@ -362,35 +362,35 @@ position = Vector2(-24, -173)
 scale = Vector2(0.15, 0.15)
 
 [node name="LegL" parent="Credits/Chad/Body" index="0"]
-position = Vector2(345, 1377.8442)
-rotation = -0.19668935
-scale = Vector2(0.9998326, 0.9998326)
+position = Vector2(345, 1354.1011)
+rotation = -0.1495256
+scale = Vector2(0.99983406, 0.99983406)
 
 [node name="ShinL" parent="Credits/Chad/Body" index="1"]
-position = Vector2(715.2284, 1905.576)
-rotation = 0.3169989
-scale = Vector2(0.9996873, 0.9996873)
+position = Vector2(689.9359, 1898.7004)
+rotation = 0.27182472
+scale = Vector2(0.9996869, 0.9996869)
 
 [node name="LegR" parent="Credits/Chad/Body" index="2"]
-position = Vector2(-303.00003, 1373.8444)
-rotation = -0.21263865
-scale = Vector2(0.9998338, 0.9998338)
+position = Vector2(-303.00003, 1350.1011)
+rotation = -0.16019367
+scale = Vector2(0.9998331, 0.9998331)
 
 [node name="ShinR" parent="Credits/Chad/Body" index="3"]
-position = Vector2(-54.221542, 1933.8833)
-rotation = 0.31096855
-scale = Vector2(0.9996879, 0.9996879)
+position = Vector2(-83.92178, 1922.4102)
+rotation = 0.25547484
+scale = Vector2(0.99968696, 0.99968696)
 
 [node name="FootR" parent="Credits/Chad/Body" index="4"]
-position = Vector2(-278.98987, 2463.3364)
-scale = Vector2(0.99952966, 0.99952966)
+position = Vector2(-278.9775, 2463.514)
+scale = Vector2(0.99952805, 0.99952805)
 
 [node name="FootL" parent="Credits/Chad/Body" index="5"]
-position = Vector2(547.47394, 2461.8276)
-scale = Vector2(0.9995241, 0.9995241)
+position = Vector2(547.47266, 2461.96)
+scale = Vector2(0.9995262, 0.9995262)
 
 [node name="Chest" parent="Credits/Chad/Body" index="6"]
-position = Vector2(81.00001, 133.84436)
+position = Vector2(81.00001, 110.101074)
 
 [node name="Skeleton2D" parent="Credits/Chad" index="1"]
 modification_stack = SubResource("SkeletonModificationStack2D_1obqf")
@@ -467,22 +467,22 @@ polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83,
 uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
 
 [node name="LegR" parent="Credits/Chad/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998338, 0.9998338)
+scale = Vector2(0.99983305, 0.99983305)
 
 [node name="ShinR" parent="Credits/Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998541, 0.9998541)
+scale = Vector2(0.99985385, 0.99985385)
 
 [node name="FootR" parent="Credits/Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.99984163, 0.99984163)
+scale = Vector2(0.9998411, 0.9998411)
 
 [node name="LegL" parent="Credits/Chad/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998326, 0.9998326)
+scale = Vector2(0.999834, 0.999834)
 
 [node name="ShinL" parent="Credits/Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.9998547, 0.9998547)
+scale = Vector2(0.9998529, 0.9998529)
 
 [node name="FootL" parent="Credits/Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998368, 0.9998368)
+scale = Vector2(0.9998393, 0.9998393)
 
 [node name="Label" type="Label" parent="Credits"]
 offset_left = -265.0
@@ -703,35 +703,35 @@ position = Vector2(-484, -306)
 scale = Vector2(0.15, 0.15)
 
 [node name="LegL" parent="CharacterSelectMenu/Chad/Body" index="0"]
-position = Vector2(345, 1377.8445)
-rotation = -0.19668935
-scale = Vector2(0.9998326, 0.9998326)
+position = Vector2(345, 1354.1012)
+rotation = -0.1495256
+scale = Vector2(0.99983406, 0.99983406)
 
 [node name="ShinL" parent="CharacterSelectMenu/Chad/Body" index="1"]
-position = Vector2(715.2283, 1905.5762)
-rotation = 0.3169989
-scale = Vector2(0.9996873, 0.9996873)
+position = Vector2(689.9358, 1898.7007)
+rotation = 0.27182472
+scale = Vector2(0.9996869, 0.9996869)
 
 [node name="LegR" parent="CharacterSelectMenu/Chad/Body" index="2"]
-position = Vector2(-303.00024, 1373.8445)
-rotation = -0.21263865
-scale = Vector2(0.9998338, 0.9998338)
+position = Vector2(-303.00024, 1350.1012)
+rotation = -0.16019367
+scale = Vector2(0.9998331, 0.9998331)
 
 [node name="ShinR" parent="CharacterSelectMenu/Chad/Body" index="3"]
-position = Vector2(-54.22168, 1933.8834)
-rotation = 0.31096855
-scale = Vector2(0.9996879, 0.9996879)
+position = Vector2(-83.92212, 1922.4103)
+rotation = 0.25547484
+scale = Vector2(0.99968696, 0.99968696)
 
 [node name="FootR" parent="CharacterSelectMenu/Chad/Body" index="4"]
-position = Vector2(-278.99023, 2463.3364)
-scale = Vector2(0.99952966, 0.99952966)
+position = Vector2(-278.97754, 2463.514)
+scale = Vector2(0.99952805, 0.99952805)
 
 [node name="FootL" parent="CharacterSelectMenu/Chad/Body" index="5"]
-position = Vector2(547.4739, 2461.828)
-scale = Vector2(0.9995241, 0.9995241)
+position = Vector2(547.47266, 2461.96)
+scale = Vector2(0.9995262, 0.9995262)
 
 [node name="Chest" parent="CharacterSelectMenu/Chad/Body" index="6"]
-position = Vector2(80.999756, 133.84448)
+position = Vector2(80.999756, 110.1012)
 
 [node name="UpperArmLPoly" type="Polygon2D" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/ArmPinLoc" index="0"]
 z_index = 5
@@ -802,22 +802,22 @@ polygon = PackedVector2Array(105.36, -19.392, 295.939, 283.161, -102.31, 520.83,
 uv = PackedVector2Array(3362.07, 1286.47, 3306.02, 933.315, 3765.68, 871.654, 3675.99, 989.371, 4068.38, 1084.67, 4057.17, 1561.14, 3412.53, 1465.85)
 
 [node name="LegR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998338, 0.9998338)
+scale = Vector2(0.99983305, 0.99983305)
 
 [node name="ShinR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998541, 0.9998541)
+scale = Vector2(0.99985385, 0.99985385)
 
 [node name="FootR" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.99984163, 0.99984163)
+scale = Vector2(0.9998411, 0.9998411)
 
 [node name="LegL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998326, 0.9998326)
+scale = Vector2(0.999834, 0.999834)
 
 [node name="ShinL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.9998547, 0.9998547)
+scale = Vector2(0.9998529, 0.9998529)
 
 [node name="FootL" parent="CharacterSelectMenu/Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998368, 0.9998368)
+scale = Vector2(0.9998393, 0.9998393)
 
 [node name="Nerd" parent="CharacterSelectMenu" instance=ExtResource("5_k63d0")]
 position = Vector2(495, -294)
@@ -825,37 +825,37 @@ scale = Vector2(-0.15, 0.15)
 
 [node name="FootR" parent="CharacterSelectMenu/Nerd/Body" index="0"]
 z_index = 6
-position = Vector2(-203.73804, 2366.806)
-scale = Vector2(0.99955475, 0.99955475)
+position = Vector2(-203.33887, 2364.1626)
+scale = Vector2(0.99955434, 0.99955434)
 
 [node name="FootL" parent="CharacterSelectMenu/Nerd/Body" index="1"]
 z_index = 6
-position = Vector2(402.60815, 2365.8257)
-rotation = 0.036446173
-scale = Vector2(0.99953115, 0.99953115)
+position = Vector2(402.2771, 2363.3662)
+rotation = 0.060334783
+scale = Vector2(0.9995351, 0.9995351)
 
 [node name="LegL" parent="CharacterSelectMenu/Nerd/Body" index="2"]
-position = Vector2(240, 1264.6604)
-rotation = -0.14007583
-scale = Vector2(0.99982905, 0.99982905)
+position = Vector2(240, 1332.2385)
+rotation = -0.2615299
+scale = Vector2(0.9998317, 0.9998317)
 
 [node name="ShinL" parent="CharacterSelectMenu/Nerd/Body" index="3"]
-position = Vector2(579.7759, 1812.5018)
-rotation = 0.33396196
-scale = Vector2(0.9996885, 0.9996885)
+position = Vector2(643.64746, 1834.8792)
+rotation = 0.45251653
+scale = Vector2(0.99969196, 0.99969196)
 
 [node name="LegR" parent="CharacterSelectMenu/Nerd/Body" index="4"]
-position = Vector2(-76, 1291.6604)
-rotation = -0.08644671
-scale = Vector2(0.99983037, 0.99983037)
+position = Vector2(-76, 1359.2385)
+rotation = -0.19918652
+scale = Vector2(0.99982953, 0.99982953)
 
 [node name="ShinR" parent="CharacterSelectMenu/Nerd/Body" index="5"]
-position = Vector2(100.309814, 1878.5394)
-rotation = 0.46645603
-scale = Vector2(0.99969506, 0.99969506)
+position = Vector2(165.21484, 1922.5558)
+rotation = 0.6049761
+scale = Vector2(0.99969465, 0.99969465)
 
 [node name="Chest" parent="CharacterSelectMenu/Nerd" index="1"]
-position = Vector2(81, 454.65942)
+position = Vector2(81, 522.2374)
 
 [node name="UpperArmRPoly" type="Polygon2D" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/ArmPinLoc" index="0"]
 z_index = 6
@@ -924,22 +924,22 @@ polygon = PackedVector2Array(96.339, 85.7836, 140.208, 214.464, -125.599, 380.96
 uv = PackedVector2Array(3973.33, 1416.9, 3978.49, 1281.04, 4286.31, 1220.85, 4468.6, 1413.46, 4420.45, 1631.86, 3983.65, 1523.52)
 
 [node name="LegR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.99983037, 0.99983037)
+scale = Vector2(0.99982953, 0.99982953)
 
 [node name="ShinR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998647, 0.9998647)
+scale = Vector2(0.9998651, 0.9998651)
 
 [node name="FootR" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998597, 0.9998597)
+scale = Vector2(0.99985963, 0.99985963)
 
 [node name="LegL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.999829, 0.999829)
+scale = Vector2(0.9998316, 0.9998316)
 
 [node name="ShinL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99985945, 0.99985945)
+scale = Vector2(0.99986035, 0.99986035)
 
 [node name="FootL" parent="CharacterSelectMenu/Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998425, 0.9998425)
+scale = Vector2(0.99984306, 0.99984306)
 
 [node name="SelectionPOS" type="Node2D" parent="CharacterSelectMenu"]
 
@@ -1054,6 +1054,7 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_2x4ia")
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Base/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Base/TutorialButton" to="." method="_on_tutorial_button_pressed"]
