@@ -4,9 +4,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_vufbg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 799, 13, 0, 0, 0, 0, 371, 7, 0, 0, 0, 0, 246, -245, 0, 0, 0, 0, 309, -497, 0, 0, 0, 0, 554, -636, 0, 0, 0, 0, 1031, -638, 0, 0, 0, 0, 1172, -619, 0, 0, 0, 0, 1310, -577, 0, 0, 0, 0, 1368, -252, 0, 0, 0, 0, 1190, -13, 0, 0, 0, 0, 799, 13)
+"points": PackedVector2Array(0, 0, 0, 0, 388, -28, 0, 0, 0, 0, 398, -28, 0, 0, 0, 0, 135, -3792, -825.9301, -865.26013, 825.9301, 865.26013, 1643, -3765, -249.09003, -655.50006, 249.09003, 655.50006, 2429, -2822, 0, 0, 0, 0, 2998, -821, 0, 0, 0, 0, 384, -42)
 }
-point_count = 11
+point_count = 7
 
 [sub_resource type="Animation" id="Animation_84vo3"]
 length = 0.001
@@ -49,7 +49,7 @@ _data = {
 curve = SubResource("Curve2D_vufbg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(799, 13)
+position = Vector2(388, -28)
 rotates = false
 
 [node name="MovingPlatformHorizontal" parent="PathFollow2D" instance=ExtResource("1_hd3x6")]
