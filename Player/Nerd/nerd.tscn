@@ -12,6 +12,7 @@ size = Vector2(353, 751)
 
 [node name="Nerd" type="CharacterBody2D" node_paths=PackedStringArray("JUMP_SOUND", "HURT_SOUND", "AnimTree", "AnimPlayer", "IKBody") groups=["Nerd", "Player"]]
 collision_layer = 4
+floor_max_angle = 0.80285144
 script = ExtResource("1_a1q1g")
 JUMP_SOUND = NodePath("Jump")
 HURT_SOUND = NodePath("Hurt")
@@ -31,54 +32,54 @@ position = Vector2(-12, -216)
 scale = Vector2(0.22, 0.22)
 
 [node name="FootR" parent="Nerd/Body" index="0"]
-position = Vector2(-200.086, 2350.414)
-scale = Vector2(0.9995508, 0.9995508)
+position = Vector2(-202.42168, 2360.114)
+scale = Vector2(0.99955106, 0.99955106)
 
 [node name="FootL" parent="Nerd/Body" index="1"]
-position = Vector2(400.08966, 2350.3638)
-rotation = 0.010314588
-scale = Vector2(0.9995461, 0.9995461)
+position = Vector2(401.65594, 2359.5488)
+rotation = 0.06773531
+scale = Vector2(0.9995416, 0.9995416)
 
 [node name="LegL" parent="Nerd/Body" index="2"]
-position = Vector2(240, 1190.737)
-rotation = -0.00721789
-scale = Vector2(0.99983996, 0.99983996)
+position = Vector2(240, 1353.1741)
+rotation = -0.29915646
+scale = Vector2(0.99983656, 0.99983656)
 
 [node name="ShinL" parent="Nerd/Body" index="3"]
-position = Vector2(504.21356, 1778.7668)
-rotation = 0.20427589
-scale = Vector2(0.9997015, 0.9997015)
+position = Vector2(662.2719, 1840.277)
+rotation = 0.48924467
+scale = Vector2(0.9997006, 0.9997006)
 
 [node name="LegR" parent="Nerd/Body" index="4"]
-position = Vector2(-76, 1217.737)
-rotation = 0.036878735
-scale = Vector2(0.99982685, 0.99982685)
+position = Vector2(-76, 1380.1741)
+rotation = -0.23411341
+scale = Vector2(0.9998293, 0.9998293)
 
 [node name="ShinR" parent="Nerd/Body" index="5"]
-position = Vector2(26.776524, 1821.8452)
-rotation = 0.31492952
-scale = Vector2(0.9996969, 0.9996969)
+position = Vector2(184.73846, 1934.7244)
+rotation = 0.64789
+scale = Vector2(0.9996963, 0.9996963)
 
 [node name="Chest" parent="Nerd" index="1"]
-position = Vector2(81, 380.73608)
+position = Vector2(81, 543.1731)
 
 [node name="LegR" parent="Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.99982685, 0.99982685)
+scale = Vector2(0.99982935, 0.99982935)
 
 [node name="ShinR" parent="Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.99987006, 0.99987006)
+scale = Vector2(0.999867, 0.999867)
 
 [node name="FootR" parent="Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.99985385, 0.99985385)
+scale = Vector2(0.9998547, 0.9998547)
 
 [node name="LegL" parent="Nerd/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.99983996, 0.99983996)
+scale = Vector2(0.99983656, 0.99983656)
 
 [node name="ShinL" parent="Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99986154, 0.99986154)
+scale = Vector2(0.999864, 0.999864)
 
 [node name="FootL" parent="Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.99984455, 0.99984455)
+scale = Vector2(0.999841, 0.999841)
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qayj3")

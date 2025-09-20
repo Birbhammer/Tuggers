@@ -13,5 +13,5 @@ func _on_body_entered(body: Node2D) -> void:
 					NERF_SOUND.play()
 				get_child(i).Activate(body)
 		
-		self.visible = false
 		self.monitoring = false
+		self.visible = false

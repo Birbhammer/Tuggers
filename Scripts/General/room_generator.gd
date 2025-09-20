@@ -42,8 +42,9 @@ func _ready() -> void:
 		last_room = new_room
 	
 	#------Next Level Logic------------------------------------------------------------------------
-	var new_room = LevelTransition.instantiate()
-	var NewRoomStart = last_room.find_child("End")
-	last_room.add_child(new_room)
-	new_room.position = NewRoomStart.position
+	if LevelTransition != null:
+		var new_room = LevelTransition.instantiate()
+		var NewRoomStart = last_room.find_child("End")
+		last_room.add_child(new_room)
+		new_room.position = NewRoomStart.position
 	
