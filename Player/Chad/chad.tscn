@@ -21,6 +21,7 @@ AnimPlayer = NodePath("Chad/ChadAnims")
 IKBody = NodePath("Chad")
 P1Controls = ExtResource("2_evj1t")
 P2Controls = ExtResource("3_msy75")
+KnockbackDir = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.5, -21)
@@ -31,53 +32,53 @@ position = Vector2(0, -195)
 scale = Vector2(0.22, 0.22)
 
 [node name="LegL" parent="Chad/Body" index="0"]
-position = Vector2(344.99997, 1428.1978)
-rotation = -0.2967119
-scale = Vector2(0.9998366, 0.9998366)
+position = Vector2(344.99997, 1314.3973)
+rotation = -0.07065808
+scale = Vector2(0.99983317, 0.99983317)
 
 [node name="ShinL" parent="Chad/Body" index="1"]
-position = Vector2(766.07874, 1916.3265)
-rotation = 0.41280222
-scale = Vector2(0.9996932, 0.9996932)
+position = Vector2(645.95544, 1884.4775)
+rotation = 0.19628398
+scale = Vector2(0.99969006, 0.99969006)
 
 [node name="LegR" parent="Chad/Body" index="2"]
-position = Vector2(-302.99997, 1424.1978)
-rotation = -0.32386142
-scale = Vector2(0.9998294, 0.9998294)
+position = Vector2(-302.99997, 1310.3975)
+rotation = -0.07249481
+scale = Vector2(0.999831, 0.999831)
 
 [node name="ShinR" parent="Chad/Body" index="3"]
-position = Vector2(6.401374, 1953.1624)
-rotation = 0.4286568
-scale = Vector2(0.9996854, 0.9996854)
+position = Vector2(-134.89091, 1899.6932)
+rotation = 0.1626779
+scale = Vector2(0.99968576, 0.99968576)
 
 [node name="FootR" parent="Chad/Body" index="4"]
-position = Vector2(-278.9787, 2452.5618)
-scale = Vector2(0.9995257, 0.9995257)
+position = Vector2(-278.96634, 2456.5413)
+scale = Vector2(0.9995256, 0.9995256)
 
 [node name="FootL" parent="Chad/Body" index="5"]
-position = Vector2(545.8822, 2453.9844)
-scale = Vector2(0.9995311, 0.9995311)
+position = Vector2(546.4072, 2456.8838)
+scale = Vector2(0.99952817, 0.99952817)
 
 [node name="Chest" parent="Chad/Body" index="6"]
-position = Vector2(81, 184.19788)
+position = Vector2(81, 70.3974)
 
 [node name="LegR" parent="Chad/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998294, 0.9998294)
+scale = Vector2(0.9998311, 0.9998311)
 
 [node name="ShinR" parent="Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.99985594, 0.99985594)
+scale = Vector2(0.9998547, 0.9998547)
 
 [node name="FootR" parent="Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.99984026, 0.99984026)
+scale = Vector2(0.9998398, 0.9998398)
 
 [node name="LegL" parent="Chad/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998366, 0.9998366)
+scale = Vector2(0.9998332, 0.9998332)
 
 [node name="ShinL" parent="Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.9998566, 0.9998566)
+scale = Vector2(0.9998569, 0.9998569)
 
 [node name="FootL" parent="Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.99983776, 0.99983776)
+scale = Vector2(0.999838, 0.999838)
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_cm8xq")

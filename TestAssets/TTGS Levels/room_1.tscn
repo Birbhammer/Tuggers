@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://doo83siwwwqic"]
+[gd_scene load_steps=6 format=4 uid="uid://doo83siwwwqic"]
 
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="1_80b7g"]
 [ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/nerd_room_start.gd" id="2_ysl4g"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_muomu"]
+[ext_resource type="PackedScene" uid="uid://co83e103383aj" path="res://LevelAssets/CCGHOUSE/CCG_moving_platform_horizontal.tscn" id="4_lip7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muomu"]
 size = Vector2(114, 1537)
@@ -45,5 +46,11 @@ shape = SubResource("RectangleShape2D_muomu")
 [node name="Sprite2D" type="Sprite2D" parent="Start"]
 position = Vector2(42, -482)
 texture = ExtResource("3_muomu")
+
+[node name="MovingPlatformHorizontal" parent="." node_paths=PackedStringArray("MaxDistance", "StartPOS") instance=ExtResource("4_lip7s")]
+position = Vector2(5030, -1970)
+SPEED = 25
+MaxDistance = NodePath("../Locations/End")
+StartPOS = NodePath("../Hazards/Hazard1")
 
 [connection signal="body_entered" from="Start" to="Start" method="_on_body_entered"]

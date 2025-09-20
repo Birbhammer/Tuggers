@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bddv7hcv6pfwt"]
+[gd_scene load_steps=6 format=4 uid="uid://bddv7hcv6pfwt"]
 
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="1_rmjx4"]
 [ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/nerd_room_start.gd" id="2_8vgf1"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_c6ey1"]
+[ext_resource type="PackedScene" uid="uid://byk44m1ut3yvk" path="res://LevelAssets/CCGHOUSE/CCG_path_platform.tscn" id="4_d5uvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ey1"]
 size = Vector2(114, 1537)
@@ -45,5 +46,8 @@ shape = SubResource("RectangleShape2D_c6ey1")
 [node name="Sprite2D" type="Sprite2D" parent="Start"]
 position = Vector2(42, -482)
 texture = ExtResource("3_c6ey1")
+
+[node name="PathPlatform" parent="." instance=ExtResource("4_d5uvx")]
+position = Vector2(4137, 1189)
 
 [connection signal="body_entered" from="Start" to="Start" method="_on_body_entered"]

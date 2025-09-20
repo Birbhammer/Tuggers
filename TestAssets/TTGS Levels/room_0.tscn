@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://dmvfroiw3ypng"]
+[gd_scene load_steps=6 format=4 uid="uid://dmvfroiw3ypng"]
 
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="1_c1fu6"]
 [ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/nerd_room_start.gd" id="2_awvba"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_hg8ja"]
+[ext_resource type="PackedScene" uid="uid://cljvamqrr2ld4" path="res://LevelAssets/CCGHOUSE/CCG_falling_platform.tscn" id="4_ljg1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg8ja"]
 size = Vector2(114, 1537)
@@ -46,5 +47,13 @@ shape = SubResource("RectangleShape2D_hg8ja")
 [node name="Sprite2D" type="Sprite2D" parent="Start"]
 position = Vector2(42, -482)
 texture = ExtResource("3_hg8ja")
+
+[node name="FallingPlatform" parent="." instance=ExtResource("4_ljg1j")]
+position = Vector2(4221, -700)
+SPEED = 1000
+
+[node name="FallingPlatform2" parent="." instance=ExtResource("4_ljg1j")]
+position = Vector2(1633, -897)
+SPEED = 1000
 
 [connection signal="body_entered" from="Start" to="Start" method="_on_body_entered"]
