@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://03yayp4ujygb"]
+[gd_scene load_steps=8 format=4 uid="uid://03yayp4ujygb"]
 
 [ext_resource type="Texture2D" uid="uid://bgxfyhx6jrgja" path="res://Visual Assets/Levels/Gym Level/TileSet2-Gym.png" id="1_yxcok"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_h4om5"]
-[ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="3_vdcks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ef0p5"]
 texture = ExtResource("1_yxcok")
@@ -111,6 +110,7 @@ tile_map_data = PackedByteArray("AADe/9n/AAAFAAEAAADe/9r/AAAFAAEAAADe/9v/AAAFAAE
 tile_set = SubResource("TileSet_ol7bm")
 
 [node name="ForeGround" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADe/xwAAAAFAAUAAADf/xsAAAAFAAUAAADg/xoAAAAFAAUAAADh/xkAAAAFAAUAAADi/xkAAAAFAAUAAADj/xgAAAAFAAUAAADk/xcAAAAFAAUAAADl/xYAAAAFAAUAAADm/xUAAAAFAAUAAADn/xQAAAAFAAUAAADo/xQAAAAFAAUAAADp/xMAAAAFAAUAAADq/xIAAAAFAAUAAADr/xEAAAAFAAUAAADs/xAAAAAFAAUAAADt/w8AAAAFAAUAAADu/w4AAAAFAAUAAADv/w4AAAAFAAUAAADw/w0AAAAFAAUAAADx/wwAAAAFAAUAAADy/wsAAAAFAAUAAADz/woAAAAFAAUAAAD0/wkAAAAFAAUAAAD1/wgAAAAFAAUAAAD2/wgAAAAFAAUAAAD3/wcAAAAFAAUAAAD4/wYAAAAFAAUAAAD5/wUAAAAFAAUAAAD6/wQAAAAFAAUAAAD7/wMAAAAFAAUAAAD8/wMAAAAFAAUAAAD9/wIAAAAFAAUAAAD+/wEAAAAFAAUAAAD//wAAAAAFAAUAAAA=")
 tile_set = SubResource("TileSet_prjtm")
 
 [node name="Locations" type="Node" parent="."]
@@ -140,9 +140,5 @@ shape = SubResource("RectangleShape2D_hg8ja")
 [node name="Sprite2D" type="Sprite2D" parent="ChadStart"]
 position = Vector2(42, -482)
 texture = ExtResource("2_h4om5")
-
-[node name="Chad" parent="." instance=ExtResource("3_vdcks")]
-position = Vector2(-658, -839)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="ChadStart" to="ChadStart" method="_on_body_entered"]

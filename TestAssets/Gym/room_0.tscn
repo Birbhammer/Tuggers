@@ -126,7 +126,7 @@ position = Vector2(-4224, -177)
 [node name="Hazards" type="Node" parent="."]
 
 [node name="Hazard1" type="Marker2D" parent="Hazards"]
-position = Vector2(-1833, -187)
+position = Vector2(-1933, -454)
 
 [node name="ChadStart" type="Area2D" parent="."]
 position = Vector2(-159, -15)

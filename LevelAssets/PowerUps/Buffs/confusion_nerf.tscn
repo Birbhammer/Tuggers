@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://4fcf8p54reuh"]
+
+[ext_resource type="PackedScene" uid="uid://b5kx8rc0u1rws" path="res://PowerUp/Components/power_up_hit_box.tscn" id="1_j4ygn"]
+[ext_resource type="PackedScene" uid="uid://dn033t7tkn7ml" path="res://PowerUp/Nerfs/confusion.tscn" id="3_j4ygn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mthf4"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="ConfusionNerf" type="Node2D"]
+
+[node name="PowerUpHitBox" parent="." instance=ExtResource("1_j4ygn")]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" parent="PowerUpHitBox" index="0"]
+position = Vector2(0, 0.5)
+
+[node name="Confusion" parent="PowerUpHitBox" instance=ExtResource("3_j4ygn")]
+
+[node name="ColorRect" type="ColorRect" parent="PowerUpHitBox"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PowerUpHitBox/ColorRect"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 124.0
+offset_right = 241.0
+offset_bottom = 193.0
+rotation = -0.5246859
+text = "Confusion"
+label_settings = SubResource("LabelSettings_mthf4")
+
+[editable path="PowerUpHitBox"]

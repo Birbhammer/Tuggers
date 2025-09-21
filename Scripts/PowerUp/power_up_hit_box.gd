@@ -1,4 +1,6 @@
 extends Area2D
+
+
 @export var BUFF_SOUND : AudioStreamPlayer
 @export var NERF_SOUND : AudioStreamPlayer
 
@@ -13,5 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 					NERF_SOUND.play()
 				get_child(i).Activate(body)
 		
-		self.monitoring = false
+		self.set_collision_layer_value(3, false)
+		self.set_collision_layer_value(1, false)
+		self.set_collision_mask_value(3,false)
+		self.set_collision_mask_value(1,false)
 		self.visible = false

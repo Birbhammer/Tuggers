@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp0a0fitmauwc"]
+[gd_scene load_steps=3 format=3 uid="uid://cp0a0fitmauwc"]
 
 [ext_resource type="Script" uid="uid://dud4olu5jbpfg" path="res://Scripts/PowerUp/nerd_hazard_spawner.gd" id="1_hf63h"]
+[ext_resource type="PackedScene" uid="uid://4fcf8p54reuh" path="res://LevelAssets/PowerUps/Buffs/confusion_nerf.tscn" id="2_j68xe"]
 
 [node name="NerdHazardSpawner" type="Node"]
 script = ExtResource("1_hf63h")
+Hazard = ExtResource("2_j68xe")

@@ -8,6 +8,7 @@ var PowerUpLocations: Array[Marker2D] = []
 var HazardLocations: Array[Marker2D] = []
 
 @export var PowerUpList: Array[PackedScene] = []
+@export var HazardList: Array[PackedScene] = []
 
 var CurrentRoom: int = 0
 
@@ -38,6 +39,10 @@ func _ready() -> void:
 		
 		for k in range(new_room.find_child("Hazards").get_child_count()):
 			HazardLocations.append(new_room.find_child("Hazards").get_child(k))
+			var curr_loc = new_room.find_child("Hazards").get_child(k)
+			var spawned_hazard = HazardList[randi_range(0, PowerUpList.size() - 1)].instantiate()
+			new_room.add_child(spawned_hazard)
+			spawned_hazard.position = curr_loc.position
 		
 		last_room = new_room
 	

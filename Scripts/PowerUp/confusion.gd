@@ -18,5 +18,5 @@ func Activate(body: Player) -> void:
 func _on_confusion_timer_timeout():
 	if player != null:
 		player.confusion = 1
-		get_parent().get_parent().queue_free()
+		#get_parent().get_parent().queue_free()
 	

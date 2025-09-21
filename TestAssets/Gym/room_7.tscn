@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dg4vetrhm4xga"]
+[gd_scene load_steps=8 format=4 uid="uid://dg4vetrhm4xga"]
 
 [ext_resource type="Texture2D" uid="uid://bgxfyhx6jrgja" path="res://Visual Assets/Levels/Gym Level/TileSet2-Gym.png" id="1_keay5"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_03ow1"]
-[ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="3_6rrwj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ef0p5"]
 texture = ExtResource("1_keay5")
@@ -141,9 +140,5 @@ shape = SubResource("RectangleShape2D_hg8ja")
 [node name="Sprite2D" type="Sprite2D" parent="ChadStart"]
 position = Vector2(42, -482)
 texture = ExtResource("2_03ow1")
-
-[node name="Chad" parent="." instance=ExtResource("3_6rrwj")]
-position = Vector2(-658, -839)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="ChadStart" to="ChadStart" method="_on_body_entered"]

@@ -155,7 +155,7 @@ shape = SubResource("RectangleShape2D_hg8ja")
 position = Vector2(42, -482)
 texture = ExtResource("2_rqdct")
 
-[node name="Platforms" type="Node" parent="."]
+[node name="Platforms" type="Node2D" parent="."]
 
 [node name="MovingPlatformVertical" parent="Platforms" node_paths=PackedStringArray("MaxHeight", "StartPOS") instance=ExtResource("4_rqdct")]
 position = Vector2(-1815, 2831)
@@ -199,7 +199,7 @@ SPEED = -25
 MaxHeight = NodePath("../../Platform Markers/EndF")
 StartPOS = NodePath("../../Platform Markers/StartF")
 
-[node name="Platform Markers" type="Node" parent="."]
+[node name="Platform Markers" type="Node2D" parent="."]
 
 [node name="Start1" type="Marker2D" parent="Platform Markers"]
 position = Vector2(-1810.082, 3281.5854)

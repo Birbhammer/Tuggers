@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://byxair753vxxv"]
+[gd_scene load_steps=29 format=4 uid="uid://byxair753vxxv"]
 
 [ext_resource type="PackedScene" uid="uid://clkj1kklnkc3d" path="res://Player/Nerd/nerd.tscn" id="1_6isyr"]
 [ext_resource type="PackedScene" uid="uid://306fmxpk8rtm" path="res://Player/Nerd/nerd_arms.tscn" id="2_5ubxa"]
 [ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="3_jycte"]
-[ext_resource type="PackedScene" uid="uid://bboh3jxf5ggkn" path="res://Player/Chad/chad_arms.tscn" id="4_ev4ff"]
-[ext_resource type="PackedScene" uid="uid://dgnjkjvifi1n1" path="res://Player/Nerd/chad_arms_2.tscn" id="5_40bat"]
+[ext_resource type="PackedScene" uid="uid://dgnjkjvifi1n1" path="res://Player/Chad/chad_arms_2.tscn" id="5_40bat"]
 [ext_resource type="Script" uid="uid://dgcaxq02xtd7p" path="res://Scripts/General/room_generator.gd" id="5_ev4ff"]
 [ext_resource type="PackedScene" uid="uid://dmvfroiw3ypng" path="res://TestAssets/TTGS Levels/room_0.tscn" id="6_jycte"]
 [ext_resource type="PackedScene" uid="uid://doo83siwwwqic" path="res://TestAssets/TTGS Levels/room_1.tscn" id="7_fiyor"]
@@ -14,7 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://pbjmeq0l0xiu" path="res://TestAssets/Gym/room_0.tscn" id="12_4lug0"]
 [ext_resource type="TileSet" uid="uid://brvfrrhv61fvg" path="res://LevelAssets/Tilesets/test_tile_set.tres" id="12_7apmo"]
 [ext_resource type="PackedScene" uid="uid://babjegcqcrucl" path="res://LevelAssets/PowerUps/Buffs/double_jump_buff.tscn" id="12_40bat"]
+[ext_resource type="PackedScene" uid="uid://bi4yuieglvdn" path="res://TestAssets/Gym/room_Final.tscn" id="14_3rge6"]
+[ext_resource type="PackedScene" uid="uid://4fcf8p54reuh" path="res://LevelAssets/PowerUps/Buffs/confusion_nerf.tscn" id="14_vt8gr"]
+[ext_resource type="PackedScene" uid="uid://wh0a1p46bbar" path="res://TestAssets/Gym/room_1.tscn" id="16_3rge6"]
 [ext_resource type="Texture2D" uid="uid://bgxfyhx6jrgja" path="res://Visual Assets/Levels/Gym Level/TileSet2-Gym.png" id="16_vt8gr"]
+[ext_resource type="PackedScene" uid="uid://rotcsg71wp1r" path="res://TestAssets/Gym/room_2.tscn" id="17_e3y5p"]
+[ext_resource type="PackedScene" uid="uid://be72syc8a4igv" path="res://TestAssets/Gym/room_3.tscn" id="18_kffco"]
+[ext_resource type="PackedScene" uid="uid://8233let4c5ds" path="res://TestAssets/Gym/room_4.tscn" id="19_rwlma"]
+[ext_resource type="PackedScene" uid="uid://orfr0t4yophj" path="res://TestAssets/Gym/room_5.tscn" id="20_j8wuk"]
+[ext_resource type="PackedScene" uid="uid://db25aj1fkifhb" path="res://TestAssets/Gym/room_6.tscn" id="21_apgjh"]
+[ext_resource type="PackedScene" uid="uid://dg4vetrhm4xga" path="res://TestAssets/Gym/room_7.tscn" id="22_aqjw4"]
+[ext_resource type="PackedScene" uid="uid://03yayp4ujygb" path="res://TestAssets/Gym/room_8.tscn" id="23_6j27b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt8yr"]
 texture = ExtResource("16_vt8gr")
@@ -122,22 +131,18 @@ position = Vector2(7203, -251)
 scale = Vector2(0.5, 0.5)
 
 [node name="NerdArms" parent="Players/Nerd" instance=ExtResource("2_5ubxa")]
-position = Vector2(-9, -91)
+scale = Vector2(2, 2)
 
 [node name="Chad" parent="Players" instance=ExtResource("3_jycte")]
 position = Vector2(-5262, -334)
 scale = Vector2(0.5, 0.5)
 
-[node name="ChadArms" parent="Players/Chad" instance=ExtResource("4_ev4ff")]
-visible = false
-position = Vector2(-16, -9)
-
-[node name="NerdArms" parent="Players/Chad" instance=ExtResource("5_40bat")]
-position = Vector2(0, -120)
+[node name="ChadArms2" parent="Players/Chad" instance=ExtResource("5_40bat")]
 
 [node name="NerdRoomGenerator" type="Node" parent="." groups=["NerdGenerator"]]
 script = ExtResource("5_ev4ff")
 PowerUpList = Array[PackedScene]([ExtResource("12_40bat")])
+HazardList = Array[PackedScene]([ExtResource("14_vt8gr")])
 LevelTransition = ExtResource("6_jycte")
 RoomList = Array[PackedScene]([ExtResource("6_jycte"), ExtResource("7_fiyor"), ExtResource("8_e33e4"), ExtResource("9_7apmo"), ExtResource("11_e33e4")])
 MaxRoomNum = 50
@@ -162,11 +167,13 @@ tile_set = ExtResource("12_7apmo")
 [node name="ChadLevelGenerator" type="Node" parent="." groups=["ChadGenerator"]]
 script = ExtResource("5_ev4ff")
 PowerUpList = Array[PackedScene]([ExtResource("12_40bat")])
-RoomList = Array[PackedScene]([ExtResource("12_4lug0")])
-MaxRoomNum = 25
+HazardList = Array[PackedScene]([ExtResource("14_vt8gr")])
+LevelTransition = ExtResource("14_3rge6")
+RoomList = Array[PackedScene]([ExtResource("12_4lug0"), ExtResource("16_3rge6"), ExtResource("17_e3y5p"), ExtResource("18_kffco"), ExtResource("19_rwlma"), ExtResource("20_j8wuk"), ExtResource("21_apgjh"), ExtResource("22_aqjw4"), ExtResource("23_6j27b")])
+MaxRoomNum = 5
 
 [node name="RoomStart" type="Marker2D" parent="ChadLevelGenerator"]
-position = Vector2(-13330, 0)
+position = Vector2(-13327, 0)
 
 [node name="BackGround" type="TileMapLayer" parent="ChadLevelGenerator"]
 position = Vector2(-4589, 0)
