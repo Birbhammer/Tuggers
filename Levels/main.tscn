@@ -1,21 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://comvul6246hhp"]
+[gd_scene load_steps=16 format=3 uid="uid://comvul6246hhp"]
 
 [ext_resource type="Script" uid="uid://cj1g4gflivcat" path="res://Scripts/General/main.gd" id="1_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://byxair753vxxv" path="res://Levels/game.tscn" id="2_lwy2l"]
-[ext_resource type="PackedScene" uid="uid://4fcf8p54reuh" path="res://LevelAssets/PowerUps/Buffs/confusion_nerf.tscn" id="3_ovrsl"]
-[ext_resource type="PackedScene" uid="uid://pbjmeq0l0xiu" path="res://TestAssets/Gym/room_0.tscn" id="4_5uk0a"]
+[ext_resource type="PackedScene" uid="uid://cky3olhxyr5a6" path="res://TestAssets/CityNerd/room_0.tscn" id="3_mykqc"]
+[ext_resource type="PackedScene" uid="uid://dmvfroiw3ypng" path="res://TestAssets/TTGS Levels/room_0.tscn" id="4_hilkn"]
+[ext_resource type="PackedScene" uid="uid://doo83siwwwqic" path="res://TestAssets/TTGS Levels/room_1.tscn" id="5_5mxy1"]
 [ext_resource type="Texture2D" uid="uid://byohnmss85mhl" path="res://Visual Assets/Whitebox.png" id="5_7pswh"]
-[ext_resource type="PackedScene" uid="uid://wh0a1p46bbar" path="res://TestAssets/Gym/room_1.tscn" id="5_ouevp"]
-[ext_resource type="PackedScene" uid="uid://rotcsg71wp1r" path="res://TestAssets/Gym/room_2.tscn" id="6_ja5tu"]
+[ext_resource type="PackedScene" uid="uid://bddv7hcv6pfwt" path="res://TestAssets/TTGS Levels/room_3.tscn" id="6_3lhg3"]
 [ext_resource type="Script" uid="uid://b7kjoe7tojar1" path="res://InputSettings/input_settings.gd" id="6_ovrsl"]
-[ext_resource type="PackedScene" uid="uid://be72syc8a4igv" path="res://TestAssets/Gym/room_3.tscn" id="7_7bh50"]
 [ext_resource type="PackedScene" uid="uid://c32ro7mk8nkji" path="res://InputSettings/input_button.tscn" id="7_hbaan"]
-[ext_resource type="PackedScene" uid="uid://8233let4c5ds" path="res://TestAssets/Gym/room_4.tscn" id="8_aj3uf"]
+[ext_resource type="PackedScene" uid="uid://cf8dhgactf4iu" path="res://TestAssets/TTGS Levels/room_4.tscn" id="7_wgfyn"]
 [ext_resource type="AudioStream" uid="uid://dcth82tww3djx" path="res://Audio/Songs/8bit 2.3.mp3" id="8_hbaan"]
-[ext_resource type="PackedScene" uid="uid://orfr0t4yophj" path="res://TestAssets/Gym/room_5.tscn" id="9_1vwtg"]
-[ext_resource type="PackedScene" uid="uid://db25aj1fkifhb" path="res://TestAssets/Gym/room_6.tscn" id="10_g5ved"]
-[ext_resource type="PackedScene" uid="uid://dg4vetrhm4xga" path="res://TestAssets/Gym/room_7.tscn" id="11_mq4wx"]
-[ext_resource type="PackedScene" uid="uid://03yayp4ujygb" path="res://TestAssets/Gym/room_8.tscn" id="12_mjabq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_he5fp"]
 font_size = 50
@@ -49,110 +44,104 @@ render_target_update_mode = 4
 [node name="Game" parent="VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_lwy2l")]
 
 [node name="FootR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Body" index="0"]
-position = Vector2(-203.125, 2363.2007)
-scale = Vector2(0.99955684, 0.99955684)
+position = Vector2(-200.19922, 2350.973)
+scale = Vector2(0.9995559, 0.9995559)
 
 [node name="FootL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Body" index="1"]
-position = Vector2(402.1328, 2362.4558)
-rotation = 0.062135212
-scale = Vector2(0.99953204, 0.99953204)
+position = Vector2(400.1797, 2350.876)
+rotation = 0.010858618
+scale = Vector2(0.99953413, 0.99953413)
 
 [node name="LegL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Body" index="2"]
-position = Vector2(240, 1337.9751)
-rotation = -0.27184364
-scale = Vector2(0.9998304, 0.9998304)
+position = Vector2(240, 1192.2759)
+rotation = -0.009983885
+scale = Vector2(0.9998312, 0.9998312)
 
 [node name="ShinL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Body" index="3"]
-position = Vector2(648.8125, 1836.4266)
-rotation = 0.4625862
-scale = Vector2(0.9996908, 0.9996908)
+position = Vector2(505.84375, 1779.5675)
+rotation = 0.20697583
+scale = Vector2(0.9996925, 0.9996925)
 
 [node name="LegR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Body" index="4"]
-position = Vector2(-76, 1364.9751)
-rotation = -0.20876193
-scale = Vector2(0.9998316, 0.9998316)
+position = Vector2(-76, 1219.2759)
+rotation = 0.0343112
+scale = Vector2(0.9998322, 0.9998322)
 
 [node name="ShinR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Body" index="5"]
-position = Vector2(170.59375, 1925.9575)
-rotation = 0.6167386
-scale = Vector2(0.9996988, 0.9996988)
+position = Vector2(28.328125, 1823.1217)
+rotation = 0.31808415
+scale = Vector2(0.9996983, 0.9996983)
 
 [node name="Chest" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd" index="1"]
-position = Vector2(81, 527.97437)
+position = Vector2(81, 382.2749)
 
 [node name="LegR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.9998316, 0.9998316)
+scale = Vector2(0.9998322, 0.9998322)
 
 [node name="ShinR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998672, 0.9998672)
+scale = Vector2(0.999866, 0.999866)
 
 [node name="FootR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.999858, 0.999858)
+scale = Vector2(0.9998576, 0.9998576)
 
 [node name="LegL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.9998304, 0.9998304)
+scale = Vector2(0.9998312, 0.9998312)
 
 [node name="ShinL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99986035, 0.99986035)
+scale = Vector2(0.9998613, 0.9998613)
 
 [node name="FootL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Nerd/Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998412, 0.9998412)
+scale = Vector2(0.9998416, 0.9998416)
 
 [node name="LegL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="0"]
-position = Vector2(345, 1296.5452)
-rotation = -0.03519608
-scale = Vector2(0.99983364, 0.99983364)
+position = Vector2(345, 1422.9575)
+rotation = -0.28630257
+scale = Vector2(0.9998332, 0.9998332)
 
 [node name="ShinL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="1"]
-position = Vector2(625.5547, 1876.9365)
-rotation = 0.1623179
-scale = Vector2(0.9996896, 0.9996896)
+position = Vector2(760.97266, 1915.4409)
+rotation = 0.40283194
+scale = Vector2(0.9996877, 0.9996877)
 
 [node name="LegR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="2"]
-position = Vector2(-303, 1292.5454)
-rotation = -0.033061873
-scale = Vector2(0.9998324, 0.9998324)
+position = Vector2(-303, 1418.9575)
+rotation = -0.31228647
+scale = Vector2(0.9998329, 0.9998329)
 
 [node name="ShinR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="3"]
-position = Vector2(-158.25, 1888.0107)
-rotation = 0.12095268
-scale = Vector2(0.99968904, 0.99968904)
+position = Vector2(0.2578125, 1951.4696)
+rotation = 0.41640902
+scale = Vector2(0.9996884, 0.9996884)
 
 [node name="FootR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="4"]
-position = Vector2(-278.97266, 2450.3853)
-scale = Vector2(0.99952966, 0.99952966)
+position = Vector2(-278.98438, 2454.3281)
+scale = Vector2(0.9995273, 0.9995273)
 
 [node name="FootL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="5"]
-position = Vector2(545.5039, 2452.3926)
-scale = Vector2(0.9995291, 0.9995291)
+position = Vector2(546.14844, 2455.2642)
+scale = Vector2(0.99952596, 0.99952596)
 
 [node name="Chest" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Body" index="6"]
-position = Vector2(81, 52.545166)
+position = Vector2(81, 178.95752)
 
 [node name="LegR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Skeleton2D/Chest" index="1"]
-scale = Vector2(0.99983245, 0.99983245)
+scale = Vector2(0.9998329, 0.9998329)
 
 [node name="ShinR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Skeleton2D/Chest/LegR" index="1"]
-scale = Vector2(0.9998566, 0.9998566)
+scale = Vector2(0.99985546, 0.99985546)
 
 [node name="FootR" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Skeleton2D/Chest/LegR/ShinR" index="1"]
-scale = Vector2(0.9998406, 0.9998406)
-
-[node name="LegL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Skeleton2D/Chest" index="2"]
-scale = Vector2(0.99983364, 0.99983364)
+scale = Vector2(0.9998388, 0.9998388)
 
 [node name="ShinL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Skeleton2D/Chest/LegL" index="1"]
-scale = Vector2(0.99985594, 0.99985594)
+scale = Vector2(0.99985445, 0.99985445)
 
 [node name="FootL" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Players/Chad/Chad/Skeleton2D/Chest/LegL/ShinL" index="1"]
-scale = Vector2(0.9998394, 0.9998394)
+scale = Vector2(0.99983823, 0.99983823)
 
 [node name="NerdRoomGenerator" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" index="1"]
-HazardList = Array[PackedScene]([ExtResource("3_ovrsl")])
-
-[node name="ChadLevelGenerator" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" index="2"]
-HazardList = Array[PackedScene]([ExtResource("3_ovrsl")])
-RoomList = Array[PackedScene]([ExtResource("4_5uk0a"), ExtResource("5_ouevp"), ExtResource("6_ja5tu"), ExtResource("7_7bh50"), ExtResource("8_aj3uf"), ExtResource("9_1vwtg"), ExtResource("10_g5ved"), ExtResource("11_mq4wx"), ExtResource("12_mjabq")])
+LevelTransition = ExtResource("3_mykqc")
+RoomList = Array[PackedScene]([ExtResource("4_hilkn"), ExtResource("5_5mxy1"), ExtResource("6_3lhg3"), ExtResource("7_wgfyn")])
 
 [node name="RoomStart2" type="Marker2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/ChadLevelGenerator" index="0"]
 position = Vector2(-5262, 0)

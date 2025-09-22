@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://babjegcqcrucl"]
+[gd_scene load_steps=5 format=3 uid="uid://babjegcqcrucl"]
 
 [ext_resource type="PackedScene" uid="uid://b5kx8rc0u1rws" path="res://PowerUp/Components/power_up_hit_box.tscn" id="1_kfr52"]
 [ext_resource type="PackedScene" uid="uid://l4ye71kkt6bs" path="res://PowerUp/Buffs/double_jump.tscn" id="2_ehv28"]
-[ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="3_ehv28"]
+[ext_resource type="Texture2D" uid="uid://byohnmss85mhl" path="res://Visual Assets/Whitebox.png" id="3_ehv28"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pfimb"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
 
 [node name="DoubleJumpBuff" type="Node2D"]
 
@@ -15,5 +19,15 @@ BuffTime = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="PowerUpHitBox"]
 texture = ExtResource("3_ehv28")
+
+[node name="Label" type="Label" parent="PowerUpHitBox/Sprite2D"]
+offset_left = -62.0
+offset_top = -15.0
+offset_right = 63.0
+offset_bottom = 13.0
+text = "Double Jump"
+label_settings = SubResource("LabelSettings_pfimb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="PowerUpHitBox"]

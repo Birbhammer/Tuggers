@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://de7kvns0iit1w" path="res://Scripts/end_trigger.gd" id="1_n83e4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hhjp"]
-size = Vector2(565, 535)
+size = Vector2(565, 5454)
 
 [sub_resource type="LabelSettings" id="LabelSettings_avars"]
 font_size = 150

@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://bagcijmpn3rs4"]
+[gd_scene load_steps=9 format=4 uid="uid://bagcijmpn3rs4"]
 
 [ext_resource type="Texture2D" uid="uid://bb5vwhplqkjar" path="res://Visual Assets/Levels/ChadCity/TileSetCity.png" id="1_2omsq"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_1p617"]
 [ext_resource type="Texture2D" uid="uid://4fbfq5yy52tj" path="res://Visual Assets/Levels/Suburb/TileSetSuburbs.png" id="2_5gk2g"]
-[ext_resource type="PackedScene" uid="uid://o4cjsts555ch" path="res://Player/Chad/chad.tscn" id="4_2fdox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fko5x"]
 texture = ExtResource("1_2omsq")
@@ -121,20 +120,20 @@ tile_set = SubResource("TileSet_3bo4b")
 tile_map_data = PackedByteArray("AADi////AAACAAgAAADj////AAADAAgAAADk////AAACAAgAAADh////AAACAAgAAADf////AAACAAgAAADe////AAACAAgAAADg////AAADAAgAAADY////AAACAAgAAADX////AAACAAgAAADZ////AAADAAgAAADa////AAACAAgAAADO////AAACAAgAAADP////AAACAAgAAADS////AAACAAgAAADT////AAACAAgAAADM////AAADAAgAAADL////AAACAAgAAADF////AAACAAgAAADH////AAACAAgAAADI////AAACAAgAAADG////AAADAAgAAAC0////AAACAAgAAAC3////AAACAAgAAAC7////AAACAAgAAAC8////AAACAAgAAACp////AAACAAgAAACr////AAACAAgAAACt////AAACAAgAAACm////AAACAAgAAACZ////AAACAAgAAACa////AAACAAgAAACb////AAACAAgAAACc////AAADAAgAAACd////AAACAAgAAACe////AAACAAgAAACf////AAACAAgAAACg////AAACAAgAAAA=")
 tile_set = SubResource("TileSet_3bo4b")
 
-[node name="Locations" type="Node" parent="."]
+[node name="Locations" type="Node2D" parent="."]
 
 [node name="End" type="Marker2D" parent="Locations"]
-position = Vector2(-8030, 0)
+position = Vector2(-30840, 0)
 
-[node name="PowerUps" type="Node" parent="."]
+[node name="PowerUps" type="Node2D" parent="."]
 
 [node name="PowerUp1" type="Marker2D" parent="PowerUps"]
-position = Vector2(-8717, 5209)
+position = Vector2(-8717, 12197)
 
-[node name="Hazards" type="Node" parent="."]
+[node name="Hazards" type="Node2D" parent="."]
 
 [node name="Hazard1" type="Marker2D" parent="Hazards"]
-position = Vector2(-5510, -109)
+position = Vector2(-5510, 6879)
 
 [node name="ChadStart" type="Area2D" parent="."]
 position = Vector2(-159, -15)
@@ -148,9 +147,5 @@ shape = SubResource("RectangleShape2D_hg8ja")
 [node name="Sprite2D" type="Sprite2D" parent="ChadStart"]
 position = Vector2(42, -482)
 texture = ExtResource("2_1p617")
-
-[node name="Chad" parent="." instance=ExtResource("4_2fdox")]
-position = Vector2(-144, -189)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="ChadStart" to="ChadStart" method="_on_body_entered"]

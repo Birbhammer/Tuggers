@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bi4yuieglvdn"]
+[gd_scene load_steps=19 format=4 uid="uid://bi4yuieglvdn"]
 
 [ext_resource type="Script" uid="uid://dgcaxq02xtd7p" path="res://Scripts/General/room_generator.gd" id="1_3eg0b"]
 [ext_resource type="Texture2D" uid="uid://bgxfyhx6jrgja" path="res://Visual Assets/Levels/Gym Level/TileSet2-Gym.png" id="1_sstjb"]
@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://babjegcqcrucl" path="res://LevelAssets/PowerUps/Buffs/double_jump_buff.tscn" id="2_51nqk"]
 [ext_resource type="PackedScene" uid="uid://4fcf8p54reuh" path="res://LevelAssets/PowerUps/Buffs/confusion_nerf.tscn" id="3_m56q4"]
 [ext_resource type="PackedScene" uid="uid://cr0a5rq8c73md" path="res://TestAssets/City/room_4.tscn" id="4_51nqk"]
+[ext_resource type="PackedScene" uid="uid://db8q5vcxw30n5" path="res://TestAssets/City/room_end (2).tscn" id="4_l6o1t"]
 [ext_resource type="PackedScene" uid="uid://b3lgph6qf0ntn" path="res://TestAssets/City/room_0.tscn" id="5_m56q4"]
 [ext_resource type="PackedScene" uid="uid://dp1kcfl04khit" path="res://TestAssets/City/room_1.tscn" id="6_efuqy"]
 [ext_resource type="PackedScene" uid="uid://uxyethe6gghn" path="res://TestAssets/City/room_2.tscn" id="7_l6o1t"]
 [ext_resource type="PackedScene" uid="uid://dkp31on3sxypy" path="res://TestAssets/City/room_3.tscn" id="8_iggee"]
+[ext_resource type="PackedScene" uid="uid://bupp74qs8h20f" path="res://TestAssets/City/room_5.tscn" id="10_iggee"]
+[ext_resource type="PackedScene" uid="uid://dm4gbe71e3484" path="res://TestAssets/City/room_6.tscn" id="11_p4so3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ef0p5"]
 texture = ExtResource("1_sstjb")
@@ -115,8 +118,8 @@ size = Vector2(114, 1537)
 script = ExtResource("1_3eg0b")
 PowerUpList = Array[PackedScene]([ExtResource("2_51nqk")])
 HazardList = Array[PackedScene]([ExtResource("3_m56q4")])
-LevelTransition = ExtResource("4_51nqk")
-RoomList = Array[PackedScene]([ExtResource("5_m56q4"), ExtResource("6_efuqy"), ExtResource("7_l6o1t"), ExtResource("8_iggee"), ExtResource("4_51nqk")])
+LevelTransition = ExtResource("4_l6o1t")
+RoomList = Array[PackedScene]([ExtResource("5_m56q4"), ExtResource("6_efuqy"), ExtResource("7_l6o1t"), ExtResource("8_iggee"), ExtResource("4_51nqk"), ExtResource("10_iggee"), ExtResource("11_p4so3")])
 MaxRoomNum = 5
 
 [node name="BackGround" type="TileMapLayer" parent="."]
