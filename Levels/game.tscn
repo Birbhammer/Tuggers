@@ -130,8 +130,59 @@ sources/0 = SubResource("TileSetAtlasSource_ppwbv")
 position = Vector2(7203, -251)
 scale = Vector2(0.5, 0.5)
 
-[node name="NerdArms" parent="Players/Nerd" instance=ExtResource("2_5ubxa")]
-scale = Vector2(2, 2)
+[node name="FootR" parent="Players/Nerd/Nerd/Body" index="0"]
+position = Vector2(-202.71875, 2362.5566)
+scale = Vector2(0.999552, 0.999552)
+
+[node name="FootL" parent="Players/Nerd/Nerd/Body" index="1"]
+position = Vector2(401.9297, 2361.8108)
+rotation = 0.024964435
+scale = Vector2(0.99953634, 0.99953634)
+
+[node name="LegL" parent="Players/Nerd/Nerd/Body" index="2"]
+position = Vector2(240, 1234.1721)
+rotation = -0.085282445
+scale = Vector2(0.9998341, 0.9998341)
+
+[node name="ShinL" parent="Players/Nerd/Nerd/Body" index="3"]
+position = Vector2(549.2656, 1799.8031)
+rotation = 0.2804774
+scale = Vector2(0.9996951, 0.9996951)
+
+[node name="LegR" parent="Players/Nerd/Nerd/Body" index="4"]
+position = Vector2(-76, 1261.1721)
+rotation = -0.035585236
+scale = Vector2(0.99983007, 0.99983007)
+
+[node name="ShinR" parent="Players/Nerd/Nerd/Body" index="5"]
+position = Vector2(70.24609, 1856.2554)
+rotation = 0.4039632
+scale = Vector2(0.9996934, 0.9996934)
+
+[node name="Chest" parent="Players/Nerd/Nerd" index="1"]
+position = Vector2(81, 424.17114)
+
+[node name="NerdArms" parent="Players/Nerd/Nerd/Skeleton2D/Chest/ArmPinLoc" index="0" instance=ExtResource("2_5ubxa")]
+position = Vector2(-26.457031, 552.26855)
+scale = Vector2(9.090909, 9.090909)
+
+[node name="LegR" parent="Players/Nerd/Nerd/Skeleton2D/Chest" index="1"]
+scale = Vector2(0.9998301, 0.9998301)
+
+[node name="ShinR" parent="Players/Nerd/Nerd/Skeleton2D/Chest/LegR" index="1"]
+scale = Vector2(0.9998634, 0.9998634)
+
+[node name="FootR" parent="Players/Nerd/Nerd/Skeleton2D/Chest/LegR/ShinR" index="1"]
+scale = Vector2(0.9998586, 0.9998586)
+
+[node name="LegL" parent="Players/Nerd/Nerd/Skeleton2D/Chest" index="2"]
+scale = Vector2(0.9998341, 0.9998341)
+
+[node name="ShinL" parent="Players/Nerd/Nerd/Skeleton2D/Chest/LegL" index="1"]
+scale = Vector2(0.999861, 0.999861)
+
+[node name="FootL" parent="Players/Nerd/Nerd/Skeleton2D/Chest/LegL/ShinL" index="1"]
+scale = Vector2(0.99984115, 0.99984115)
 
 [node name="Chad" parent="Players" instance=ExtResource("3_jycte")]
 position = Vector2(-5262, -334)
@@ -144,7 +195,7 @@ script = ExtResource("5_ev4ff")
 PowerUpList = Array[PackedScene]([ExtResource("12_40bat")])
 HazardList = Array[PackedScene]([ExtResource("14_vt8gr")])
 LevelTransition = ExtResource("11_e33e4")
-RoomList = Array[PackedScene]([ExtResource("6_jycte"), ExtResource("7_fiyor"), ExtResource("8_e33e4"), ExtResource("9_7apmo"), ExtResource("11_e33e4")])
+RoomList = Array[PackedScene]([ExtResource("6_jycte"), ExtResource("7_fiyor"), ExtResource("8_e33e4"), ExtResource("9_7apmo")])
 MaxRoomNum = 5
 
 [node name="RoomStart" type="Marker2D" parent="NerdRoomGenerator"]
@@ -185,3 +236,6 @@ position = Vector2(-4589, 0)
 scale = Vector2(-1, 1)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAADAP//AAADAAAAAAAEAP//AAAEAAAAAAAGAP//AAADAAAAABAFAP//AAAEAAAAABAIAP//AAACAAEAAAAKAP//AAADAAEAAAAMAP//AAAAAAEAAAANAP//AAABAAEAAAAPAP//AAAAAAEAAAAQAP//AAABAAEAAAASAP//AAABAAIAAAAUAP//AAABAAIAAAAJAP//AAADAAEAAAALAP//AAAEAAEAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAAAP//AAACAAEAAAABAP//AAAEAAEAAAAXAP//AAAFAAAAAAAaAP//AAAFAAAAAAAgAP//AAAFAAAAAAAdAP//AAAFAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD+//z/AAAAAAAAAAD+//v/AAAAAAAAAAD+//r/AAAAAAAAAAD+//n/AAAAAAAAAAD+//j/AAAAAAAAAAD+//b/AAAAAAAAAAD+//f/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_urf7w")
+
+[editable path="Players/Nerd"]
+[editable path="Players/Nerd/Nerd"]

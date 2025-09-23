@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://dgcaxq02xtd7p" path="res://Scripts/General/room_generator.gd" id="1_p5bqy"]
 [ext_resource type="PackedScene" uid="uid://babjegcqcrucl" path="res://LevelAssets/PowerUps/Buffs/double_jump_buff.tscn" id="2_i77yv"]
 [ext_resource type="Texture2D" uid="uid://cac3fn7dga2wv" path="res://icon.svg" id="2_lism0"]
-[ext_resource type="PackedScene" uid="uid://bagcijmpn3rs4" path="res://TestAssets/Suburbs/room_0.tscn" id="3_pn7o8"]
 [ext_resource type="PackedScene" uid="uid://dwckxsbmh4r2d" path="res://TestAssets/EndNerd/room_0.tscn" id="3_qqbnx"]
+[ext_resource type="PackedScene" uid="uid://0ik6mm01kpsl" path="res://TestAssets/SuburbNerd/room_0.tscn" id="4_qqbnx"]
 [ext_resource type="Script" uid="uid://bdevujs2ec2yg" path="res://Scripts/nerd_room_start.gd" id="5_04fqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03gp4"]
@@ -109,7 +109,7 @@ script = ExtResource("1_p5bqy")
 PowerUpList = Array[PackedScene]([ExtResource("2_i77yv")])
 HazardList = Array[PackedScene]([ExtResource("2_i77yv")])
 LevelTransition = ExtResource("3_qqbnx")
-RoomList = Array[PackedScene]([ExtResource("3_pn7o8")])
+RoomList = Array[PackedScene]([ExtResource("4_qqbnx")])
 MaxRoomNum = 5
 
 [node name="Background" type="TileMapLayer" parent="."]
